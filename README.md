@@ -1,1 +1,0 @@
-# grupo7-projeto-front-end-t12
