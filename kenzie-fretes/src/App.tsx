@@ -1,5 +1,12 @@
-const App = () => {
-  return <div className="App"></div>;
-};
+import CButton from "./components/Button"
+import MainRoutes from "./services/routes"
 
-export default App;
+const App = () => {
+  return (
+    <>
+      <MainRoutes />
+    </>
+  )
+}
+
+export default App
