@@ -1,12 +1,13 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
 :root{
         /* main colors */
 
-        --color-primary: #EB8C5B;
-        --color-secundary: #5A8BB7;
-        --color-secundary-50: #84A4C1;
+        --color-primary:#EB8C5B;
+        --color-secundary:#5A8BB7;
+        --color-secundary-50:#84A4C1;
+
 
         --links:#0086FF;
 
@@ -59,5 +60,5 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 10px;
     border: 3px solid var(--color-gray-3);
   }
-`;
-export default GlobalStyle;
+`
+export default GlobalStyle
