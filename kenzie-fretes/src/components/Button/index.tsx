@@ -2,11 +2,11 @@ import { Button, styled } from "@mui/material"
 
 const CButton = styled(Button)({
   "&.MuiButton-contained": {
-    backgroundColor: "var(--color-primary)",
+    backgroundColor: "var(--color-secundary)",
     height: 48,
     width: "100%",
     "&:hover": {
-      backgroundColor: "#eb570d",
+      backgroundColor: "var(--color-secundary-50)",
     },
   },
   "&.MuiButton-outlined": {
