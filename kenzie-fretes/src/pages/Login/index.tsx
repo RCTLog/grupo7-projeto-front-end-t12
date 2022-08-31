@@ -5,6 +5,7 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material"
+import {AiOutlineArrowLeft} from 'react-icons/ai'
 import CInput from "../../components/Input"
 import CButton from "../../components/Button"
 import { Link, Navigate } from "react-router-dom"
@@ -42,6 +43,7 @@ const Login = () => {
         <Container>
           <div className="login-container">
             <LoginWrap>
+              <AiOutlineArrowLeft  size='30px'/>
               <img src={logo} alt="kenzie-fretes logo" />
 
               <h2>Bem-vindo!</h2>
