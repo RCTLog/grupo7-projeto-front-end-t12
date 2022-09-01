@@ -1,17 +1,21 @@
-import { createContext, useContext } from "react"
-import LoginProvider from "../LoginContext/LoginProvider"
-import { IMainProvider } from "./Main.interfaces"
+import { createContext, useContext } from "react";
+import LoginProvider from "../LoginContext/LoginProvider";
+import RegisterProvider from "../RegisterContext/RegisterProvider";
 
-const MainContext = createContext({})
+import { IMainProvider } from "./Main.interfaces";
+
+const MainContext = createContext({});
 
 const MainProvider = ({ children }: IMainProvider) => {
   return (
     <MainContext.Provider value={{}}>
-      <LoginProvider>{children}</LoginProvider>
+      <LoginProvider>
+        <RegisterProvider>{children}</RegisterProvider>
+      </LoginProvider>
     </MainContext.Provider>
-  )
-}
+  );
+};
 
-export const useMain = () => useContext(MainContext)
+export const useMain = () => useContext(MainContext);
 
-export default MainProvider
+export default MainProvider;
