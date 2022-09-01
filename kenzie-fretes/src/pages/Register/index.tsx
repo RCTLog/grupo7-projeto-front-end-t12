@@ -1,3 +1,4 @@
+import "./style";
 import {
   FormControlLabel,
   FormLabel,
@@ -9,22 +10,23 @@ import CInput from "../../components/Input";
 import CButton from "../../components/Button";
 import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { useLogin } from "../../context/LoginContext/LoginProvider";
+import { useRegister } from "../../context/RegisterContext/RegisterProvider";
 
-import { Container, LoginWrap } from "./style";
+import { Container, RegisterWrap } from "./style";
 
 import logo from "../../assets/logo.svg";
-import cliente from "../../assets/cliente.svg";
-import fretista from "../../assets/fretista.svg";
+import cliente_register from "../../assets/cliente_register.svg";
+import fretista_register from "../../assets/fretista_register.svg";
 import arrowBack from "../../assets/arrowBack.svg";
 
-const Login = () => {
+const Register = () => {
   const [password, setPassword] = useState(false);
+  const [passwordConfirm, setPasswordConfirm] = useState(false);
   const [type, setType] = useState(false);
 
   const {
     emailError,
+    nameError,
     passError,
     auth,
     setAuth,
@@ -33,7 +35,7 @@ const Login = () => {
     handleSubmit,
     errors,
     onSubmit,
-  } = useLogin();
+  } = useRegister();
 
   return (
     <>
@@ -41,22 +43,14 @@ const Login = () => {
         <Navigate to={"/dashboard"} />
       ) : (
         <Container>
-          <div className="login-container">
-            <LoginWrap>
-              <Link to={"/dashboard"}>
-                <img
-                  className="arrowBack"
-                  src={arrowBack}
-                  alt="voltar"
-                  onClick={() => {
-                    console.log("foi");
-                  }}
-                />
+          <div className="register-container">
+            <RegisterWrap>
+              <Link to={"/login"}>
+                <img className="arrowBack" src={arrowBack} alt="voltar" />{" "}
               </Link>
 
               <img src={logo} alt="kenzie-fretes logo" />
 
-              <h2>Bem-vindo!</h2>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <FormLabel id="type">Você é:</FormLabel>
 
@@ -100,6 +94,16 @@ const Login = () => {
 
                 <CInput
                   variant="outlined"
+                  id="name"
+                  placeholder="Digite seu nome"
+                  label="Nome:"
+                  error={nameError}
+                  helperText={errors.name?.message}
+                  {...register("name")}
+                />
+
+                <CInput
+                  variant="outlined"
                   id="email"
                   placeholder="Digite seu e-mail"
                   label="E-mail:"
@@ -114,30 +118,33 @@ const Login = () => {
                   placeholder="Digite sua senha"
                   label="Senha:"
                   type={password ? "text" : "password"}
-                  InputProps={{
-                    endAdornment: (
-                      <IconButton onClick={() => setPassword(!password)}>
-                        {password ? <VisibilityOff /> : <Visibility />}
-                      </IconButton>
-                    ),
-                  }}
                   error={passError}
                   helperText={errors.password?.message}
                   {...register("password")}
                 />
 
-                <CButton variant="contained" type="submit">
-                  Login
-                </CButton>
+                <CInput
+                  variant="outlined"
+                  id="passwordConfirm"
+                  placeholder="Digite sua senha"
+                  label="Confirmação de senha:"
+                  type={passwordConfirm ? "text" : "password"}
+                  error={passwordConfirm}
+                  helperText={errors.passwordConfirm?.message}
+                  {...register("passwordConfirm")}
+                />
 
-                <p>Ainda não possui uma conta?</p>
-                <p>
-                  <Link to="/register">Clique aqui</Link> e cadastre-se
-                </p>
+                <CButton variant="contained" type="submit">
+                  Cadastre-se
+                </CButton>
               </form>
-            </LoginWrap>
-            <div className="login-image">
-              {type ? <img src={cliente} /> : <img src={fretista} />}
+            </RegisterWrap>
+            <div className="register-image">
+              {type ? (
+                <img src={cliente_register} />
+              ) : (
+                <img src={fretista_register} />
+              )}
             </div>
           </div>
         </Container>
@@ -146,4 +153,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

@@ -8,25 +8,11 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  background: rgb(90, 139, 183);
-  background: -moz-linear-gradient(
-    90deg,
-    rgba(235, 140, 91, 1) 50%,
-    rgba(90, 139, 183, 1) 50%
-  );
-  background: -webkit-linear-gradient(
-    90deg,
-    rgba(235, 140, 91, 1) 50%,
-    rgba(90, 139, 183, 1) 50%
-  );
-  background: linear-gradient(
-    90deg,
-    rgba(235, 140, 91, 1) 50%,
-    rgba(90, 139, 183, 1) 50%
-  );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eb8c5b",endColorstr="#5a8bb7",GradientType=1);
+  background-color: #eb8c5b;
+  background-image: linear-gradient(90deg, #eb8c5b 20%, #5a8bb7 80%);
 
-  .login-container {
+  .register-container {
     width: 100%;
     max-width: 485px;
     height: 100vh;
@@ -42,7 +28,7 @@ export const Container = styled.div`
 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
 
-    .login-image {
+    .register-image {
       display: none;
       width: 50%;
 
@@ -59,14 +45,14 @@ export const Container = styled.div`
       max-width: 1176px;
       height: 650px;
       border-radius: 15px;
-      .login-image {
+      .register-image {
         display: block;
       }
     }
   }
 `;
 
-export const LoginWrap = styled.div`
+export const RegisterWrap = styled.div`
   width: 100%;
   max-width: 300px;
 
@@ -78,6 +64,7 @@ export const LoginWrap = styled.div`
     width: 20px;
     height: 20px;
     cursor: pointer;
+    z-index: 200;
   }
   form {
     display: flex;

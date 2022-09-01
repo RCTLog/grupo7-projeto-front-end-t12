@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Login from "../pages/Login"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 const MainRoutes = () => {
   return (
@@ -8,13 +9,13 @@ const MainRoutes = () => {
         <Routes>
           <Route path="*" element={<h2>Página não existe</h2>} />
           <Route index element={<h2>HomePage</h2>} />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/register" element={<h2>Register Page</h2>} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<h2>Dashboard Page</h2>} />
         </Routes>
       </BrowserRouter>
     </>
-  )
-}
+  );
+};
 
-export default MainRoutes
+export default MainRoutes;
