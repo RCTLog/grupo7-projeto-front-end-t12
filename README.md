@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Logo da empresa" title="RCTLog | Fretes & Mudanças" src="https://github.com/RCTLog/grupo7-projeto-front-end-t12/blob/main/kenzie-fretes/public/logo.png" width="100px" />
+  <img alt="Logo da empresa" title="RCTLog | Fretes & Mudanças" src="" width="100px" />
 </h1>
 
 <h1 align="center">
@@ -20,9 +20,7 @@ RCTLog | Fretes & Mudanças é uma plataforma voltada para motoristas se cadastr
 
 ## **Endpoints**
 
-A API tem um total de 2 endpoints, sendo em volta principalmente do usuário (Cliente) - podendo cadastrar seu perfil, logar em seu perfil, criar um post. <br/>
-O JSON para utilizar no Insomnia é este aqui -> https://drive.google.com/file/d/1kALZ2TZywU4OOqwqWeVuu8H13fHrxt_2/view
-Para importar o JSON no Insomnia é só baixar o arquivo. Na palavra "Insomnia" no canto superior esquerdo. Nesse dropdown é só clicar em "Import / Export > Import Data > From File" e selecionar o arquivo que foi feito download :v:
+A API tem um total de 2 endpoints, sendo em volta principalmente do usuário (Cliente) - podendo cadastrar seu perfil, logar em seu perfil e criar um post. <br/>
 
 O url base da API é https://json-server-kenzie-fretes.herokuapp.com
 
