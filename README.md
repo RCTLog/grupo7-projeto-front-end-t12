@@ -114,7 +114,7 @@ A senha necessita de 6 caracteres, uma letra maiúscula e minúscula e números.
 ```json
 {
   "status": "error",
-  "message": ["password: "A senha precisa ter no mínimo uma letra maiúscula e minúscula e números"]
+  "message": "A senha precisa ter no mínimo uma letra maiúscula e minúscula e números."
 }
 ```
 
@@ -228,8 +228,7 @@ Da mesma forma de criar tecnologias, conseguimos criar trabalhos, dessa forma:
 
 ```json
 {
-  "description": "Faço fretes e mudanças na região de Volta Redonda, Piraí e Pinheiral.
-Aceito serviços para outras regiões.",
+  "description": "Faço fretes na região, dependendo faço fretes em outros estados.",
   "contact": "24 98134-0029"
 }
 ```
@@ -241,8 +240,7 @@ Utilizando este endpoint:
 
 ```json
 {
-  "description": "Faço fretes e mudanças na região de Volta Redonda, Piraí e Pinheiral.
-Aceito serviços para outras regiões.",
+  "description": "Faço fretes na região, dependendo faço fretes em outros estados.",
   "contact": "24 98134-0029"
 }
 ```
@@ -265,7 +263,7 @@ Endpoint para atualizar a foto de perfil:
 
 ```multipart
 {
-  "userImg": "",
+  "userImg": "https://img.quizur.com/f/img628e3091c2f679.37459174.jpg?lastEdited=1653485722",
 }
 ```
 
