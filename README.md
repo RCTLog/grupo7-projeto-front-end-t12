@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Logo da empresa" title="RCTLog | Fretes & Mudanças" src="https://kenzie.com.br/images/logoblue.svg" width="100px" />
+  <img alt="Logo da empresa" title="RCTLog | Fretes & Mudanças" src="https://www.figma.com/file/B7sjeCPERedF2zpenZAXIp/Projeto-Final-FrontEnd-M3-Grupo-12?node-id=109%3A1300" width="100px" />
 </h1>
 
 <h1 align="center">
