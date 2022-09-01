@@ -30,7 +30,6 @@ export const Container = styled.div`
     width: 100%;
     max-width: 485px;
     height: 100vh;
-    max-height: 772px;
 
     display: flex;
 
@@ -51,13 +50,15 @@ export const Container = styled.div`
       }
     }
     @media (min-width: 485px) {
-      height: 90vh;
+      width: 90%;
+      height: 100vh;
       border-radius: 15px;
+      max-height: 600px;
     }
-    @media (min-width: 1285px) {
+    @media (min-width: 1280px) {
       width: 70%;
       max-width: 1176px;
-      height: 650px;
+      height: 600px;
       border-radius: 15px;
       .login-image {
         display: block;
@@ -69,10 +70,12 @@ export const Container = styled.div`
 export const LoginWrap = styled.div`
   width: 100%;
   max-width: 300px;
+  height: 100px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
+
 
   .arrowBack {
     width: 20px;
@@ -82,7 +85,7 @@ export const LoginWrap = styled.div`
   form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 
     p {
       text-align: center;
@@ -92,7 +95,7 @@ export const LoginWrap = styled.div`
     }
   }
 
-  @media (min-width: 1285px) {
+  @media (min-width: 1280px) {
     width: 50%;
   }
 `;

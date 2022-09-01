@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
         --color-secundary:#5A8BB7;
         --color-secundary-50:#84A4C1;
 
+
         --links:#0086FF;
 
         /* validation */
@@ -18,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
         /* colors grey */
 
         --grey-0: #606060;
-        --grey-1: #C7C7C7:
+        --grey-1: #C7C7C7;
         --grey-2: #F2F2F2;
 
     }
