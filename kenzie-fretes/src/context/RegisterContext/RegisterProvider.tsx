@@ -66,7 +66,7 @@ const RegisterProvider = ({ children }: IRegisterProps) => {
 
       /* 
       
-      COLOCAR RESPOSTA
+      COLOCAR RESPOSTA do USER em algum Lugar
       
       */
     });
