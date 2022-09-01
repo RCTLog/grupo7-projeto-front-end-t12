@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Logo da empresa" title="RCTLog | Fretes & Mudanças" src="https://www.figma.com/file/B7sjeCPERedF2zpenZAXIp/Projeto-Final-FrontEnd-M3-Grupo-12?node-id=109%3A1300" width="100px" />
+  <img alt="Logo da empresa" title="RCTLog | Fretes & Mudanças" src="https://kenzie.com.br/images/logoblue.svg" width="100px" />
 </h1>
 
 <h1 align="center">
@@ -242,31 +242,32 @@ Não é necessário um corpo da requisição.
 
 Da mesma forma de criar tecnologias, conseguimos criar trabalhos, dessa forma:
 
-`POST /users/works - FORMATO DA REQUISIÇÃO`
+`POST https://json-server-kenzie-fretes.herokuapp.com/login/services- FORMATO DA REQUISIÇÃO`
 
 ```json
 {
-  "title": "KenzieHub",
-  "description": "I was the backend developer of this project, and i did it using Typescript and NodeJS",
-  "deploy_url": "https://kenziehub.me"
+  "description": "Faço fretes e mudanças na região de Volta Redonda, Piraí e Pinheiral.
+Aceito serviços para outras regiões.",
+  "contact": "24 98134-0029"
 }
 ```
 
-Conseguimos atualizar o titulo, a descrição ou o deploy_url, qualquer uma das informações do respectivo trabalho.
+Conseguimos atualizar a descrição e o contato, qualquer uma das informações do respectivo trabalho.
 Utilizando este endpoint:
 
-`PUT /users/works/:work_id - FORMATO DA REQUISIÇÃO`
+`PATCH https://json-server-kenzie-fretes.herokuapp.com/login/services/${post_id} - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
-  "title": "KenzieHub Atualizado",
-  "description": "Nova descrição."
+  "description": "Faço fretes e mudanças na região de Volta Redonda, Piraí e Pinheiral.
+Aceito serviços para outras regiões.",
+  "contact": "24 98134-0029"
 }
 ```
 
 Também é possível deletar um trabalho do seu perfil, utilizando este endpoint:
 
-`DELETE /users/works/:work_id`
+`DELETE https://json-server-kenzie-fretes.herokuapp.com/login/services/${post_id}`
 
 ```
 Não é necessário um corpo da requisição.
@@ -278,22 +279,32 @@ Assim como os endpoints de tecnologias e trabalhos, nesse precisamos estar logad
 
 Endpoint para atualizar a foto de perfil:
 
-`PATCH /users/avatar - FORMATO DA REQUISIÇÃO`
+`PATCH https://json-server-kenzie-fretes.herokuapp.com/users - FORMATO DA REQUISIÇÃO`
 
 ```multipart
-avatar: <Arquivo de imagem>
+{
+  "userImg": "",
+}
 ```
 
 Nesse endpoint podemos atualizar qualquer dado do usuário, e a senha também, porém é necessário enviar a antiga senha no campo "old_password" caso o usuário queira atualizar a senha.
 
-`PUT /profile - FORMATO DA REQUISIÇÃO`
+`PATCH /users - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
-  "name": "Gabriel Araujo",
-  "contact": "linkedin/araujooj",
+  "name": "Gabriel Fray",
+  "contact": "19 98134-0029",
   "old_password": "123456",
-  "password": "123456789"
+  "password": "Teste123"
+   "address": [
+        {
+          "street": "Rua dos bobos",
+          "number": 166,
+          "distric": "Volta redonda",
+          "state": "Rio de Janeiro"
+        }
+      ]
 }
 ```
 
