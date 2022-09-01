@@ -138,7 +138,7 @@ Email já cadastrado:
 
 ```json
 {
-      "email": "raphael@email.com",
+      "email": "gabrielfray@email.com",
       "password": "Teste123",
 }
 ```
@@ -175,64 +175,64 @@ Rotas que necessitam de autorização deve ser informado no cabeçalho da requis
 
 <br>
 
-`GET /profile - FORMATO DA RESPOSTA - STATUS 200`
+`GET / - FORMATO DA RESPOSTA - STATUS 200`
 
 ```json
 {
-  "id": "1f4b83fe-c3df-4818-8356-c8d4dedeb49b",
-  "name": "Teste",
-  "email": "teste@gmail.com",
-  "course_module": "m3",
-  "bio": "Teste",
-  "contact": "linkedin/in/teste",
-  "techs": [],
-  "works": [],
-  "created_at": "2022-08-08T00:08:22.920Z",
-  "updated_at": "2022-08-08T00:08:22.920Z",
-  "avatar_url": null
+
 }
 ```
 
-<h2 align ='center'> Criar tecnologias para o seu perfil </h2>
+<h2 align ='center'> Criar um post de serviço </h2>
 
-`POST /users/techs - FORMATO DA REQUISIÇÃO`
+`POST /services - FORMATO DA REQUISIÇÃO`
 
 ```json
-{
-  "title": "React",
-  "status": "Iniciante"
+{	
+   "createUserId": 3,
+ 
+  "description": "Preciso de um carreto urgente!",
+  "origin": [
+    {
+      "city": "Indaiatuba",
+      "state": "SP"
+    }
+  ],
+  "destination": [
+    {
+      "city": "Cuiabá",
+      "state": "MT"
+    }
+  ]
 }
+
 ```
 
-1. O campo - "status" deve receber respectivamente os 3 níveis de habilidade:
-   - "Iniciante"
-   - "Intermediário"
-   - "Avançado"
+Você poderá editar os posts feitos
 
-Caso você tente criar uma tecnologia com o mesmo nome para o seu perfil, receberá este erro:
-
-`POST /users/techs - FORMATO DA RESPOSTA - STATUS 401`
+`PATCH /services/${post_id} - FORMATO DA REQUISIÇÃO`
 
 ```json
-{
-  "status": "error",
-  "message": "User Already have this technology created, you can only update it"
-}
-```
-
-Ou seja, você pode apenas dar update em quanto você avançou nas tecnologias que já está no seu perfil. Utilizando este endpoint:
-
-`PUT /users/techs/:tech_id - FORMATO DA REQUISIÇÃO`
-
-```json
-{
-  "status": "Avançado"
+{	
+  "description": "Preciso de um carreto urgente!",
+  "origin": [
+    {
+      "city": "Indaiatuba",
+      "state": "SP"
+    }
+  ],
+  "destination": [
+    {
+      "city": "Cuiabá",
+      "state": "MT"
+    }
+  ]
 }
 ```
 
 Também é possível deletar uma tecnologia, utilizando este endpoint:
 
-`DELETE /users/techs/:tech_id`
+`DELETE /services/${post_id}`
 
 ```
 Não é necessário um corpo da requisição.
@@ -299,4 +299,4 @@ Nesse endpoint podemos atualizar qualquer dado do usuário, e a senha também, p
 
 ---
 
-Feito com ♥ by araujooj :wave:
+Feito by Gabriel Fray :wave:
