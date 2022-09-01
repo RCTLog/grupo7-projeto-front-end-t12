@@ -12,7 +12,7 @@ Para que serve esse site?
 RCTLog | Fretes & Mudanças é uma plataforma voltada para motoristas se cadastrarem e oferecerem seus serviços de transporte, e ao mesmo tempo, para o cliente final que busca por esses serviços, ter a facilidade em poucos cliques de se cadastrar e de contratar os serviços de que precisa.
 </p>
 
-<blockquote align="center">“Sempre passar o que você aprendeu. - Mestre Yoda”</blockquote>
+<blockquote align="center">“Faça ou não faça. Tentativa não há. - Mestre Yoda”</blockquote>
 
 <p align="center">
   <a href="#endpoints">Endpoints</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -20,11 +20,11 @@ RCTLog | Fretes & Mudanças é uma plataforma voltada para motoristas se cadastr
 
 ## **Endpoints**
 
-A API tem um total de 13 endpoints, sendo em volta principalmente do usuário (dev) - podendo cadastrar seu perfil, tecnologias que estuda e trabalhos realizados. <br/>
+A API tem um total de 2 endpoints, sendo em volta principalmente do usuário (Cliente) - podendo cadastrar seu perfil, logar em seu perfil, criar um post. <br/>
 O JSON para utilizar no Insomnia é este aqui -> https://drive.google.com/file/d/1kALZ2TZywU4OOqwqWeVuu8H13fHrxt_2/view
 Para importar o JSON no Insomnia é só baixar o arquivo. Na palavra "Insomnia" no canto superior esquerdo. Nesse dropdown é só clicar em "Import / Export > Import Data > From File" e selecionar o arquivo que foi feito download :v:
 
-O url base da API é https://kenziehub.herokuapp.com
+O url base da API é https://json-server-kenzie-fretes.herokuapp.com
 
 ## Rotas que não precisam de autenticação
 
@@ -33,232 +33,82 @@ O url base da API é https://kenziehub.herokuapp.com
 Nessa aplicação o usuário sem fazer login ou se cadastrar pode ver os devs já cadastrados na plataforma, na API podemos acessar a lista dessa forma:
 Aqui conseguimos ver os usuários, suas tecnologias e seus trabalhos cadastrados.
 
-`GET /users - FORMATO DA RESPOSTA - STATUS 200`
+`GET https://json-server-kenzie-fretes.herokuapp.com/users - FORMATO DA RESPOSTA - STATUS 200`
 
 ```json
 [
-  {
-    "id": "8b8e50a6-50c2-4718-b817-2d38cad0c8f4",
-    "name": "Gabriel Araujo",
-    "email": "gabriel@gmail.com",
-    "course_module": "2o Módulo (Frontend avançado)",
-    "bio": "Lorem ipsum dolor emet",
-    "contact": "linkedin/araujooj",
-    "techs": [
-      {
-        "id": "55126701-18ac-40df-aab9-3a88657db446",
-        "title": "React",
-        "status": "Avançado",
-        "created_at": "2020-11-30T16:26:53.953Z",
-        "updated_at": "2020-11-30T16:26:53.953Z"
-      },
-      {
-        "id": "af06a853-c1fb-4a94-960d-1c6caa8d2b5c",
-        "title": "Typescript",
-        "status": "Avançado",
-        "created_at": "2020-11-30T18:40:08.316Z",
-        "updated_at": "2020-11-30T18:40:08.316Z"
-      }
-    ],
-    "works": [
-      {
-        "id": "0cd019b5-10c5-4eb4-9781-5dff577cfd9e",
-        "title": "KenzieHub",
-        "description": "I was the backend developer of this project, and i did it using Typescript and NodeJS",
-        "deploy_url": "https://kenziehub.me",
-        "created_at": "2020-12-03T01:13:44.720Z",
-        "updated_at": "2020-12-03T01:13:44.720Z"
-      }
-    ],
-    "created_at": "2020-11-27T00:01:13.789Z",
-    "updated_at": "2020-12-05T13:59:22.632Z",
-    "avatar_url": "https://kenziehub.s3.amazonaws.com/4ff1e3c6c082ff67af7c-IMG_20200610_110518_522.jpg"
-  },
-  {
-    "id": "863a5291-d6c8-4869-8461-db0dcf4f176b",
-    "name": "Filipe Gutierry",
-    "email": "filipe@gmail.com",
-    "course_module": "2o Módulo (Frontend avançado)",
-    "bio": "Lorem ipsum dolor emet",
-    "contact": "123456789",
-    "techs": [],
-    "works": [],
-    "created_at": "2020-11-27T11:35:18.768Z",
-    "updated_at": "2020-11-27T11:36:04.490Z",
-    "avatar_url": "https://kenziehub.s3.amazonaws.com/2a3a2542031902a9aa00-kenzie_academy_logo.jpg"
-  },
-  {
-    "id": "7c8c65dd-d83b-465d-a074-acfb6535076c",
-    "name": "Filipe Gutierry",
-    "email": "fili2pe@gmail.com",
-    "course_module": "2o Módulo (Frontend avançado)",
-    "bio": "Lorem ipsum dolor emet",
-    "contact": "123456789",
-    "techs": [],
-    "works": [],
-    "created_at": "2020-11-27T11:41:58.779Z",
-    "updated_at": "2020-11-27T11:41:58.779Z",
-    "avatar_url": null
-  }
+	{
+		"id": 1,
+		"name": "Gabriel Fray",
+		"email": "gabrielfray@email.com",
+		"password": "$2a$10$YQiiz0ANVwIgpOjYXPxc0O9H2XeX3m8OoY1xk7OGgxTnOJnsZU7FO",
+		"typeUser": "Cliente",
+		"userImg": "",
+		"contact": "19 98134-0029",
+		"address": [
+			{
+				"street": "Rua dos Atumalacos",
+				"number": 166,
+				"distric": "Campinas",
+				"state": "SP"
+			}
+		]
+	},
+	{
+		"id": 2,
+		"name": "Vinão Carioca",
+		"email": "vinao@gmail.com",
+		"password": "$2a$10$QXQVPw7XhD2RA2DUTBgy.ugte2Dlb4LHMd58rl.prAd4axbbJ5LHC",
+		"typeUser": "Motorista",
+		"userImg": "",
+		"contact": "19 98134-0029",
+		"address": [
+			{
+				"street": "Rua dos bobos",
+				"number": 135,
+				"distric": "Volta redonda",
+				"state": "Rio de Janeiro"
+			}
+		]
+	},
 ]
 ```
 
-Podemos utilizar os query params para mudar a lista, mudando a paginação, podemos alterar quantos usuários queremos no perPage, e alterar a página no parâmetro page. Uma requisição apenas no /users irá trazer 15 usuários na página 1.
-Com o parâmetro tech, podemos filtrar por tecnologia.
-
-`GET /users?perPage=15&page=1&tech=React - FORMATO DA RESPOSTA - STATUS 200`
-
-```json
-[
-  {
-    "id": "8b8e50a6-50c2-4718-b817-2d38cad0c8f4",
-    "name": "Gabriel Araujo",
-    "email": "gabriel@gmail.com",
-    "course_module": "2o Módulo (Frontend avançado)",
-    "bio": "Lorem ipsum dolor emet",
-    "contact": "linkedin/araujooj",
-    "techs": [
-      {
-        "id": "55126701-18ac-40df-aab9-3a88657db446",
-        "title": "React",
-        "status": "Avançado",
-        "created_at": "2020-11-30T16:26:53.953Z",
-        "updated_at": "2020-11-30T16:26:53.953Z"
-      },
-      {
-        "id": "af06a853-c1fb-4a94-960d-1c6caa8d2b5c",
-        "title": "Typescript",
-        "status": "Avançado",
-        "created_at": "2020-11-30T18:40:08.316Z",
-        "updated_at": "2020-11-30T18:40:08.316Z"
-      }
-    ],
-    "works": [
-      {
-        "id": "0cd019b5-10c5-4eb4-9781-5dff577cfd9e",
-        "title": "KenzieHub",
-        "description": "I was the backend developer of this project, and i did it using Typescript and NodeJS",
-        "deploy_url": "https://kenziehub.me",
-        "created_at": "2020-12-03T01:13:44.720Z",
-        "updated_at": "2020-12-03T01:13:44.720Z"
-      }
-    ],
-    "created_at": "2020-11-27T00:01:13.789Z",
-    "updated_at": "2020-12-05T13:59:22.632Z",
-    "avatar_url": "https://kenziehub.s3.amazonaws.com/4ff1e3c6c082ff67af7c-IMG_20200610_110518_522.jpg"
-  }
-]
-```
-
-Lembrando que no cabeçalho da resposta, temos as informações sobre a paginação, e o nextUrl para acessar a próxima página.
-
-Cabeçalho da resposta:
-
-> nextUrl: https://kenziehub.herokuapp.com/users?perPage=15&page=2 <br/>
-> page: 1 <br/>
-> perPage: 15
-
-Podemos acessar um usuário específico utilizando o endpoint:
-
-`GET /users/:user_id - FORMATO DA RESPOSTA - STATUS 200`
-
-```json
-{
-  "id": "8b8e50a6-50c2-4718-b817-2d38cad0c8f4",
-  "name": "Gabriel Araujo",
-  "email": "gabriel@gmail.com",
-  "course_module": "2o Módulo (Frontend avançado)",
-  "bio": "Lorem ipsum dolor emet",
-  "contact": "linkedin/araujooj",
-  "techs": [
-    {
-      "id": "55126701-18ac-40df-aab9-3a88657db446",
-      "title": "React",
-      "status": "Avançado",
-      "created_at": "2020-11-30T16:26:53.953Z",
-      "updated_at": "2020-11-30T16:26:53.953Z"
-    },
-    {
-      "id": "af06a853-c1fb-4a94-960d-1c6caa8d2b5c",
-      "title": "Typescript",
-      "status": "Avançado",
-      "created_at": "2020-11-30T18:40:08.316Z",
-      "updated_at": "2020-11-30T18:40:08.316Z"
-    }
-  ],
-  "works": [
-    {
-      "id": "0cd019b5-10c5-4eb4-9781-5dff577cfd9e",
-      "title": "KenzieHub",
-      "description": "I was the backend developer of this project, and i did it using Typescript and NodeJS",
-      "deploy_url": "https://kenziehub.me",
-      "created_at": "2020-12-03T01:13:44.720Z",
-      "updated_at": "2020-12-03T01:13:44.720Z"
-    }
-  ],
-  "created_at": "2020-11-27T00:01:13.789Z",
-  "updated_at": "2020-12-05T13:59:22.632Z",
-  "avatar_url": "https://kenziehub.s3.amazonaws.com/4ff1e3c6c082ff67af7c-IMG_20200610_110518_522.jpg"
-}
-```
 
 <h2 align ='center'> Criação de usuário </h2>
 
-`POST /users - FORMATO DA REQUISIÇÃO`
+`POST https://json-server-kenzie-fretes.herokuapp.com/users/register - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
-  "email": "johndoe@email.com",
-  "password": "123456",
-  "name": "John Doe",
-  "bio": "Lorem ipsum dolor emet",
-  "contact": "linkedin/in/johndoe",
-  "course_module": "Segundo Módulo (Frontend avançado)"
+      "name": "Gabriel Fray",
+      "email": "gabrielfray@email.com",
+      "password": "Teste123",
+      "typeUser": "Cliente"
 }
 ```
 
 Caso dê tudo certo, a resposta será assim:
 
-`POST /users - FORMATO DA RESPOSTA - STATUS 201`
+`POST https://json-server-kenzie-fretes.herokuapp.com/users/users/register - FORMATO DA RESPOSTA - STATUS 201`
 
 ```json
 {
-  "id": "c110dbb6-beb9-4682-ab63-2c12a570d66b",
-  "name": "John Doe",
-  "email": "johndoe@email.com",
-  "course_module": "Segundo Módulo (Frontend avançado)",
-  "bio": "Lorem ipsum dolor emet",
-  "contact": "linkedin/in/johndoe",
-  "created_at": "2020-12-05T14:38:02.019Z",
-  "updated_at": "2020-12-05T14:38:02.019Z",
-  "avatar_url": null
+	"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhcGhhZWxAZW1haWwuY29tIiwiaWF0IjoxNjYyMDQ4NDM4LCJleHAiOjE2NjIwNTIwMzgsInN1YiI6IjYifQ.1gok4g6EsChkv1VlIOet1GepwsNjcopfqdSntxqEIpM",
+	"user": {
+		"email": "raphael@email.com",
+		"name": "Raphael",
+		"typeUser": "Motorista",
+		"id": 6
+	}
 }
 ```
 
-1. O campo - "contact": Pode receber as redes sociais da pessoa, ou numero de telefone, algum método de contato fora da aplicação.
-
-2. O campo - "course_module" deve receber respectivamente os 4 módulos do curso da kenzie, devendo ser escritos dessa forma:
-   1. "Primeiro módulo (Introdução ao Frontend)"
-   2. "Segundo módulo (Frontend Avançado)"
-   3. "Terceiro módulo (Introdução ao Backend)"
-   4. "Quarto módulo (Backend Avançado)"
+1. O campo - "typeUser": Pode receber o tipo do usuário, se ele é cliente ou motorista.
 
 <h2 align ='center'> Possíveis erros </h2>
 
-Caso você acabe errando e mandando algum campo errado, a resposta de erro será assim:
-No exemplo a requisição foi feita faltando o campo "contact" e "course_module".
-
-`POST /users - `
-` FORMATO DA RESPOSTA - STATUS 400`
-
-```json
-{
-  "status": "error",
-  "message": ["contact is required", "course_module is required"]
-}
-```
-
-A senha necessita de 6 caracteres.
+A senha necessita de 6 caracteres, uma letra maiúscula e minúscula e números.
 
 `POST /users - `
 ` FORMATO DA RESPOSTA - STATUS 400`
@@ -284,35 +134,28 @@ Email já cadastrado:
 
 <h2 align = "center"> Login </h2>
 
-`POST /sessions - FORMATO DA REQUISIÇÃO`
+`POST https://json-server-kenzie-fretes.herokuapp.com/login/users - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
-  "email": "johndoe@email.com",
-  "password": "123456"
+      "email": "raphael@email.com",
+      "password": "Teste123",
 }
 ```
 
 Caso dê tudo certo, a resposta será assim:
 
-`POST /sessions - FORMATO DA RESPOSTA - STATUS 201`
+`POST https://json-server-kenzie-fretes.herokuapp.com/login/users - FORMATO DA RESPOSTA - STATUS 201`
 
 ```json
 {
-  "user": {
-    "id": "2a75e12d-fd1c-481d-ba88-4d8b17103b2a",
-    "name": "John Doe",
-    "email": "johndoe@email.com",
-    "course_module": "Segundo Módulo (Frontend avançado)",
-    "bio": "Lorem ipsum dolor emet",
-    "contact": "linkedin/in/johndoe",
-    "created_at": "2020-12-05T17:45:04.207Z",
-    "updated_at": "2020-12-05T17:45:04.207Z",
-    "techs": [],
-    "works": [],
-    "avatar_url": null
-  },
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDcxODM3NzYsImV4cCI6MTYwNzQ0Mjk3Niwic3ViIjoiMmE3NWUxMmQtZmQxYy00ODFkLWJhODgtNGQ4YjE3MTAzYjJhIn0.UY67X23mPYAAzT43uFWZDHPUakd2STo5w4AuOcppkyQ"
+	"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhcGhhZWxAZW1haWwuY29tIiwiaWF0IjoxNjYyMDQ5MDY5LCJleHAiOjE2NjIwNTI2NjksInN1YiI6IjYifQ.H4VIQmB4euM5zMwR8KJMzdlKEAFKQ1zkNVs0sFx7w3Y",
+	"user": {
+		"email": "gabrielfray@email.com",
+		"name": "Gabriel Fray",
+		"typeUser": "Cliente",
+		"id": 6
+	}
 }
 ```
 
@@ -323,8 +166,6 @@ Com essa resposta, vemos que temos duas informações, o user e o token respecti
 Rotas que necessitam de autorização deve ser informado no cabeçalho da requisição o campo "Authorization", dessa forma:
 
 > Authorization: Bearer {token}
-
-Após o usuário estar logado, ele deve conseguir informar as tecnologias que ele aprendeu até agora.
 
 <h2 align ='center'> Buscar Perfil do usuário logado (token) </h2>
 
