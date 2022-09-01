@@ -114,7 +114,7 @@ A senha necessita de 6 caracteres, uma letra maiúscula e minúscula e números.
 ```json
 {
   "status": "error",
-  "message": ["password: minimum is 6 characters"]
+  "message": ["password: "A senha precisa ter no mínimo uma letra maiúscula e minúscula e números"]
 }
 ```
 
@@ -126,7 +126,7 @@ Email já cadastrado:
 ```json
 {
   "status": "error",
-  "message": "Email already exists"
+  "message": "O email já existe"
 }
 ```
 
