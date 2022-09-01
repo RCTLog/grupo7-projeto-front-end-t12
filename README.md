@@ -165,22 +165,6 @@ Rotas que necessitam de autorização deve ser informado no cabeçalho da requis
 
 > Authorization: Bearer {token}
 
-<h2 align ='center'> Buscar Perfil do usuário logado (token) </h2>
-
-`GET /profile - FORMATO DA REQUISIÇÃO`
-
-<blockquote>Na requisição apenas é necessário o TOKEN, a aplicação ficará responsável em buscar o id do usuário no token e retorna ele.</blockquote>
-
-<br>
-
-`GET / - FORMATO DA RESPOSTA - STATUS 200`
-
-```json
-{
-
-}
-```
-
 <h2 align ='center'> Criar um post de serviço </h2>
 
 `POST /services - FORMATO DA REQUISIÇÃO`
