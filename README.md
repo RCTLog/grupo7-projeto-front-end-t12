@@ -42,6 +42,8 @@ Aqui conseguimos ver os usuários, suas tecnologias e seus trabalhos cadastrados
 		"password": "$2a$10$YQiiz0ANVwIgpOjYXPxc0O9H2XeX3m8OoY1xk7OGgxTnOJnsZU7FO",
 		"typeUser": "Cliente",
 		"userImg": "",
+		"cpf": "",
+      		"cnpj": "",
 		"contact": "19 98134-0029",
 		"address": [
 			{
@@ -59,6 +61,8 @@ Aqui conseguimos ver os usuários, suas tecnologias e seus trabalhos cadastrados
 		"password": "$2a$10$QXQVPw7XhD2RA2DUTBgy.ugte2Dlb4LHMd58rl.prAd4axbbJ5LHC",
 		"typeUser": "Motorista",
 		"userImg": "",
+		"cpf": "",
+      		"cnpj": "",
 		"contact": "19 98134-0029",
 		"address": [
 			{
@@ -167,41 +171,65 @@ Nesse endpoint listara todos os posts feitos por Clientes.
 
 ```json
 [
-	{
-		"createUserId": 1,
-		"id": 2,
-		"description": "Preciso de uma mudança urgente!",
-		"origin": [
-			{
-				"city": "Campinas",
-				"state": "SP"
-			}
-		],
-		"destination": [
-			{
-				"city": "Resende",
-				"state": "RJ"
-			}
-		]
-	},
-	{
-		"createUserId": 3,
-		"description": "Estou precisando fazer uma mudança, pago bem.",
-		"origin": [
-			{
-				"city": "Indaiatuba",
-				"state": "SP"
-			}
-		],
-		"destination": [
-			{
-				"city": "Cuiabá",
-				"state": "MT"
-			}
-		],
-		"id": 3
-	}
-]
+    {
+      "createUserId": 1,
+      "getUserid": 2,
+
+      "description": "Preciso de uma mudança urgente!",
+      "origin": [
+        {
+          "city": "Campinas",
+          "state": "SP"
+        }
+      ],
+      "destination": [
+        {
+          "city": "Resende",
+          "state": "RJ"
+        }
+      ],
+      "typeUser": "Cliente",
+      "id": 1
+    },
+    {
+      "createUserId": 3,
+      "getUserid": 2,
+      "description": "Estou precisando fazer uma mudança, pago bem.",
+      "origin": [
+        {
+          "city": "Indaiatuba",
+          "state": "SP"
+        }
+      ],
+      "destination": [
+        {
+          "city": "Cuiabá",
+          "state": "MT"
+        }
+      ],
+      "typeUser": "Cliente",
+      "id": 2
+    },
+    {
+      "createUserId": 2,
+      "description": "Faço fretes na região, dependendo faço fretes em outros estados.",
+      "contact": "24 98134-0029",
+      "typeUser": "Motorista",
+
+      "id": 1
+
+    },
+    {
+      "createUserId": 3,
+      "description": "Faço fretes na região.",
+      "contact": "24 98134-0029",
+      "typeUser": "Motorista",
+
+      "id": 2
+    }
+  ]
+}
+
 ```
 
 <h2 align ='center'> Criar um post de serviço </h2>
@@ -209,23 +237,45 @@ Nesse endpoint listara todos os posts feitos por Clientes.
 `POST /services - FORMATO DA REQUISIÇÃO`
 
 ```json
-{	
-   "createUserId": 3,
- 
-  "description": "Preciso de um carreto urgente!",
-  "origin": [
+{
+      "createUserId": 1,
+      "getUserid": 2,
+
+      "description": "Preciso de uma mudança urgente!",
+      "origin": [
+        {
+          "city": "Campinas",
+          "state": "SP"
+        }
+      ],
+      "destination": [
+        {
+          "city": "Resende",
+          "state": "RJ"
+        }
+      ],
+      "typeUser": "Cliente",
+      "id": 1
+    },
     {
-      "city": "Indaiatuba",
-      "state": "SP"
-    }
-  ],
-  "destination": [
-    {
-      "city": "Cuiabá",
-      "state": "MT"
-    }
-  ]
-}
+      "createUserId": 3,
+      "getUserid": 2,
+      "description": "Estou precisando fazer uma mudança, pago bem.",
+      "origin": [
+        {
+          "city": "Indaiatuba",
+          "state": "SP"
+        }
+      ],
+      "destination": [
+        {
+          "city": "Cuiabá",
+          "state": "MT"
+        }
+      ],
+      "typeUser": "Cliente",
+      "id": 2
+    },
 
 ```
 
