@@ -1,4 +1,5 @@
 import { Homepage } from "./pages/Homepage";
+import MainRoutes from "./services/routes";
 
 const App = () => {
   return (
@@ -6,6 +7,7 @@ const App = () => {
       <div className="App">
         <Homepage />
       </div>
+      <MainRoutes />
     </>
   );
 };
