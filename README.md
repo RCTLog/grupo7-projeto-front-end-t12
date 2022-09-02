@@ -263,7 +263,7 @@ Não é necessário um corpo da requisição.
 
 Da mesma forma de criar tecnologias, conseguimos criar trabalhos, dessa forma:
 
-`POST https://json-server-kenzie-fretes.herokuapp.com/login/services- FORMATO DA REQUISIÇÃO`
+`POST https://json-server-kenzie-fretes.herokuapp.com/services- FORMATO DA REQUISIÇÃO`
 
 ```json
 {
@@ -275,7 +275,7 @@ Da mesma forma de criar tecnologias, conseguimos criar trabalhos, dessa forma:
 Conseguimos atualizar a descrição e o contato, qualquer uma das informações do respectivo trabalho.
 Utilizando este endpoint:
 
-`PATCH https://json-server-kenzie-fretes.herokuapp.com/login/services/${post_id} - FORMATO DA REQUISIÇÃO`
+`PATCH https://json-server-kenzie-fretes.herokuapp.com/services/${post_id} - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
@@ -286,7 +286,7 @@ Utilizando este endpoint:
 
 Também é possível deletar um trabalho do seu perfil, utilizando este endpoint:
 
-`DELETE https://json-server-kenzie-fretes.herokuapp.com/login/services/${post_id}`
+`DELETE https://json-server-kenzie-fretes.herokuapp.com/services/${post_id}`
 
 ```
 Não é necessário um corpo da requisição.
