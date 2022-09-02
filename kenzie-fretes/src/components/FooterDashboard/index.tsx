@@ -3,7 +3,7 @@ import { MdEmail } from "react-icons/md";
 import { Container } from "./style";
 import { TiSocialInstagramCircular } from "react-icons/ti";
 
-const Footer = () => {
+const FooterDashboard = () => {
   return (
     <Container>
       <div className="contact">
@@ -30,4 +30,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterDashboard;

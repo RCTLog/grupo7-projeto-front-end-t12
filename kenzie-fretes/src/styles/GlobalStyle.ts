@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 :root{
@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
     }
     body{
       background-color: var(--color-gray-4);
-      color: white;
+     
     }
   * {
     margin: 0;
@@ -68,4 +68,3 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 export default GlobalStyle;
-
