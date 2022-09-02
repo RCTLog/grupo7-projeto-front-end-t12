@@ -25,12 +25,14 @@ const GlobalStyle = createGlobalStyle`
     }
     body{
       background-color: var(--color-gray-4);
+      color: white;
     }
   * {
     margin: 0;
     padding: 0;
+    outline: 0;
     box-sizing: border-box;
-    font-family: Open-Sans, Helvetica, Sans-Serif;
+    font-family: 'Inter', sans-serif;
   }
   ul,ol,li{
     list-style: none;
@@ -60,5 +62,10 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 10px;
     border: 3px solid var(--color-gray-3);
   }
-`
-export default GlobalStyle
+
+  button{
+    color:white;
+  }
+`;
+export default GlobalStyle;
+
