@@ -6,20 +6,20 @@ import ContentNotFound from "../components/ContentNotFound";
 
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Homepage from "../pages/Homepage";
 
 const MainRoutes = () => {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route index element={<h2>HomePage</h2>} />
+          <Route index element={<Homepage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
           <Route path="/dashboard" element={<Dashboard />} />
 
           <Route path="*" element={<ContentNotFound />} />
-
         </Routes>
       </BrowserRouter>
     </>
