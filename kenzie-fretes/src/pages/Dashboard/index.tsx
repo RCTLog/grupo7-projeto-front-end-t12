@@ -1,11 +1,11 @@
-import Footer from "../../components/Footer";
+import FooterDashboard from "../../components/FooterDashboard";
 import Header from "../../components/Header";
 
 const Dashboard = () => {
   return (
     <>
       <Header></Header>
-      <Footer></Footer>
+      <FooterDashboard></FooterDashboard>
     </>
   );
 };
