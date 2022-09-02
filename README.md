@@ -159,11 +159,50 @@ Caso dê tudo certo, a resposta será assim:
 
 Com essa resposta, vemos que temos duas informações, o user e o token respectivo, dessa forma você pode guardar o token e o usuário logado no localStorage para fazer a gestão do usuário no seu frontend.
 
-## Rotas que necessitam de autorização
+<h2 align ='center'> Listando posts </h2>
 
-Rotas que necessitam de autorização deve ser informado no cabeçalho da requisição o campo "Authorization", dessa forma:
+Nesse endpoint listara todos os posts feitos por Clientes.
 
-> Authorization: Bearer {token}
+`GET https://json-server-kenzie-fretes.herokuapp.com/services - FORMATO DA RESPOSTA - STATUS 200`
+
+```json
+[
+	{
+		"createUserId": 1,
+		"id": 2,
+		"description": "Preciso de uma mudança urgente!",
+		"origin": [
+			{
+				"city": "Campinas",
+				"state": "SP"
+			}
+		],
+		"destination": [
+			{
+				"city": "Resende",
+				"state": "RJ"
+			}
+		]
+	},
+	{
+		"createUserId": 3,
+		"description": "Estou precisando fazer uma mudança, pago bem.",
+		"origin": [
+			{
+				"city": "Indaiatuba",
+				"state": "SP"
+			}
+		],
+		"destination": [
+			{
+				"city": "Cuiabá",
+				"state": "MT"
+			}
+		],
+		"id": 3
+	}
+]
+```
 
 <h2 align ='center'> Criar um post de serviço </h2>
 
