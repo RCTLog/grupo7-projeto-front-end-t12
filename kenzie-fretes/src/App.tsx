@@ -4,9 +4,6 @@ import MainRoutes from "./services/routes";
 const App = () => {
   return (
     <>
-      <div className="App">
-        <Homepage />
-      </div>
       <MainRoutes />
     </>
   );
