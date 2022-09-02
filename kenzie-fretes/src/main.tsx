@@ -5,7 +5,7 @@ import MainProvider from "./context/MainContext/MainProvider";
 
 import GlobalStyle from "./styles/GlobalStyle";
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root")as HTMLElement).render(
   <React.StrictMode>
     <MainProvider>
       <GlobalStyle />
