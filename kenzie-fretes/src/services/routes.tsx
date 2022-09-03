@@ -5,6 +5,7 @@ import DriverPosts from "../components/DriverPosts"
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Homepage from "../pages/Homepage";
+import Support from "../pages/Support";
 
 const MainRoutes = () => {
   return (
@@ -16,7 +17,8 @@ const MainRoutes = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard/driver/posts" element={<DriverPosts />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          
+          <Route path="/support" element={<Support />} />
+
           <Route path="*" element={<ContentNotFound />} />
         </Routes>
       </BrowserRouter>
