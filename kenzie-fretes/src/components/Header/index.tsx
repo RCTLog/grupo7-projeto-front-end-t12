@@ -7,12 +7,21 @@ import userImg from "../../assets/react.svg";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { BsBell } from "react-icons/bs";
 
+import { useNavigate } from "react-router-dom";
+
 const Header = () => {
+  let navigate = useNavigate();
+
   return (
     <Container>
       <img className="Logo" src={logo} alt="kenzie-fretes logo" />
       <div className="buttons">
-        <HeaderButton variant="contained">Página Inicial</HeaderButton>
+        <HeaderButton
+          onClick={() => navigate("../login", { replace: true })}
+          variant="contained"
+        >
+          Página Inicial
+        </HeaderButton>
         <MdMarkEmailUnread />
         <BsBell />
         <img src={userImg} alt="" />
