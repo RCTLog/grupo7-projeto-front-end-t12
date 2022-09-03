@@ -43,7 +43,7 @@ const Login = () => {
         <Container>
           <div className="login-container">
             <LoginWrap>
-              <Link to={"/dashboard"}>
+              <Link to={"/"}>
                 <img
                   className="arrowBack"
                   src={arrowBack}

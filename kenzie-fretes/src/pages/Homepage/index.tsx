@@ -6,7 +6,11 @@ import SecondImage from "../../assets/SecondImage.svg";
 import { Button } from "../../styles/Button";
 import { Footer } from "../../styles/Footer";
 
+import { useNavigate } from "react-router-dom";
+
 export const Homepage = () => {
+  let navigate = useNavigate();
+
   const sobreRef = useRef(null);
 
   const gotoSobre = () => {
@@ -29,8 +33,14 @@ export const Homepage = () => {
             />
             <div className="buttons">
               <Button onClick={gotoSobre}>Sobre</Button>
-              <Button>Login</Button>
-              <Button>Cadastre-se</Button>
+              <Button onClick={() => navigate("../login", { replace: true })}>
+                Login
+              </Button>
+              <Button
+                onClick={() => navigate("../register", { replace: true })}
+              >
+                Cadastre-se
+              </Button>
             </div>
           </div>
         </div>
