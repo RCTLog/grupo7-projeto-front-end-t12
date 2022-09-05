@@ -40,7 +40,7 @@ const Register = () => {
   return (
     <>
       {auth ? (
-        <Navigate to={"/dashboard"} />
+        <Navigate to={"/login"} />
       ) : (
         <Container>
           <div className="register-container">

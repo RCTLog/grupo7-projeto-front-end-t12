@@ -9,6 +9,7 @@ import {
 import * as yup from "yup"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
+import { toast } from "react-toastify"
 import api from "../../services/api"
 
 const RegisterContext = createContext<IRegisterProvider>(
@@ -64,11 +65,34 @@ const RegisterProvider = ({ children }: IRegisterProps) => {
       setAuth(true)
       window.localStorage.setItem("@RCTL: Token", data.accessToken)
 
+      toast.success("Cadastro realizado com sucesso! Você será redirecionado.", {
+        toastId: 1,
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+      })
       /* 
       
       COLOCAR RESPOSTA do USER em algum Lugar
       
       */
+     
+    })
+    .catch((error) => {
+      toast.error("Verifique as informações e tente novamente.", {
+        toastId: 1,
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+      });
     })
   }
 
