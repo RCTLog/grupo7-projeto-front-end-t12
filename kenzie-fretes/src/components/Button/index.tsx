@@ -10,12 +10,13 @@ const CButton = styled(Button)({
     },
   },
   "&.MuiButton-outlined": {
-    color: "#fff",
+    color: "#000",
     borderColor: "#eb570d",
     height: 48,
     width: "100%",
     "&:hover": {
       backgroundColor: "#eb570d",
+      color: "#fff",
     },
   },
 })

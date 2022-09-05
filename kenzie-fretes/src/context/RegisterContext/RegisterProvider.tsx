@@ -1,21 +1,25 @@
 import { createContext, useContext, useEffect, useState } from "react"
 import {
-  ILoginApi,
-  ILoginData,
-  ILoginProps,
-  ILoginProvider,
-} from "./Login.interfaces"
+  IRegisterApi,
+  IRegisterData,
+  IRegisterProps,
+  IRegisterProvider,
+} from "./Register.interfaces"
+
 import * as yup from "yup"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import api from "../../services/api"
 
-const LoginContext = createContext<ILoginProvider>({} as ILoginProvider)
+const RegisterContext = createContext<IRegisterProvider>(
+  {} as IRegisterProvider
+)
 
-const LoginProvider = ({ children }: ILoginProps) => {
+const RegisterProvider = ({ children }: IRegisterProps) => {
   const [emailError, setEmailError] = useState(false)
   const [passError, setPassError] = useState(false)
-
+  const [nameError, setNameError] = useState(false)
+  const [passwordConfirmError, setpasswordConfirmError] = useState(false)
   const [auth, setAuth] = useState(false)
   const [loading, setLoading] = useState(true)
 
@@ -34,20 +38,37 @@ const LoginProvider = ({ children }: ILoginProps) => {
       setPassError(true)
       return "Insira sua senha"
     }),
+    name: yup.string().required(() => {
+      setNameError(true)
+      return "Insira seu nome"
+    }),
+    passwordConfirm: yup
+      .string()
+      .oneOf([yup.ref("password")], "Passwords precisam ser iguais")
+      .required(() => {
+        setpasswordConfirmError(true)
+        return "Insira a confirmação de senha"
+      }),
   })
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<ILoginData>({
+  } = useForm<IRegisterData>({
     resolver: yupResolver(formSchema),
   })
 
-  const onSubmit = (data: ILoginData) => {
-    api.post<ILoginApi>("/login/users", data).then((res) => {
+  const onSubmit = (data: IRegisterData) => {
+    api.post<IRegisterApi>("/users/register", data).then(({ data }) => {
       setAuth(true)
-      window.localStorage.setItem("@RCTL: Token", res.data.accessToken)
+      window.localStorage.setItem("@RCTL: Token", data.accessToken)
+
+      /* 
+      
+      COLOCAR RESPOSTA do USER em algum Lugar
+      
+      */
     })
   }
 
@@ -58,10 +79,12 @@ const LoginProvider = ({ children }: ILoginProps) => {
   }, [auth])
 
   return (
-    <LoginContext.Provider
+    <RegisterContext.Provider
       value={{
         emailError,
+        nameError,
         passError,
+        passwordConfirmError,
         auth,
         setAuth,
         loading,
@@ -72,10 +95,10 @@ const LoginProvider = ({ children }: ILoginProps) => {
       }}
     >
       {children}
-    </LoginContext.Provider>
+    </RegisterContext.Provider>
   )
 }
 
-export const useLogin = () => useContext(LoginContext)
+export const useRegister = () => useContext(RegisterContext)
 
-export default LoginProvider
+export default RegisterProvider

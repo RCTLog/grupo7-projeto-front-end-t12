@@ -8,28 +8,15 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  background: rgb(90, 139, 183);
-  background: -moz-linear-gradient(
-    90deg,
-    rgba(235, 140, 91, 1) 50%,
-    rgba(90, 139, 183, 1) 50%
-  );
-  background: -webkit-linear-gradient(
-    90deg,
-    rgba(235, 140, 91, 1) 50%,
-    rgba(90, 139, 183, 1) 50%
-  );
-  background: linear-gradient(
-    90deg,
-    rgba(235, 140, 91, 1) 50%,
-    rgba(90, 139, 183, 1) 50%
-  );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eb8c5b",endColorstr="#5a8bb7",GradientType=1);
+  background-color: #eb8c5b;
+  background-image: linear-gradient(90deg, #eb8c5b 20%, #5a8bb7 80%);
 
-  .login-container {
+  .register-container {
     width: 100%;
     max-width: 485px;
     height: 100vh;
+    max-height: 772px;
 
     display: flex;
 
@@ -41,7 +28,7 @@ export const Container = styled.div`
 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
 
-    .login-image {
+    .register-image {
       display: none;
       width: 50%;
 
@@ -50,42 +37,39 @@ export const Container = styled.div`
       }
     }
     @media (min-width: 485px) {
-      width: 90%;
-      height: 100vh;
+      height: 90vh;
       border-radius: 15px;
-      max-height: 600px;
     }
-    @media (min-width: 1280px) {
+    @media (min-width: 1285px) {
       width: 70%;
       max-width: 1176px;
-      height: 600px;
+      height: 650px;
       border-radius: 15px;
-      .login-image {
+      .register-image {
         display: block;
       }
     }
   }
 `;
 
-export const LoginWrap = styled.div`
+export const RegisterWrap = styled.div`
   width: 100%;
   max-width: 300px;
-  height: 100px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-
   .arrowBack {
     width: 20px;
     height: 20px;
     cursor: pointer;
+    z-index: 200;
   }
   form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 
     p {
       text-align: center;
@@ -95,7 +79,7 @@ export const LoginWrap = styled.div`
     }
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1285px) {
     width: 50%;
   }
 `;
