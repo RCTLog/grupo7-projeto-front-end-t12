@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Homepage from "../pages/Homepage";
 import Support from "../pages/Support";
+import WorkWithUs from "../pages/WorkWithUs";
 
 const MainRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const MainRoutes = () => {
           <Route path="/dashboard/driver/posts" element={<DriverPosts />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/work-with-us" element={<WorkWithUs />} />
 
           <Route path="*" element={<ContentNotFound />} />
         </Routes>

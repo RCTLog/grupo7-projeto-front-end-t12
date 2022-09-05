@@ -2,17 +2,20 @@ import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { BsFacebook } from "react-icons/bs";
-import logo_support from "../../assets/logo_support.svg"
 import google_play from "../../assets/google_play.svg";
 import app_store from "../../assets/app_store.svg"
 import Container from "./style";
 
-const Footer = () => {
+interface IFooter {
+  logo: string;
+}
+
+const Footer = ({logo}: IFooter) => {
   return (
     <Container>
 
       <div className="logo">
-        <img src={logo_support} alt="logo-rctlog" />
+        <img src={logo} alt="logo-rctlog" />
       </div>
 
       <div className="info">
@@ -24,7 +27,7 @@ const Footer = () => {
 
         <div className="links">
           <div className="pages">
-            <Link to="/worktous" >Trabalhe Conosco</Link>
+            <Link to="/work-with-us" >Trabalhe Conosco</Link>
             <Link to="/support" ><AiFillGithub size={25} />Suporte</Link>
           </div>
 
