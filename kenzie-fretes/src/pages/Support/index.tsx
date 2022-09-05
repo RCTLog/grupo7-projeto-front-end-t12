@@ -58,7 +58,7 @@ const Support = () => {
         </div>
 
       </div>
-      <Footer/>
+      <Footer logo={logo_support} />
 
     </Container>
   )

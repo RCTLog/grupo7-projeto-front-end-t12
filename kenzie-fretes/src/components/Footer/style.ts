@@ -8,6 +8,7 @@ const Container = styled.div`
   .logo {
     img {
       display: none;
+      width: 200px;
     }
   }
 
@@ -32,7 +33,7 @@ const Container = styled.div`
       .pages {
         display: flex;
         flex-direction: column;
-        color: white;
+        color: inherit;
         gap: 5px;
         margin-bottom: 10px;
 
@@ -90,6 +91,11 @@ const Container = styled.div`
     }
   }
   @media screen and (min-width: 1200px) {
+    .logo {
+    img {
+      display: block;
+    }
+  }
     .info {
       grid-template-columns: 1fr 1fr 1fr;
       gap: 2rem;
