@@ -4,9 +4,9 @@ import FirstImage from "../../assets/FirstImage.svg";
 import Logo from "../../assets/logo.svg";
 import SecondImage from "../../assets/SecondImage.svg";
 import { Button } from "../../styles/Button";
-import { Footer } from "../../styles/Footer";
 
 import { useNavigate } from "react-router-dom";
+import Footer from "../../components/Footer";
 
 export const Homepage = () => {
   let navigate = useNavigate();
@@ -62,11 +62,8 @@ export const Homepage = () => {
             />
           </div>
         </div>
+        <Footer logo={Logo} />
       </MainContent>
-      <Footer>
-        <p>2022 RTCLog, todos os direitos reservados</p>
-        {/* <img src={Logo} alt="" /> */}
-      </Footer>
     </>
   );
 };
