@@ -13,9 +13,7 @@ const Dashboard = () => {
     <>
       <Header />
       <ContainerUserDashboard />
-      <ContainerInfoDashboard
-        setUserPage={setUserPage}
-      ></ContainerInfoDashboard>
+      <ContainerInfoDashboard setUserPage={setUserPage} />
       <ContainerObjectDashboard>
         {userPage === 2 && <DriverPosts />}
       </ContainerObjectDashboard>

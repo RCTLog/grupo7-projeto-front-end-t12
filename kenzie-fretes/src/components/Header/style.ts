@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Container = styled.div`
   display: flex;
@@ -23,8 +23,9 @@ export const Container = styled.div`
     }
 
     img {
-      height: 60px;
-      width: 60px;
+      height: 45px;
+      width: 45px;
+      border-radius: 50%;
     }
   }
   .Logo {
@@ -35,4 +36,4 @@ export const Container = styled.div`
   button {
     border-radius: 10px;
   }
-`;
+`

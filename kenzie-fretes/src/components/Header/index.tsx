@@ -1,18 +1,18 @@
-import HeaderButton from "../../components/HeaderButton";
-import { Container } from "./style";
+import HeaderButton from "../../components/HeaderButton"
+import { Container } from "./style"
 
-import logo from "../../assets/logo.svg";
-import userImg from "../../assets/react.svg";
+import logo from "../../assets/logo.svg"
+import userImg from "../../assets/no-image-user.jpg"
 
-import { MdMarkEmailUnread } from "react-icons/md";
-import { BsBell } from "react-icons/bs";
+import { MdMarkEmailUnread } from "react-icons/md"
+import { BsBell } from "react-icons/bs"
 
-import { useNavigate } from "react-router-dom";
-import { useLogin } from "../../context/LoginContext/LoginProvider";
+import { useNavigate } from "react-router-dom"
+import { useLogin } from "../../context/LoginContext/LoginProvider"
 
 const Header = () => {
-  let navigate = useNavigate();
-  const { user } = useLogin();
+  let navigate = useNavigate()
+  const { user } = useLogin()
 
   return (
     <Container>
@@ -29,7 +29,7 @@ const Header = () => {
         <img src={userImg} alt="" />
       </div>
     </Container>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
