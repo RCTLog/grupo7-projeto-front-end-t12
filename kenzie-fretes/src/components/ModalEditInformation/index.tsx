@@ -1,5 +1,4 @@
 import { AiOutlineClose } from "react-icons/ai";
-import CInput from "../Input";
 import Container from "./style";
 
 const ModalEditInformation = () => {
