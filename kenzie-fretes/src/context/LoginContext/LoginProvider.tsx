@@ -9,6 +9,8 @@ import {
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { toast } from "react-toastify";
+
 import api from "../../services/api";
 
 const LoginContext = createContext<ILoginProvider>({} as ILoginProvider);
@@ -18,7 +20,9 @@ const LoginProvider = ({ children }: ILoginProps) => {
   const [passError, setPassError] = useState(false);
 
   const [auth, setAuth] = useState(false);
+
   const [user, setUser] = useState<IUser>({} as IUser);
+
   const [loading, setLoading] = useState(true);
 
   const formSchema = yup.object().shape({
@@ -30,7 +34,9 @@ const LoginProvider = ({ children }: ILoginProps) => {
       })
       .email(() => {
         setEmailError(true);
+
         return "E-mail invalido";
+
       }),
     password: yup.string().required(() => {
       setPassError(true);
@@ -47,12 +53,35 @@ const LoginProvider = ({ children }: ILoginProps) => {
   });
 
   const onSubmit = (data: ILoginData) => {
-    api.post<ILoginApi>("/login/users", data).then(({ data }) => {
-      setUser(data.user);
+    api
+      .post<ILoginApi>("/login/users", data)
+      .then((res) => {
+        setAuth(true);
+        window.localStorage.setItem("@RCTL: Token", res.data.accessToken);
 
-      setAuth(true);
-      window.localStorage.setItem("@RCTL: Token", data.accessToken);
-    });
+        toast.success("Login realizado com sucesso! Você será redirecionado.", {
+          toastId: 1,
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+        });
+      })
+      .catch((error) => {
+        toast.error("Login ou senha inválidos.", {
+          toastId: 1,
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+        });
+      });
   };
 
   useEffect(() => {
