@@ -1,14 +1,14 @@
-import FooterDashboard from "../../components/FooterDashboard";
-import Header from "../../components/Header";
+import FooterDashboard from "../../components/FooterDashboard"
+import Header from "../../components/Header"
 
-import { ContainerObjectDashboard } from "./style";
-import { ContainerInfoDashboard } from "../../components/ContainerInfoDashboard/ContainerInfoDashboard";
-import { ContainerUserDashboard } from "../../components/ContainerUserDashboard/ContainerUserDashboard";
-import DriverPosts from "../../components/DriverPosts";
-import { useState } from "react";
+import { ContainerObjectDashboard } from "./style"
+import { ContainerInfoDashboard } from "../../components/ContainerInfoDashboard/ContainerInfoDashboard"
+import { ContainerUserDashboard } from "../../components/ContainerUserDashboard/ContainerUserDashboard"
+import DriverPosts from "../../components/DriverPosts"
+import { useState } from "react"
 
 const Dashboard = () => {
-  const [userPage, setUserPage] = useState(2);
+  const [userPage, setUserPage] = useState(2)
   return (
     <>
       <Header />
@@ -21,7 +21,7 @@ const Dashboard = () => {
       </ContainerObjectDashboard>
       <FooterDashboard />
     </>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard
