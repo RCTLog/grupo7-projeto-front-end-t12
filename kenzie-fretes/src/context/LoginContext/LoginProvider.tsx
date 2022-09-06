@@ -39,6 +39,10 @@ const LoginProvider = ({ children }: ILoginProps) => {
       .then((res) => {
         setAuth(true)
         window.localStorage.setItem("@RCTL: Token", res.data.accessToken)
+        window.localStorage.setItem("@RCTL: UserId", res.data.user.id)
+        window.localStorage.setItem("@RCTL: Username", res.data.user.name)
+        window.localStorage.setItem("@RCTL: typeUser", res.data.user.typeUser)
+        window.localStorage.setItem("@RCTL: UserEmail", res.data.user.email)
 
         toast.success("Login realizado com sucesso! Você será redirecionado.", {
           toastId: 1,
@@ -67,6 +71,17 @@ const LoginProvider = ({ children }: ILoginProps) => {
 
   useEffect(() => {
     const token = localStorage.getItem("@RCTL: Token")
+    const userId = localStorage.getItem("@RCTL: UserId")
+    const userName = localStorage.getItem("@RCTL: Username")
+    const typeUser = localStorage.getItem("@RCTL: typeUser")
+    const userEmail = localStorage.getItem("@RCTL: UserEmail")
+
+    setUser({
+      id: `${userId}`,
+      email: `${userEmail}`,
+      name: `${userName}`,
+      typeUser: `${typeUser}`,
+    })
 
     token && setAuth(true)
   }, [auth])
