@@ -11,8 +11,6 @@ export interface ILoginProps {
 }
 
 export interface ILoginProvider {
-  emailError: boolean
-  passError: boolean
   auth: boolean
   setAuth: React.Dispatch<React.SetStateAction<boolean>>
   loading: boolean

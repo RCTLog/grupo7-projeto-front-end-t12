@@ -13,27 +13,12 @@ import api from "../../services/api"
 const LoginContext = createContext<ILoginProvider>({} as ILoginProvider)
 
 const LoginProvider = ({ children }: ILoginProps) => {
-  const [emailError, setEmailError] = useState(false)
-  const [passError, setPassError] = useState(false)
-
   const [auth, setAuth] = useState(false)
   const [loading, setLoading] = useState(true)
 
   const formSchema = yup.object().shape({
-    email: yup
-      .string()
-      .required(() => {
-        setEmailError(true)
-        return "Insira seu e-mail"
-      })
-      .email(() => {
-        setEmailError(true)
-        return "E-mail invalido"
-      }),
-    password: yup.string().required(() => {
-      setPassError(true)
-      return "Insira sua senha"
-    }),
+    email: yup.string().required("Insira seu e-mail").email("E-mail invalido"),
+    password: yup.string().required("Insira sua senha"),
   })
 
   const {
@@ -60,8 +45,6 @@ const LoginProvider = ({ children }: ILoginProps) => {
   return (
     <LoginContext.Provider
       value={{
-        emailError,
-        passError,
         auth,
         setAuth,
         loading,
