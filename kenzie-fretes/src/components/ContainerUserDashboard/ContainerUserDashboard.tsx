@@ -4,7 +4,7 @@ import { Container } from "./style";
 
 export const ContainerUserDashboard = () => {
   const { user } = useLogin();
-  console.log(user);
+/*   console.log(user); */
 
   return (
     <Container>

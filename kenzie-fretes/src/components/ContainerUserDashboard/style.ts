@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   display: flex;
-  margin: 35px 182px;
-
+  width: 90%;
   align-items: center;
+  padding: 20px 0;
   gap: 37px;
+
   .userImg {
-    height: 228px;
-    width: 228px;
+    width: 150px;
     border-radius: 50%;
   }
 

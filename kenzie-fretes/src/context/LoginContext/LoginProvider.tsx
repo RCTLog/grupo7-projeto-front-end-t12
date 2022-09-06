@@ -55,9 +55,10 @@ const LoginProvider = ({ children }: ILoginProps) => {
   const onSubmit = (data: ILoginData) => {
     api
       .post<ILoginApi>("/login/users", data)
-      .then((res) => {
+      .then(({ data }) => {
+        setUser(data.user)
         setAuth(true);
-        window.localStorage.setItem("@RCTL: Token", res.data.accessToken);
+        window.localStorage.setItem("@RCTL: Token", data.accessToken);
 
         toast.success("Login realizado com sucesso! Você será redirecionado.", {
           toastId: 1,

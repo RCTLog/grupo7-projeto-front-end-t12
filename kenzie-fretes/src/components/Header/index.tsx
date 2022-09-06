@@ -2,7 +2,7 @@ import HeaderButton from "../../components/HeaderButton";
 import { Container } from "./style";
 
 import logo from "../../assets/logo.svg";
-import userImg from "../../assets/react.svg";
+import userImg from "../../assets/truck.png";
 
 import { MdMarkEmailUnread } from "react-icons/md";
 import { BsBell } from "react-icons/bs";
@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <Container>
-      <img className="Logo" src={logo} alt="kenzie-fretes logo" />
+      <img className="Logo" src={logo} alt="rctlog logo" /> 
       <div className="buttons">
         <HeaderButton
           onClick={() => navigate("../login", { replace: true })}

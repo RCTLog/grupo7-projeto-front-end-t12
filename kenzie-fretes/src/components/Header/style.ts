@@ -1,13 +1,21 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 0 85px;
+  justify-content: end;
+  padding: 0 5%;
+  position: fixed;
+
   align-content: center;
   align-items: center;
   box-shadow: 0px 4px 4px #e9e9e9;
+
+  .Logo {
+    display: none;
+    width: 244px;
+  }
 
   .buttons {
     display: flex;
@@ -23,16 +31,20 @@ export const Container = styled.div`
     }
 
     img {
-      height: 60px;
       width: 60px;
+      border-radius: 50%;
     }
   }
-  .Logo {
-    height: 68px;
-    width: 244px;
-  }
+
 
   button {
     border-radius: 10px;
+  }
+
+  @media screen and (min-width: 775px) {
+    justify-content: space-between;
+    .Logo {
+      display: block;
+    }
   }
 `;
