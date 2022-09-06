@@ -1,5 +1,6 @@
 import { AiOutlineClose } from "react-icons/ai";
 import Container from "./style";
+import React from "react";
 
 const ModalEditInformation = () => {
     return (
@@ -47,7 +48,6 @@ const ModalEditInformation = () => {
                         <option value="SE">SE</option>
                         <option value="TO">TO</option>
                     </select>
-                    
                     <button>Salvar Alterações</button>
                 </form>
             </div>
