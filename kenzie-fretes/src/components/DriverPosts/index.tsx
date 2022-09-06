@@ -1,39 +1,42 @@
-import { PlaceOutlined } from "@mui/icons-material"
+import { PlaceOutlined } from "@mui/icons-material";
 import {
   FormControl,
   Grid,
   InputLabel,
   MenuItem,
   Skeleton,
-} from "@mui/material"
-import { SetStateAction, useEffect, useState } from "react"
-import api from "../../services/api"
-import CButton from "../Button"
-import FooterDashboard from "../FooterDashboard"
-import Header from "../Header"
-import CustomSelect from "../Select"
-import { IServices } from "./driver.interfaces"
-import { Container } from "./style"
+} from "@mui/material";
+import { SetStateAction, useEffect, useState } from "react";
+import { useLogin } from "../../context/LoginContext/LoginProvider";
+import api from "../../services/api";
+import CButton from "../Button";
+import FooterDashboard from "../FooterDashboard";
+import Header from "../Header";
+import CustomSelect from "../Select";
+import { IServices } from "./driver.interfaces";
+import { Container } from "./style";
 
 const DriverPosts = () => {
-  const [services, setServices] = useState<IServices[]>([])
-  const [loading, setLoading] = useState(true)
+  const { user } = useLogin();
+  console.log(user);
 
-  const [originFilter, setOriginFilter] = useState("SP")
-  const [destinationFilter, setDestinationFilter] = useState("RJ")
+  const [services, setServices] = useState<IServices[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const [originFilter, setOriginFilter] = useState("SP");
+  const [destinationFilter, setDestinationFilter] = useState("RJ");
 
   useEffect(() => {
-    api.get<SetStateAction<IServices[]>>("/services").then((res) => {
+    api.get<SetStateAction<IServices[]>>("/services").then(({ data }) => {
       setTimeout(() => {
-        setLoading(false)
-        setServices(res.data)
-      }, 1000)
-    })
-  }, [])
+        setLoading(false);
+        setServices(data);
+      }, 1000);
+    });
+  }, []);
 
   return (
     <>
-      <Header/>
       <Container>
         <Grid container spacing={2} className="filters">
           <Grid item xs={6} className="center">
@@ -45,10 +48,10 @@ const DriverPosts = () => {
                 variant="outlined"
                 defaultValue="all"
                 onChange={(event) => {
-                  setOriginFilter(`${event.target.value}`)
+                  setOriginFilter(`${event.target.value}`);
                 }}
                 startAdornment={<PlaceOutlined />}
-                >
+              >
                 <MenuItem value="all">Todos</MenuItem>
                 <MenuItem value="AC">AC</MenuItem>
                 <MenuItem value="AL">AL</MenuItem>
@@ -90,7 +93,7 @@ const DriverPosts = () => {
                 variant="outlined"
                 defaultValue="all"
                 onChange={(event) => {
-                  setDestinationFilter(`${event.target.value}`)
+                  setDestinationFilter(`${event.target.value}`);
                 }}
                 startAdornment={<PlaceOutlined />}
               >
@@ -135,33 +138,33 @@ const DriverPosts = () => {
               width={"80%"}
               height={154}
               sx={{ maxWidth: "728px" }}
-              />
+            />
             <Skeleton
               variant="rounded"
               animation="wave"
               width={"80%"}
               height={154}
               sx={{ maxWidth: "728px" }}
-              />
+            />
             <Skeleton
               variant="rounded"
               animation="wave"
               width={"80%"}
               height={154}
               sx={{ maxWidth: "728px" }}
-              />
+            />
           </>
         )}
         {services ? (
           services.map((post, index) => {
             return (
-              post.typeUser === "Cliente" && (
+              post.typeUser !== user.type && (
                 <Grid
-                container
-                rowSpacing={2}
-                columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-                key={index}
-                className="post-card"
+                  container
+                  rowSpacing={2}
+                  columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                  key={index}
+                  className="post-card"
                 >
                   <Grid item xs={12}>
                     <p className="post-name">UserName</p>
@@ -183,15 +186,14 @@ const DriverPosts = () => {
                   </Grid>
                 </Grid>
               )
-            )
+            );
           })
-          ) : (
-            <p>Sem pedidos</p>
-            )}
+        ) : (
+          <p>Sem pedidos</p>
+        )}
       </Container>
-      <FooterDashboard/>
     </>
-  )
-}
+  );
+};
 
-export default DriverPosts
+export default DriverPosts;

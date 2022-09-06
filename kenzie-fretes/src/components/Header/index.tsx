@@ -8,9 +8,11 @@ import { MdMarkEmailUnread } from "react-icons/md";
 import { BsBell } from "react-icons/bs";
 
 import { useNavigate } from "react-router-dom";
+import { useLogin } from "../../context/LoginContext/LoginProvider";
 
 const Header = () => {
   let navigate = useNavigate();
+  const { user } = useLogin();
 
   return (
     <Container>

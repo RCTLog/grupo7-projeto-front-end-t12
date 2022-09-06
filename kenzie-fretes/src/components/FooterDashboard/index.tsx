@@ -9,7 +9,7 @@ const FooterDashboard = () => {
       <div className="contact">
         <div className="flex">
           <MdEmail />
-          <p>ajuda-rctlog@rctlog.com.br</p>
+          <p>ajuda.rctlog@rctlog.com.br</p>
         </div>
         <p>08:00 - 17:00 (seg-sex)</p>
       </div>
@@ -21,7 +21,7 @@ const FooterDashboard = () => {
           </div>
           <p> Trabalhe Conosco</p>
         </div>
-        <div className="contact">
+        <div className="contact-info">
           <BsFacebook className="facebook" />
           <TiSocialInstagramCircular className="pokeInsta" />
         </div>

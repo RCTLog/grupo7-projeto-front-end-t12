@@ -3,11 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 100vh;
-  bottom: 0;
+  max-height: 73px;
   justify-content: space-between;
   padding: 41px 61px;
-  align-content: center;
+  align-content: flex-end;
   align-items: center;
   border-top: 2px solid #c7c7c7;
 
@@ -19,6 +18,12 @@ export const Container = styled.div`
   .contact {
     display: flex;
     gap: 35px;
+    align-items: center;
+  }
+
+  .contact-info {
+    display: flex;
+    gap: 5px;
     align-items: center;
   }
 
@@ -37,7 +42,7 @@ export const Container = styled.div`
     width: 30px;
   }
   .pokeInsta {
-    height: 35px;
-    width: 35px;
+    height: 45px;
+    width: 45px;
   }
 `;
