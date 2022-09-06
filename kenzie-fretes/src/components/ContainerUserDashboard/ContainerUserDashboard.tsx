@@ -1,6 +1,6 @@
-import userImg from "../../assets/truck.png";
-import { useLogin } from "../../context/LoginContext/LoginProvider";
-import { Container } from "./style";
+import userImg from "../../assets/no-image-user.jpg"
+import { useLogin } from "../../context/LoginContext/LoginProvider"
+import { Container } from "./style"
 
 export const ContainerUserDashboard = () => {
   const { user } = useLogin();
@@ -11,5 +11,5 @@ export const ContainerUserDashboard = () => {
       <img className="userImg" src={userImg} alt="" />
       <h2 className="userName">{user.name}</h2>
     </Container>
-  );
-};
+  )
+}

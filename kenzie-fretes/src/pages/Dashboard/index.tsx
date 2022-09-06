@@ -1,5 +1,5 @@
-import FooterDashboard from "../../components/FooterDashboard";
-import Header from "../../components/Header";
+import FooterDashboard from "../../components/FooterDashboard"
+import Header from "../../components/Header"
 
 import Container, { ContainerObjectDashboard } from "./style";
 import { ContainerInfoDashboard } from "../../components/ContainerInfoDashboard/ContainerInfoDashboard";
@@ -33,4 +33,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Dashboard
