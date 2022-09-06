@@ -1,9 +1,9 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100%;
-
+  height: 488px;
+  overflow: hidden;
   padding: 20px 0;
 
   display: flex;
@@ -45,4 +45,4 @@ export const Container = styled.div`
       font-weight: 600;
     }
   }
-`
+`;
