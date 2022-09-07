@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Logo da empresa" title="RCTLog | Fretes & Mudanças" src="https://img.freepik.com/vetores-gratis/ilustracao-do-conceito-de-mudanca-de-casa_52683-45397.jpg" width="800vw" height="350vh" />
+  <img alt="Logo da empresa" title="RCTLog | Fretes & Mudanças" src="https://www.camionline.com.br/img/mudanca.png" width="800vw" height="350vh" />
 </h1>
 
 <h1 align="center">
