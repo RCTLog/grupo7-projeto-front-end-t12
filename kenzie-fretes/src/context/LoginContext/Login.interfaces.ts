@@ -24,7 +24,7 @@ export interface ILoginProvider {
 export interface ILoginData {
   email: string;
   password: string;
-  type: string;
+  typeUser: string;
 }
 
 export interface ILoginApi {
@@ -33,8 +33,8 @@ export interface ILoginApi {
 }
 
 export interface IUser {
-  email: string
-  id: string
-  name: string
-  type: string
+  email: string;
+  id: string;
+  name: string;
+  typeUser: string;
 }

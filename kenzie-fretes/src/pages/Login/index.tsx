@@ -6,26 +6,26 @@ import {
   Radio,
   RadioGroup,
   Tooltip,
-} from "@mui/material"
-import { AiOutlineArrowLeft } from "react-icons/ai"
-import CInput from "../../components/Input"
-import CButton from "../../components/Button"
-import { Link, Navigate } from "react-router-dom"
-import { useState } from "react"
-import { ErrorOutline, Visibility, VisibilityOff } from "@mui/icons-material"
-import { useLogin } from "../../context/LoginContext/LoginProvider"
+} from "@mui/material";
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import CInput from "../../components/Input";
+import CButton from "../../components/Button";
+import { Link, Navigate } from "react-router-dom";
+import { useState } from "react";
+import { ErrorOutline, Visibility, VisibilityOff } from "@mui/icons-material";
+import { useLogin } from "../../context/LoginContext/LoginProvider";
 
-import { Container, LoginWrap } from "./style"
+import { Container, LoginWrap } from "./style";
 
-import logo from "../../assets/logo.svg"
-import cliente from "../../assets/cliente.svg"
-import fretista from "../../assets/fretista.svg"
+import logo from "../../assets/logo.svg";
+import cliente from "../../assets/cliente.svg";
+import fretista from "../../assets/fretista.svg";
 
 const Login = () => {
-  const [password, setPassword] = useState(false)
-  const [type, setType] = useState(false)
+  const [password, setPassword] = useState(false);
+  const [type, setType] = useState(false);
 
-  const { auth, register, handleSubmit, errors, onSubmit } = useLogin()
+  const { auth, register, handleSubmit, errors, onSubmit } = useLogin();
 
   return (
     <>
@@ -61,7 +61,7 @@ const Login = () => {
                             color: "var(--color-primary)",
                           },
                         }}
-                        {...register("type")}
+                        {...register("typeUser")}
                         onClick={() => setType(false)}
                       />
                     }
@@ -77,7 +77,7 @@ const Login = () => {
                             color: "var(--color-primary)",
                           },
                         }}
-                        {...register("type")}
+                        {...register("typeUser")}
                         onClick={() => setType(true)}
                       />
                     }
@@ -159,7 +159,7 @@ const Login = () => {
         </Container>
       )}
     </>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

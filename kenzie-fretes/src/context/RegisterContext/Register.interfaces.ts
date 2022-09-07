@@ -29,7 +29,7 @@ export interface IRegisterData {
   name: string;
   password: string;
   passwordConfirm: string;
-  type: string;
+  typeUser: string;
 }
 
 export interface IRegisterApi {

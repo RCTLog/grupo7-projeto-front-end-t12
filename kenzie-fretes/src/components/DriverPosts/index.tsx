@@ -159,7 +159,7 @@ const DriverPosts = () => {
         {services ? (
           services.map((post, index) => {
             return (
-              post.typeUser !== user.type && (
+              post.typeUser !== user.typeUser && (
                 <Grid
                   container
                   rowSpacing={2}

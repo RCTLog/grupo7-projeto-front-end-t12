@@ -10,7 +10,7 @@ import ModalPoster from "../../components/ModalPoster";
 import ModalAbout from "../../components/ModalAbout";
 import { useNavigate } from "react-router-dom";
 import { useLogin } from "../../context/LoginContext/LoginProvider";
-
+import ModalEditSolicitation from "../../components/ModalEditSolicitation";
 const Dashboard = () => {
   const [userPage, setUserPage] = useState(1);
   const navigate = useNavigate();
