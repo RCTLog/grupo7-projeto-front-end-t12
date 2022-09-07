@@ -13,7 +13,6 @@ const Dashboard = () => {
   const [userPage, setUserPage] = useState(1);
   return (
     <Container>
-      <ModalEditSolicitation />
       <div className="main">
         <Header />
         <div className="info-container">
