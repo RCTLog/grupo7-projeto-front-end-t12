@@ -12,17 +12,19 @@ import ModalEditAnnouncement from "../components/ModalEditAnnouncement"
 const MainRoutes = () => {
   return (
     <>
-      <Routes>
-        <Route index element={<Homepage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/dashboard/driver/posts" element={<DriverPosts />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/support" element={<Support />} />
-        <Route path="/work-with-us" element={<WorkWithUs />} />
 
-        <Route path="*" element={<ContentNotFound />} />
-      </Routes>
+        <Routes>
+          <Route index element={<Homepage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/dashboard/driver/posts" element={<DriverPosts />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/work-with-us" element={<WorkWithUs />} />
+
+          <Route path="*" element={<ContentNotFound />} />
+        </Routes>
+
     </>
   )
 }

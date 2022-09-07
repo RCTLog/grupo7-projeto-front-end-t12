@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Container = styled.section`
   display: flex;
@@ -9,17 +9,37 @@ export const Container = styled.section`
 
   .userImg {
     width: 150px;
-    border-radius: 50%;
-  }
+    height: 150px;
 
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 100%;
+    }
+  }
+  
   .userName {
     font-style: normal;
     font-weight: 700;
-    font-size: 35px;
+    font-size: 2rem;
     line-height: 42px;
 
     color: #eb8c5b;
     width: 252px;
     height: 42px;
   }
-`;
+
+  @media (max-width: 450px) {
+    width: 100%;
+    justify-content: space-around;
+    gap: 10px;
+    .userName {
+      width: fit-content;
+    }
+
+    .userImg {
+      width: 75px;
+    }
+  }
+`
