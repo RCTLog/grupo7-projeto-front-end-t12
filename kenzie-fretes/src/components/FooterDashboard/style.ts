@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
+/*   display: flex;
   flex-direction: row;
+  width: 100%;
   max-height: 73px;
   justify-content: space-between;
   padding: 41px 61px;
@@ -15,6 +16,7 @@ export const Container = styled.div`
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
+
   .contact {
     display: flex;
     gap: 35px;
@@ -31,18 +33,75 @@ export const Container = styled.div`
     display: flex;
     gap: 5px;
     align-items: center;
+  } */
+
+  width: 100%;
+  padding: 1rem 5%;
+  border-top: 2px solid #c7c7c7;
+
+  .flex {
+    display: flex;
+    gap: 5px;
+    align-items: center;
   }
 
-  svg {
-    height: 25px;
-    width: 25px;
+  .contact {
+
+    .contact-pages {
+      display: flex;
+      align-items: center;
+
+      gap: 20px;
+      text-decoration: underline;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: inherit;
+        font-weight: 600;
+      }
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+
+      a {
+        color: inherit;
+      }
+    }
   }
-  .facebook {
-    height: 30px;
-    width: 30px;
+
+
+  @media screen and (min-width: 375px) {
+    .contact {
+      display: flex;
+      justify-content: space-between;
+    }
   }
-  .pokeInsta {
-    height: 45px;
-    width: 45px;
+
+  @media screen and (min-width: 455px) {
+    .email {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .contact {
+      justify-content: start;
+      gap: 85px;
+    }
+  }
+
+  @media screen and (min-width: 850px) {
+    display: flex;
+    justify-content: space-between;
+
+    .contact {
+      justify-content: start;
+      gap: 25px;
+    }
   }
 `;
