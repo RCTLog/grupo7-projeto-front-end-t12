@@ -10,6 +10,7 @@ export const Container = styled.div`
 
   padding: 0 5%;
   position: fixed;
+  background-color: white;
 
   background-color: var(--grey-2);
 
@@ -40,8 +41,9 @@ export const Container = styled.div`
 
     img {
       width: 50px;
-      border-radius: 50%;
-      cursor: pointer;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 100%;
     }
   }
 
