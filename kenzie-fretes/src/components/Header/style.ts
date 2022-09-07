@@ -3,15 +3,21 @@ import styled from "styled-components"
 export const Container = styled.div`
   width: 100%;
   height: 75px;
+
   display: flex;
   flex-direction: row;
   justify-content: end;
+
   padding: 0 5%;
   position: fixed;
+
+  background-color: var(--grey-2);
 
   align-content: center;
   align-items: center;
   box-shadow: 0px 4px 4px #e9e9e9;
+
+  z-index: 3;
 
   .Logo {
     display: none;
@@ -39,7 +45,6 @@ export const Container = styled.div`
     }
   }
 
-
   button {
     border-radius: 10px;
   }
@@ -50,4 +55,4 @@ export const Container = styled.div`
       display: block;
     }
   }
-`;
+`

@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Container = styled.div`
-/*   display: flex;
+  /*   display: flex;
   flex-direction: row;
   width: 100%;
   max-height: 73px;
@@ -46,18 +46,17 @@ export const Container = styled.div`
   }
 
   .contact {
-
     .contact-pages {
       display: flex;
       align-items: center;
 
       gap: 20px;
-      text-decoration: underline;
 
       a {
         display: flex;
         align-items: center;
         justify-content: center;
+
         color: inherit;
         font-weight: 600;
       }
@@ -73,7 +72,6 @@ export const Container = styled.div`
       }
     }
   }
-
 
   @media screen and (min-width: 375px) {
     .contact {
@@ -104,4 +102,20 @@ export const Container = styled.div`
       gap: 25px;
     }
   }
-`;
+
+  @media (max-width: 450px) {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    .email {
+      display: flex;
+      flex-direction: column;
+    }
+    .contact {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+`

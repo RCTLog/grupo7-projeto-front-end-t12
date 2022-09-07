@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Container = styled.section`
   align-items: center;
@@ -12,7 +12,6 @@ export const Container = styled.section`
   margin: 0 182px;
 
   p {
-    padding: 1rem;
     font-weight: 600;
     cursor: pointer;
   }
@@ -20,4 +19,9 @@ export const Container = styled.section`
   @media screen and (min-width: 450px) {
     padding-left: 40px;
   }
-`;
+
+  @media (max-width: 450px) {
+    width: 100%;
+    justify-content: center;
+  }
+`
