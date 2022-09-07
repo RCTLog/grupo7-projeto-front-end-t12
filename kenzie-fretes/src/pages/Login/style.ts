@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
@@ -50,7 +50,7 @@ export const Container = styled.div`
       }
     }
   }
-`
+`;
 
 export const LoginWrap = styled.div`
   width: 100%;
@@ -72,9 +72,11 @@ export const LoginWrap = styled.div`
     gap: 20px;
 
     p {
-      text-align: center;
-      a {
+      text-align: start;
+      font-size: 16px;
+      span {
         color: var(--links);
+        cursor: pointer;
       }
     }
   }
@@ -82,4 +84,4 @@ export const LoginWrap = styled.div`
   @media (min-width: 1280px) {
     width: 50%;
   }
-`
+`;

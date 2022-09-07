@@ -34,7 +34,7 @@ const Register = () => {
         <Navigate to={"/login"} />
       ) : (
         <Container>
-          <div className="register-container">
+          <div className="register-container animate__animated animate__fadeIn">
             <RegisterWrap>
               <Link to={"/login"}>
                 <img className="arrowBack" src={arrowBack} alt="voltar" />{" "}
@@ -87,7 +87,7 @@ const Register = () => {
                   variant="outlined"
                   id="name"
                   placeholder="Digite seu nome"
-                  label="Nome:"
+                  label="Nome"
                   error={errors.name && true}
                   InputProps={{
                     endAdornment: errors.name && (
@@ -110,7 +110,7 @@ const Register = () => {
                   variant="outlined"
                   id="email"
                   placeholder="Digite seu e-mail"
-                  label="E-mail:"
+                  label="E-mail"
                   error={errors.email && true}
                   InputProps={{
                     endAdornment: errors.email && (
@@ -133,7 +133,7 @@ const Register = () => {
                   variant="outlined"
                   id="password"
                   placeholder="Digite sua senha"
-                  label="Senha:"
+                  label="Senha"
                   type={"password"}
                   error={errors.password && true}
                   InputProps={{
@@ -157,7 +157,7 @@ const Register = () => {
                   variant="outlined"
                   id="passwordConfirm"
                   placeholder="Digite sua senha"
-                  label="Confirmação de senha:"
+                  label="Confirmação de senha"
                   type={"password"}
                   error={errors.passwordConfirm && true}
                   InputProps={{
