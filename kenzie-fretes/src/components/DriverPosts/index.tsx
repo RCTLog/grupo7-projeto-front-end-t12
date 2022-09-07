@@ -109,8 +109,8 @@ const DriverPosts = () => {
         ) : (
           <p>Sem pedidos</p>
         )}
+        <Footer logo={logo} />
       </Container>
-      <Footer logo={logo} />
     </>
   )
 }

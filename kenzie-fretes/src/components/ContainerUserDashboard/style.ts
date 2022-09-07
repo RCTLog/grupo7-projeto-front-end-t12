@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Container = styled.section`
   display: flex;
@@ -29,4 +29,17 @@ export const Container = styled.section`
     width: 252px;
     height: 42px;
   }
-`;
+
+  @media (max-width: 450px) {
+    width: 100%;
+    justify-content: space-around;
+    gap: 10px;
+    .userName {
+      width: fit-content;
+    }
+
+    .userImg {
+      width: 75px;
+    }
+  }
+`
