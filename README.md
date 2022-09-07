@@ -1,9 +1,11 @@
 <h1 align="center">
-  <img alt="Logo da empresa" title="RCTLog | Fretes & Mudanças" src="https://img.freepik.com/vetores-gratis/ilustracao-do-conceito-de-mudanca-de-casa_52683-45397.jpg" width="800vw" height="350vh" />
+  <img alt="Logo da empresa" title="RCTLog | Fretes & Mudanças" src="https://www.camionline.com.br/img/mudanca.png" width="800vw" height="350vh" />
 </h1>
 
 <h1 align="center">
+	
  RCTLog | Fretes & Mudanças
+	
 </h1>
 
 <p align = "center">
@@ -348,11 +350,21 @@ Assim como os endpoints de tecnologias e trabalhos, nesse precisamos estar logad
 
 Endpoint para atualizar a foto de perfil:
 
-`PATCH https://json-server-kenzie-fretes.herokuapp.com/users - FORMATO DA REQUISIÇÃO`
+`PATCH https://json-server-kenzie-fretes.herokuapp.com/users/${user_id} - FORMATO DA REQUISIÇÃO`
 
 ```multipart
 {
   "userImg": "https://img.quizur.com/f/img628e3091c2f679.37459174.jpg?lastEdited=1653485722",
+}
+```
+
+Com esse endpoint poderá adicionar/editar o sobre do usuário:
+
+`PATCH https://json-server-kenzie-fretes.herokuapp.com/users/${user_id} - FORMATO DA REQUISIÇÃO`
+
+```multipart
+{
+  "about": "Sou motorista a 20 anos, sou muito dedicado a minha profissão. Justo com os preços, e não gosto que me subestimem.",
 }
 ```
 

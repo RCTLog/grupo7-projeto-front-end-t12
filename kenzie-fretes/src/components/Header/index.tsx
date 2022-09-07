@@ -37,7 +37,7 @@ const Header = () => {
         <GiExitDoor onClick={Logout} />
       </div>
     </Container>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

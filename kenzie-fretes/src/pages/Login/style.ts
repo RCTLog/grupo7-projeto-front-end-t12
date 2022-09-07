@@ -8,22 +8,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  background: rgb(90, 139, 183);
-  background: -moz-linear-gradient(
-    90deg,
-    rgba(235, 140, 91, 1) 50%,
-    rgba(90, 139, 183, 1) 50%
-  );
-  background: -webkit-linear-gradient(
-    90deg,
-    rgba(235, 140, 91, 1) 50%,
-    rgba(90, 139, 183, 1) 50%
-  );
-  background: linear-gradient(
-    90deg,
-    rgba(235, 140, 91, 1) 50%,
-    rgba(90, 139, 183, 1) 50%
-  );
+  background-image: linear-gradient(90deg, #eb8c5b 20%, #5a8bb7 80%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eb8c5b",endColorstr="#5a8bb7",GradientType=1);
 
   .login-container {

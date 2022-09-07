@@ -18,22 +18,22 @@ import logo from "../../assets/logo.svg";
 import { Container } from "./style";
 
 const DriverPosts = () => {
-  const { user } = useLogin()
+  const { user } = useLogin();
 
-  const [services, setServices] = useState<IServices[]>([])
-  const [loading, setLoading] = useState(true)
+  const [services, setServices] = useState<IServices[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const [originFilter, setOriginFilter] = useState("SP")
-  const [destinationFilter, setDestinationFilter] = useState("RJ")
+  const [originFilter, setOriginFilter] = useState("SP");
+  const [destinationFilter, setDestinationFilter] = useState("RJ");
 
   useEffect(() => {
     api.get<SetStateAction<IServices[]>>("/services").then(({ data }) => {
       setTimeout(() => {
-        setLoading(false)
-        setServices(data)
-      }, 1000)
-    })
-  }, [])
+        setLoading(false);
+        setServices(data);
+      }, 1000);
+    });
+  }, []);
 
   return (
     <>
@@ -49,7 +49,7 @@ const DriverPosts = () => {
                 variant="outlined"
                 defaultValue="all"
                 onChange={(event) => {
-                  setOriginFilter(`${event.target.value}`)
+                  setOriginFilter(`${event.target.value}`);
                 }}
                 startAdornment={<PlaceOutlined />}
               >
@@ -94,7 +94,7 @@ const DriverPosts = () => {
                 variant="outlined"
                 defaultValue="all"
                 onChange={(event) => {
-                  setDestinationFilter(`${event.target.value}`)
+                  setDestinationFilter(`${event.target.value}`);
                 }}
                 startAdornment={<PlaceOutlined />}
               >
@@ -187,7 +187,7 @@ const DriverPosts = () => {
                   </Grid>
                 </Grid>
               )
-            )
+            );
           })
         ) : (
           <p>Sem pedidos</p>
@@ -195,7 +195,7 @@ const DriverPosts = () => {
       </Container>
       <Footer logo={logo} />
     </>
-  )
-}
+  );
+};
 
-export default DriverPosts
+export default DriverPosts;
