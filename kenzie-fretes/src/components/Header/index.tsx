@@ -11,12 +11,14 @@ import { useNavigate } from "react-router-dom"
 import { useLogin } from "../../context/LoginContext/LoginProvider"
 import { TiHomeOutline } from "react-icons/ti";
 import { useMain } from "../../context/MainContext/MainProvider";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext/UserProvider";
 
 const Header = () => {
   const navigate = useNavigate()
   const { Logout } = useMain()
   const { auth, setAuth } = useLogin()
-
+  const { currentUser } = useContext(UserContext);
 
   return (
     <Container>
@@ -27,7 +29,11 @@ const Header = () => {
         />
         <MdOutlineEmail />
         <BsBell />
-        <img src={userImg} alt="" />
+        <img 
+          src={currentUser[0]?.userImg} 
+          alt="" 
+/*           onClick={() => {navigate("../dashboard")}} */
+        />
         <GiExitDoor onClick={() => {
           Logout();
           setAuth(false)

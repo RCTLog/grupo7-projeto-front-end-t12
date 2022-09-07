@@ -10,7 +10,6 @@ const UserProvider = ({ children }: IUserProps) => {
 
     useEffect(() => {
         api.get(`/users`).then(({ data }) => {
-            console.log(data)
             setCurrentUser(data.filter((user: any) => {
                 return user.id == userId
             }))

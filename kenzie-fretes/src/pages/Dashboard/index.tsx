@@ -18,7 +18,7 @@ const Dashboard = () => {
 
   const { auth } = useLogin()
   const { currentUser } = useContext(UserContext)
-  console.log(currentUser)
+
   useEffect (() => {
     !auth && navigate("../login", { replace: true }) 
   }, [auth])
