@@ -55,7 +55,7 @@ const Register = () => {
                 <FormLabel id="type">Você é:</FormLabel>
 
                 <RadioGroup
-                  aria-labelledby="type"
+                  aria-labelledby="typeUser"
                   defaultValue="Motorista"
                   sx={{ display: "inline" }}
                 >
@@ -68,7 +68,7 @@ const Register = () => {
                             color: "var(--color-primary)",
                           },
                         }}
-                        {...register("type")}
+                        {...register("typeUser")}
                         onClick={() => setType(false)}
                       />
                     }
@@ -84,7 +84,7 @@ const Register = () => {
                             color: "var(--color-primary)",
                           },
                         }}
-                        {...register("type")}
+                        {...register("typeUser")}
                         onClick={() => setType(true)}
                       />
                     }

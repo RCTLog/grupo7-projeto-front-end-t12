@@ -38,6 +38,7 @@ const LoginProvider = ({ children }: ILoginProps) => {
       .post<ILoginApi>("/login/users", data)
       .then((res) => {
         setAuth(true);
+        console.log(res)
         window.localStorage.setItem("@RCTL: Token", res.data.accessToken);
         window.localStorage.setItem("@RCTL: UserId", res.data.user.id);
         window.localStorage.setItem("@RCTL: Username", res.data.user.name);
