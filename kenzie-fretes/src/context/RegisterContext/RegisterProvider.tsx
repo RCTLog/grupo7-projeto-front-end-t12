@@ -6,17 +6,21 @@ import {
   IRegisterProvider,
 } from "./Register.interfaces";
 
-import * as yup from "yup";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { toast } from "react-toastify";
-import api from "../../services/api";
+
+import * as yup from "yup"
+import { useForm } from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
+import { toast } from "react-toastify"
+import api from "../../services/api"
+import { useNavigate } from "react-router-dom"
+
 
 const RegisterContext = createContext<IRegisterProvider>(
   {} as IRegisterProvider
 );
 
 const RegisterProvider = ({ children }: IRegisterProps) => {
+
   const [emailError, setEmailError] = useState(false);
   const [passError, setPassError] = useState(false);
   const [nameError, setNameError] = useState(false);
@@ -24,7 +28,11 @@ const RegisterProvider = ({ children }: IRegisterProps) => {
   const [auth, setAuth] = useState(false);
   const [loading, setLoading] = useState(true);
 
+
+  const navigate = useNavigate()
+
   const formSchema = yup.object().shape({
+
     email: yup
       .string()
       .required(() => {
@@ -52,6 +60,7 @@ const RegisterProvider = ({ children }: IRegisterProps) => {
       }),
   });
 
+
   const {
     register,
     handleSubmit,
@@ -64,14 +73,15 @@ const RegisterProvider = ({ children }: IRegisterProps) => {
     api
       .post<IRegisterApi>("/users/register", data)
       .then(({ data }) => {
-        setAuth(true);
-        window.localStorage.setItem("@RCTL: Token", data.accessToken);
+
+        navigate("/login", { replace: true })
 
         toast.success(
           "Cadastro realizado com sucesso! Você será redirecionado.",
           {
             toastId: 1,
             position: "top-right",
+
             autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
@@ -85,11 +95,22 @@ const RegisterProvider = ({ children }: IRegisterProps) => {
       COLOCAR RESPOSTA do USER em algum Lugar
       
       */
+
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+          }
+        )
+
       })
       .catch((error) => {
         toast.error("Verifique as informações e tente novamente.", {
           toastId: 1,
           position: "top-right",
+
           autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -100,6 +121,16 @@ const RegisterProvider = ({ children }: IRegisterProps) => {
       });
   };
 
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+        })
+      })
+  }
+
   useEffect(() => {
     const token = localStorage.getItem("@RCTL: Token");
 
@@ -109,10 +140,6 @@ const RegisterProvider = ({ children }: IRegisterProps) => {
   return (
     <RegisterContext.Provider
       value={{
-        emailError,
-        nameError,
-        passError,
-        passwordConfirmError,
         auth,
         setAuth,
         loading,
