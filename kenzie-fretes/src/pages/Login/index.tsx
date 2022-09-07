@@ -6,26 +6,37 @@ import {
   Radio,
   RadioGroup,
   Tooltip,
-} from "@mui/material"
-import { AiOutlineArrowLeft } from "react-icons/ai"
-import CInput from "../../components/Input"
-import CButton from "../../components/Button"
-import { Link, Navigate } from "react-router-dom"
-import { useState } from "react"
-import { ErrorOutline, Visibility, VisibilityOff } from "@mui/icons-material"
-import { useLogin } from "../../context/LoginContext/LoginProvider"
+} from "@mui/material";
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import CInput from "../../components/Input";
+import CButton from "../../components/Button";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useRef, useState } from "react";
+import { ErrorOutline, Visibility, VisibilityOff } from "@mui/icons-material";
+import { useLogin } from "../../context/LoginContext/LoginProvider";
 
-import { Container, LoginWrap } from "./style"
+import { Container, LoginWrap } from "./style";
 
-import logo from "../../assets/logo.svg"
-import cliente from "../../assets/cliente.svg"
-import fretista from "../../assets/fretista.svg"
+import logo from "../../assets/logo.svg";
+import cliente from "../../assets/cliente.svg";
+import fretista from "../../assets/fretista.svg";
 
 const Login = () => {
-  const [password, setPassword] = useState(false)
-  const [type, setType] = useState(false)
+  const [password, setPassword] = useState(false);
+  const [type, setType] = useState(false);
 
-  const { auth, register, handleSubmit, errors, onSubmit } = useLogin()
+  const navigate = useNavigate();
+
+  const { auth, register, handleSubmit, errors, onSubmit } = useLogin();
+
+  const box = useRef<HTMLDivElement>(null);
+
+  const handleOut = () => {
+    box.current?.classList.add("animate__animated", "animate__fadeOut");
+    setTimeout(() => {
+      navigate("/register");
+    }, 500);
+  };
 
   return (
     <>
@@ -33,7 +44,7 @@ const Login = () => {
         <Navigate to={"/dashboard"} />
       ) : (
         <Container>
-          <div className="login-container">
+          <div ref={box} className="login-container">
             <LoginWrap>
               <Link to="/">
                 <IconButton sx={{ width: "40px", height: "40px" }}>
@@ -49,7 +60,7 @@ const Login = () => {
                   variant="outlined"
                   id="email"
                   placeholder="Digite seu e-mail"
-                  label="E-mail:"
+                  label="E-mail"
                   InputProps={{
                     endAdornment: errors.email && (
                       <Tooltip
@@ -72,7 +83,7 @@ const Login = () => {
                   variant="outlined"
                   id="password"
                   placeholder="Digite sua senha"
-                  label="Senha:"
+                  label="Senha"
                   type={password ? "text" : "password"}
                   InputProps={{
                     endAdornment: errors.password?.message ? (
@@ -100,10 +111,7 @@ const Login = () => {
                   Login
                 </CButton>
 
-                <p>Ainda não possui uma conta?</p>
-                <p>
-                  <Link to="/register">Clique aqui</Link> e cadastre-se
-                </p>
+                <p>Ainda não possui uma conta? <span onClick={handleOut}>Clique aqui</span> e cadastre-se</p>
               </form>
             </LoginWrap>
             <div className="login-image">
@@ -113,7 +121,7 @@ const Login = () => {
         </Container>
       )}
     </>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
