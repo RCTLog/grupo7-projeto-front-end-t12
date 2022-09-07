@@ -1,39 +1,39 @@
-import { PlaceOutlined } from "@mui/icons-material"
+import { PlaceOutlined } from "@mui/icons-material";
 import {
   FormControl,
   Grid,
   InputLabel,
   MenuItem,
   Skeleton,
-} from "@mui/material"
-import { SetStateAction, useEffect, useState } from "react"
-import { useLogin } from "../../context/LoginContext/LoginProvider"
-import api from "../../services/api"
-import CButton from "../Button"
-import Footer from "../Footer"
-import Header from "../Header"
-import CustomSelect, { SelectStates } from "../Select"
-import { IServices } from "./driver.interfaces"
-import logo from "../../assets/logo.svg"
-import { Container } from "./style"
+} from "@mui/material";
+import { SetStateAction, useEffect, useState } from "react";
+import { useLogin } from "../../context/LoginContext/LoginProvider";
+import api from "../../services/api";
+import CButton from "../Button";
+import Footer from "../Footer";
+import Header from "../Header";
+import CustomSelect, { SelectStates } from "../Select";
+import { IServices } from "./driver.interfaces";
+import logo from "../../assets/logo.svg";
+import { Container } from "./style";
 
 const DriverPosts = () => {
-  const { user } = useLogin()
+  const { user } = useLogin();
 
-  const [services, setServices] = useState<IServices[]>([])
-  const [loading, setLoading] = useState(true)
+  const [services, setServices] = useState<IServices[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const [originFilter, setOriginFilter] = useState("SP")
-  const [destinationFilter, setDestinationFilter] = useState("RJ")
+  const [originFilter, setOriginFilter] = useState("SP");
+  const [destinationFilter, setDestinationFilter] = useState("RJ");
 
   useEffect(() => {
     api.get<SetStateAction<IServices[]>>("/services").then(({ data }) => {
       setTimeout(() => {
-        setLoading(false)
-        setServices(data)
-      }, 1000)
-    })
-  }, [])
+        setLoading(false);
+        setServices(data);
+      }, 1000);
+    });
+  }, []);
 
   return (
     <>
@@ -73,6 +73,7 @@ const DriverPosts = () => {
             />
           </>
         )}
+
         {services ? (
           services.map((post, index) => {
             return (
@@ -85,7 +86,6 @@ const DriverPosts = () => {
                   className="post-card"
                 >
                   <Grid item xs={12}>
-                    <p className="post-name">UserName</p>
                     <p className="post-description">{post.description}</p>
                   </Grid>
                   <Grid item xs={6} sm={4}>
@@ -104,7 +104,7 @@ const DriverPosts = () => {
                   </Grid>
                 </Grid>
               )
-            )
+            );
           })
         ) : (
           <p>Sem pedidos</p>
@@ -112,7 +112,7 @@ const DriverPosts = () => {
         <Footer logo={logo} />
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default DriverPosts
+export default DriverPosts;
