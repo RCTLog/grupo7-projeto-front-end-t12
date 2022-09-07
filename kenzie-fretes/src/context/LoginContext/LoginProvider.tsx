@@ -4,36 +4,25 @@ import {
   ILoginData,
   ILoginProps,
   ILoginProvider,
+  IUser,
 } from "./Login.interfaces";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { toast } from "react-toastify";
+
 import api from "../../services/api";
 
 const LoginContext = createContext<ILoginProvider>({} as ILoginProvider);
 
 const LoginProvider = ({ children }: ILoginProps) => {
-  const [emailError, setEmailError] = useState(false);
-  const [passError, setPassError] = useState(false);
-
   const [auth, setAuth] = useState(false);
+  const [user, setUser] = useState<IUser>({} as IUser);
   const [loading, setLoading] = useState(true);
 
   const formSchema = yup.object().shape({
-    email: yup
-      .string()
-      .required(() => {
-        setEmailError(true);
-        return "Insira seu e-mail";
-      })
-      .email(() => {
-        setEmailError(true);
-        return "E-mail invalido";
-      }),
-    password: yup.string().required(() => {
-      setPassError(true);
-      return "Insira sua senha";
-    }),
+    email: yup.string().required("Insira seu e-mail").email("E-mail invalido"),
+    password: yup.string().required("Insira sua senha"),
   });
 
   const {
@@ -45,14 +34,54 @@ const LoginProvider = ({ children }: ILoginProps) => {
   });
 
   const onSubmit = (data: ILoginData) => {
-    api.post<ILoginApi>("/login", data).then((res) => {
-      setAuth(true);
-      window.localStorage.setItem("@RCTL: Token", res.data.accessToken);
-    });
+    api
+      .post<ILoginApi>("/login/users", data)
+      .then((res) => {
+        setAuth(true);
+        window.localStorage.setItem("@RCTL: Token", res.data.accessToken);
+        window.localStorage.setItem("@RCTL: UserId", res.data.user.id);
+        window.localStorage.setItem("@RCTL: Username", res.data.user.name);
+        window.localStorage.setItem("@RCTL: typeUser", res.data.user.type);
+        window.localStorage.setItem("@RCTL: UserEmail", res.data.user.email);
+
+        toast.success("Login realizado com sucesso! Você será redirecionado.", {
+          toastId: 1,
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+        });
+      })
+      .catch((error) => {
+        toast.error("Login ou senha inválidos.", {
+          toastId: 1,
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+        });
+      });
   };
 
   useEffect(() => {
     const token = localStorage.getItem("@RCTL: Token");
+    const userId = localStorage.getItem("@RCTL: UserId");
+    const userName = localStorage.getItem("@RCTL: Username");
+    const typeUser = localStorage.getItem("@RCTL: typeUser");
+    const userEmail = localStorage.getItem("@RCTL: UserEmail");
+
+    setUser({
+      id: `${userId}`,
+      email: `${userEmail}`,
+      name: `${userName}`,
+      type: `${typeUser}`,
+    });
 
     token && setAuth(true);
   }, [auth]);
@@ -60,8 +89,6 @@ const LoginProvider = ({ children }: ILoginProps) => {
   return (
     <LoginContext.Provider
       value={{
-        emailError,
-        passError,
         auth,
         setAuth,
         loading,
@@ -69,6 +96,7 @@ const LoginProvider = ({ children }: ILoginProps) => {
         handleSubmit,
         errors,
         onSubmit,
+        user,
       }}
     >
       {children}
