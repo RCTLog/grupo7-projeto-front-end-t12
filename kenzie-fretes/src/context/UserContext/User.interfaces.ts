@@ -4,3 +4,6 @@ export interface IUserProps {
     children: ReactNode;
 }
 
+export interface IUserContext {
+    currentUser: any
+}

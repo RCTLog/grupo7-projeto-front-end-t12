@@ -1,20 +1,27 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import api from "../../services/api";
-import { IUserProps } from "./User.interfaces";
+import { IUserContext, IUserProps } from "./User.interfaces";
 
-const UserContext = createContext({})
+export const UserContext = createContext<IUserContext>({} as IUserContext)
 
-const UserProvider = async ({ children }: IUserProps) => {
+const UserProvider = ({ children }: IUserProps) => {
     const [currentUser, setCurrentUser] = useState({});
-    const userId = localStorage.getItem("@RCTL: userId");
+    const userId = localStorage.getItem("@RCTL: UserId");
 
-    const user = await api.get(`users/${userId}`)
-    setCurrentUser(user)
+    useEffect(() => {
+        api.get(`/users`).then(({ data }) => {
+            console.log(data)
+            setCurrentUser(data.filter((user: any) => {
+                return user.id == userId
+            }))
+        })
+
+    }, [userId])
 
     return (
-        <UserContext.Provider 
+        <UserContext.Provider
             value={{
-                
+                currentUser
             }}
         >
             {children}

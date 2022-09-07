@@ -5,18 +5,20 @@ import Container, { ContainerObjectDashboard } from "./style";
 import { ContainerInfoDashboard } from "../../components/ContainerInfoDashboard/ContainerInfoDashboard";
 import { ContainerUserDashboard } from "../../components/ContainerUserDashboard/ContainerUserDashboard";
 import ModalInformation from "../../components/ModalInformation";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ModalPoster from "../../components/ModalPoster";
 import ModalAbout from "../../components/ModalAbout";
 import { useNavigate } from "react-router-dom";
 import { useLogin } from "../../context/LoginContext/LoginProvider";
 import ModalEditSolicitation from "../../components/ModalEditSolicitation";
+import { UserContext } from "../../context/UserContext/UserProvider";
 const Dashboard = () => {
   const [userPage, setUserPage] = useState(1);
   const navigate = useNavigate();
 
   const { auth } = useLogin()
-
+  const { currentUser } = useContext(UserContext)
+  console.log(currentUser)
   useEffect (() => {
     !auth && navigate("../login", { replace: true }) 
   }, [auth])
