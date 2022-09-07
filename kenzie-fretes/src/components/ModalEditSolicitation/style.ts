@@ -78,8 +78,8 @@ const Container = styled.div`
         height: 55px;
         /* padding: 0.8rem; */
         border-radius: 0.5rem;
-      
-        input::placeholder{
+
+        input::placeholder {
           font-size: 14px;
         }
 

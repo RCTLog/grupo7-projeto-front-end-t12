@@ -51,7 +51,7 @@ Aqui conseguimos ver os usuários, suas tecnologias e seus trabalhos cadastrados
 			{
 				"street": "Rua dos Atumalacos",
 				"number": 166,
-				"distric": "Campinas",
+				"city": "Campinas",
 				"state": "SP"
 			}
 		]
@@ -70,7 +70,7 @@ Aqui conseguimos ver os usuários, suas tecnologias e seus trabalhos cadastrados
 			{
 				"street": "Rua dos bobos",
 				"number": 135,
-				"distric": "Volta redonda",
+				"city": "Volta redonda",
 				"state": "Rio de Janeiro"
 			}
 		]

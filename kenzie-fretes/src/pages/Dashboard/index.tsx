@@ -5,15 +5,24 @@ import Container, { ContainerObjectDashboard } from "./style";
 import { ContainerInfoDashboard } from "../../components/ContainerInfoDashboard/ContainerInfoDashboard";
 import { ContainerUserDashboard } from "../../components/ContainerUserDashboard/ContainerUserDashboard";
 import ModalInformation from "../../components/ModalInformation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ModalPoster from "../../components/ModalPoster";
 import ModalAbout from "../../components/ModalAbout";
+import { useNavigate } from "react-router-dom";
+import { useLogin } from "../../context/LoginContext/LoginProvider";
 import ModalEditSolicitation from "../../components/ModalEditSolicitation";
 const Dashboard = () => {
   const [userPage, setUserPage] = useState(1);
+  const navigate = useNavigate();
+
+  const { auth } = useLogin()
+
+  useEffect (() => {
+    !auth && navigate("../login", { replace: true }) 
+  }, [auth])
+
   return (
     <Container>
-      <ModalEditSolicitation />
       <div className="main">
         <Header />
         <div className="info-container">
