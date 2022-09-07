@@ -21,6 +21,14 @@ const Container = styled.div`
     gap: 20px;
     min-height: 50vh;
     
+    button {
+      color: var(--chinese-black);
+      border: none;
+      background-color: transparent;
+      width: 75px;
+      font-size: 1.2rem;
+    }
+    
     a {
       display: flex;
       color: black;
