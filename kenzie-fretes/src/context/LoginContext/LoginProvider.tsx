@@ -41,7 +41,7 @@ const LoginProvider = ({ children }: ILoginProps) => {
         window.localStorage.setItem("@RCTL: Token", res.data.accessToken)
         window.localStorage.setItem("@RCTL: UserId", res.data.user.id)
         window.localStorage.setItem("@RCTL: Username", res.data.user.name)
-        window.localStorage.setItem("@RCTL: typeUser", res.data.user.typeUser)
+        window.localStorage.setItem("@RCTL: typeUser", res.data.user.type)
         window.localStorage.setItem("@RCTL: UserEmail", res.data.user.email)
 
         toast.success("Login realizado com sucesso! Você será redirecionado.", {
@@ -80,7 +80,7 @@ const LoginProvider = ({ children }: ILoginProps) => {
       id: `${userId}`,
       email: `${userEmail}`,
       name: `${userName}`,
-      typeUser: `${typeUser}`,
+      type: `${typeUser}`,
     })
 
     token && setAuth(true)
@@ -106,4 +106,4 @@ const LoginProvider = ({ children }: ILoginProps) => {
 
 export const useLogin = () => useContext(LoginContext)
 
-export default LoginProvider
+export default LoginProvider;

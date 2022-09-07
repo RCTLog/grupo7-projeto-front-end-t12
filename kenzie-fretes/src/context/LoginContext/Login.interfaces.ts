@@ -36,5 +36,5 @@ export interface IUser {
   email: string
   id: string
   name: string
-  typeUser: string
+  type: string
 }

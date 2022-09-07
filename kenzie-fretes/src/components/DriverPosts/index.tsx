@@ -1,18 +1,21 @@
-import { PlaceOutlined } from "@mui/icons-material"
+import { PlaceOutlined } from "@mui/icons-material";
 import {
   FormControl,
   Grid,
   InputLabel,
   MenuItem,
   Skeleton,
-} from "@mui/material"
-import { SetStateAction, useEffect, useState } from "react"
-import { useLogin } from "../../context/LoginContext/LoginProvider"
-import api from "../../services/api"
-import CButton from "../Button"
-import CustomSelect from "../Select"
-import { IServices } from "./driver.interfaces"
-import { Container } from "./style"
+} from "@mui/material";
+import { SetStateAction, useEffect, useState } from "react";
+import { useLogin } from "../../context/LoginContext/LoginProvider";
+import api from "../../services/api";
+import CButton from "../Button";
+import Footer from "../Footer";
+import Header from "../Header";
+import CustomSelect from "../Select";
+import { IServices } from "./driver.interfaces";
+import logo from "../../assets/logo.svg";
+import { Container } from "./style";
 
 const DriverPosts = () => {
   const { user } = useLogin()
@@ -34,6 +37,7 @@ const DriverPosts = () => {
 
   return (
     <>
+      <Header />
       <Container>
         <Grid container spacing={2} className="filters">
           <Grid item xs={6} className="center">
@@ -155,7 +159,7 @@ const DriverPosts = () => {
         {services ? (
           services.map((post, index) => {
             return (
-              post.typeUser !== user.typeUser && (
+              post.typeUser !== user.type && (
                 <Grid
                   container
                   rowSpacing={2}
@@ -189,6 +193,7 @@ const DriverPosts = () => {
           <p>Sem pedidos</p>
         )}
       </Container>
+      <Footer logo={logo} />
     </>
   )
 }
