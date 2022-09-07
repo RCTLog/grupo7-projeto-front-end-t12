@@ -13,7 +13,7 @@ import { TiHomeOutline } from "react-icons/ti";
 import { useMain } from "../../context/MainContext/MainProvider";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext/UserProvider";
-
+  
 const Header = () => {
   const navigate = useNavigate()
   const { Logout } = useMain()
