@@ -8,7 +8,7 @@ import ModalInformation from "../../components/ModalInformation";
 import { useState } from "react";
 import ModalPoster from "../../components/ModalPoster";
 import ModalAbout from "../../components/ModalAbout";
-
+import ModalEditSolicitation from "../../components/ModalEditSolicitation";
 const Dashboard = () => {
   const [userPage, setUserPage] = useState(1);
   return (
