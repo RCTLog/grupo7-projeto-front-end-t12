@@ -1,13 +1,13 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Dashboard from "../pages/Dashboard";
-import ContentNotFound from "../components/ContentNotFound";
-import DriverPosts from "../components/DriverPosts";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
-import Homepage from "../pages/Homepage";
-import Support from "../pages/Support";
-import WorkWithUs from "../pages/WorkWithUs";
-import ModalEditAnnouncement from "../components/ModalEditAnnouncement";
+import { Routes, Route } from "react-router-dom"
+import Dashboard from "../pages/Dashboard"
+import ContentNotFound from "../components/ContentNotFound"
+import DriverPosts from "../components/DriverPosts"
+import Login from "../pages/Login"
+import Register from "../pages/Register"
+import Homepage from "../pages/Homepage"
+import Support from "../pages/Support"
+import WorkWithUs from "../pages/WorkWithUs"
+import ModalEditAnnouncement from "../components/ModalEditAnnouncement"
 
 const MainRoutes = () => {
   return (
@@ -26,7 +26,7 @@ const MainRoutes = () => {
         </Routes>
 
     </>
-  );
-};
+  )
+}
 
-export default MainRoutes;
+export default MainRoutes

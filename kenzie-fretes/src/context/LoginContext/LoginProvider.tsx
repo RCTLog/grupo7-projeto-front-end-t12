@@ -46,10 +46,10 @@ const LoginProvider = ({ children }: ILoginProps) => {
         window.localStorage.setItem("@RCTL: typeUser", res.data.user.typeUser);
         window.localStorage.setItem("@RCTL: UserEmail", res.data.user.email);
 
-        toast.success("Login realizado com sucesso! Você será redirecionado.", {
+        toast.success("Login realizado com sucesso!", {
           toastId: 1,
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: false,
@@ -57,11 +57,11 @@ const LoginProvider = ({ children }: ILoginProps) => {
           progress: undefined,
         });
       })
-      .catch((error) => {
-        toast.error("Login ou senha inválidos.", {
+      .catch(() => {
+        toast.error("Login ou senha inválidos!", {
           toastId: 1,
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: false,

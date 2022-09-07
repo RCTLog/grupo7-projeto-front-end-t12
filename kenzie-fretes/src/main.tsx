@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import GlobalStyle from "./styles/GlobalStyle";
 import { BrowserRouter } from "react-router-dom";
 
-ReactDOM.createRoot(document.getElementById("root")as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
       <ToastContainer
@@ -20,12 +20,11 @@ ReactDOM.createRoot(document.getElementById("root")as HTMLElement).render(
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        />
+      />
       <MainProvider>
         <GlobalStyle />
         <App />
-      
       </MainProvider>
     </BrowserRouter>
   </React.StrictMode>
-);
+)
