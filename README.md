@@ -348,11 +348,21 @@ Assim como os endpoints de tecnologias e trabalhos, nesse precisamos estar logad
 
 Endpoint para atualizar a foto de perfil:
 
-`PATCH https://json-server-kenzie-fretes.herokuapp.com/users - FORMATO DA REQUISIÇÃO`
+`PATCH https://json-server-kenzie-fretes.herokuapp.com/users/${user_id} - FORMATO DA REQUISIÇÃO`
 
 ```multipart
 {
   "userImg": "https://img.quizur.com/f/img628e3091c2f679.37459174.jpg?lastEdited=1653485722",
+}
+```
+
+Com esse endpoint poderá adicionar/editar o sobre do usuário:
+
+`PATCH https://json-server-kenzie-fretes.herokuapp.com/users/${user_id} - FORMATO DA REQUISIÇÃO`
+
+```multipart
+{
+  "about": "Sou motorista a 20 anos, sou muito dedicado a minha profissão. Justo com os preços, e não gosto que me subestimem.",
 }
 ```
 
