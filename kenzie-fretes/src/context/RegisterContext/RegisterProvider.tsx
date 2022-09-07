@@ -44,15 +44,15 @@ const RegisterProvider = ({ children }: IRegisterProps) => {
   const onSubmit = (data: IRegisterData) => {
     api
       .post<IRegisterApi>("/users/register", data)
-      .then(({ data }) => {
-        navigate("/login", { replace: true });
+      .then(() => {
+        navigate("/login");
 
         toast.success(
-          "Cadastro realizado com sucesso! Você será redirecionado.",
+          "Cadastro realizado com sucesso!",
           {
             toastId: 1,
             position: "top-right",
-            autoClose: 5000,
+            autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: false,
@@ -61,11 +61,11 @@ const RegisterProvider = ({ children }: IRegisterProps) => {
           }
         );
       })
-      .catch((error) => {
-        toast.error("Verifique as informações e tente novamente.", {
+      .catch(() => {
+        toast.error("Verifique as informações e tente novamente!", {
           toastId: 1,
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: false,
@@ -74,12 +74,6 @@ const RegisterProvider = ({ children }: IRegisterProps) => {
         });
       });
   };
-
-  useEffect(() => {
-    const token = localStorage.getItem("@RCTL: Token");
-
-    token && setAuth(true);
-  }, [auth]);
 
   return (
     <RegisterContext.Provider

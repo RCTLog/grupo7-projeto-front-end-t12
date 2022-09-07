@@ -14,13 +14,13 @@ export const MainContent = styled.main`
     gap: 50px;
   }
   .main-image-buttons {
-    gap: 30px;
+    gap: 50px;
     width: 80%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    margin-bottom: 250px;
     .logo {
       width: 244px;
       height: 68px;
@@ -41,10 +41,10 @@ export const MainContent = styled.main`
       gap: 100px;
 
       .main-first-image {
-          display: block;
-          max-width: 350px;
-          max-height: 450px;
-        }
+        display: block;
+        max-width: 350px;
+        max-height: 450px;
+      }
 
       .buttons {
         width: 100%;
@@ -56,12 +56,12 @@ export const MainContent = styled.main`
       }
     }
 
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       .main-first-image {
-          display: block;
-          min-width: 450px;
-          min-height: 50px;
-        }
+        display: block;
+        min-width: 450px;
+        min-height: 50px;
+      }
     }
 
     @media (min-width: 1059px) {
@@ -101,8 +101,8 @@ export const MainContent = styled.main`
     background-color: var(--color-primary);
     width: 100%;
     min-height: 100vh;
-    
-    align-items:center;
+
+    align-items: center;
     color: var(--grey-2);
     padding: 20px 15px;
 
@@ -132,34 +132,30 @@ export const MainContent = styled.main`
       }
     }
     @media screen and (min-width: 1059px) {
-      .main-text{
+      .main-text {
         h2 {
           font-size: 1.8rem;
         }
       }
-        .text-image {
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
+      .text-image {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
-          gap: 30px;
+        gap: 30px;
 
-          .main-second-image {
-            max-height: 700px;
-            min-width: 900px;
-          }
-          p {
-            line-height: 50px;
-            color: white;
-            width: 80%;
-            font-size: 1.5rem;
-            text-align: justify;
-          }
+        .main-second-image {
+          max-height: 700px;
+          min-width: 900px;
+        }
+        p {
+          line-height: 50px;
+          color: white;
+          width: 80%;
+          font-size: 1.5rem;
+          text-align: justify;
         }
       }
     }
-
-
-    
-  
+  }
 `;
