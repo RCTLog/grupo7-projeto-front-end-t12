@@ -1,5 +1,5 @@
-import FooterDashboard from "../../components/FooterDashboard"
-import Header from "../../components/Header"
+import FooterDashboard from "../../components/FooterDashboard";
+import Header from "../../components/Header";
 
 import Container, { ContainerObjectDashboard } from "./style";
 import { ContainerInfoDashboard } from "../../components/ContainerInfoDashboard/ContainerInfoDashboard";
@@ -26,7 +26,6 @@ const Dashboard = () => {
       <div className="main">
         <Header />
         <div className="info-container">
-
           <ContainerUserDashboard />
           <ContainerInfoDashboard
             setUserPage={setUserPage}
@@ -43,4 +42,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard
+export default Dashboard;
