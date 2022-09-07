@@ -8,6 +8,7 @@ export const Container = styled.div`
   justify-content: end;
   padding: 0 5%;
   position: fixed;
+  background-color: white;
 
   align-content: center;
   align-items: center;
@@ -34,8 +35,9 @@ export const Container = styled.div`
 
     img {
       width: 50px;
-      border-radius: 50%;
-      cursor: pointer;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 100%;
     }
   }
 

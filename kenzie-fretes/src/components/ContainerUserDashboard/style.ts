@@ -9,14 +9,20 @@ export const Container = styled.section`
 
   .userImg {
     width: 150px;
-    border-radius: 50%;
-  }
+    height: 150px;
 
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 100%;
+    }
+  }
+  
   .userName {
-    font-family: "Inter";
     font-style: normal;
     font-weight: 700;
-    font-size: 35px;
+    font-size: 2rem;
     line-height: 42px;
 
     color: #eb8c5b;
