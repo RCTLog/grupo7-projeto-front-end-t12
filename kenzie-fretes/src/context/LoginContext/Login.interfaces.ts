@@ -19,7 +19,6 @@ export interface ILoginProvider {
   errors: FieldErrorsImpl<DeepRequired<ILoginData>>;
   onSubmit: (data: ILoginData) => void;
   user: IUser;
-  GetUser: () => void
 }
 
 export interface ILoginData {

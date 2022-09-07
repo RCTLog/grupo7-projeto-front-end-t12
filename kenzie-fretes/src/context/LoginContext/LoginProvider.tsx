@@ -38,7 +38,7 @@ const LoginProvider = ({ children }: ILoginProps) => {
       .post<ILoginApi>("/login/users", data)
       .then((res) => {
         setAuth(true);
-        console.log(res.data.user)
+
         setUser(res.data.user);
         window.localStorage.setItem("@RCTL: Token", res.data.accessToken);
         window.localStorage.setItem("@RCTL: UserId", res.data.user.id);
@@ -78,14 +78,8 @@ const LoginProvider = ({ children }: ILoginProps) => {
     const typeUser = localStorage.getItem("@RCTL: typeUser");
     const userEmail = localStorage.getItem("@RCTL: UserEmail");
 
-
     token && setAuth(true);
   }, [auth]);
-
-  const GetUser = async () => {
-    const currentUser = await api.get(`/users/${user.id}`);
-    console.log(currentUser)
-  }
 
   return (
     <LoginContext.Provider
@@ -98,7 +92,6 @@ const LoginProvider = ({ children }: ILoginProps) => {
         errors,
         onSubmit,
         user,
-        GetUser
       }}
     >
       {children}
