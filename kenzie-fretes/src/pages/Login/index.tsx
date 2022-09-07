@@ -6,26 +6,26 @@ import {
   Radio,
   RadioGroup,
   Tooltip,
-} from "@mui/material";
-import { AiOutlineArrowLeft } from "react-icons/ai";
-import CInput from "../../components/Input";
-import CButton from "../../components/Button";
-import { Link, Navigate } from "react-router-dom";
-import { useState } from "react";
-import { ErrorOutline, Visibility, VisibilityOff } from "@mui/icons-material";
-import { useLogin } from "../../context/LoginContext/LoginProvider";
+} from "@mui/material"
+import { AiOutlineArrowLeft } from "react-icons/ai"
+import CInput from "../../components/Input"
+import CButton from "../../components/Button"
+import { Link, Navigate } from "react-router-dom"
+import { useState } from "react"
+import { ErrorOutline, Visibility, VisibilityOff } from "@mui/icons-material"
+import { useLogin } from "../../context/LoginContext/LoginProvider"
 
-import { Container, LoginWrap } from "./style";
+import { Container, LoginWrap } from "./style"
 
-import logo from "../../assets/logo.svg";
-import cliente from "../../assets/cliente.svg";
-import fretista from "../../assets/fretista.svg";
+import logo from "../../assets/logo.svg"
+import cliente from "../../assets/cliente.svg"
+import fretista from "../../assets/fretista.svg"
 
 const Login = () => {
-  const [password, setPassword] = useState(false);
-  const [type, setType] = useState(false);
+  const [password, setPassword] = useState(false)
+  const [type, setType] = useState(false)
 
-  const { auth, register, handleSubmit, errors, onSubmit } = useLogin();
+  const { auth, register, handleSubmit, errors, onSubmit } = useLogin()
 
   return (
     <>
@@ -45,46 +45,6 @@ const Login = () => {
 
               <h2>Bem-vindo!</h2>
               <form onSubmit={handleSubmit(onSubmit)}>
-                <FormLabel id="type">Você é:</FormLabel>
-
-                <RadioGroup
-                  aria-labelledby="type"
-                  defaultValue="Motorista"
-                  sx={{ display: "inline" }}
-                >
-                  <FormControlLabel
-                    value="Motorista"
-                    control={
-                      <Radio
-                        sx={{
-                          "&.Mui-checked": {
-                            color: "var(--color-primary)",
-                          },
-                        }}
-                        {...register("typeUser")}
-                        onClick={() => setType(false)}
-                      />
-                    }
-                    label="Motorista"
-                  />
-
-                  <FormControlLabel
-                    value="Cliente"
-                    control={
-                      <Radio
-                        sx={{
-                          "&.Mui-checked": {
-                            color: "var(--color-primary)",
-                          },
-                        }}
-                        {...register("typeUser")}
-                        onClick={() => setType(true)}
-                      />
-                    }
-                    label="Cliente"
-                  />
-                </RadioGroup>
-
                 <CInput
                   variant="outlined"
                   id="email"
@@ -97,12 +57,6 @@ const Login = () => {
                         placement="right"
                         arrow
                         disableInteractive
-                        sx={{
-                          "& .MuiTooltip-popper": {
-                            width: "300px",
-                            height: "300px",
-                          },
-                        }}
                       >
                         <Icon sx={{ cursor: "default" }}>
                           <ErrorOutline color="error" />
@@ -159,7 +113,7 @@ const Login = () => {
         </Container>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
