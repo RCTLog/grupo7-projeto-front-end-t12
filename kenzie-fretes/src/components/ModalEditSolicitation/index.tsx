@@ -1,47 +1,34 @@
 import { AiOutlineClose } from "react-icons/ai";
 import Container from "./style";
-import CInput from "../Input";
 
 const ModalEditSolicitation = () => {
-
-  
   return (
     <Container>
       <div className="edit">
-        
-        <form>
         <div className="title">
           <h2>Editar solicitação</h2>
           <AiOutlineClose size={25} />
         </div>
+        <form>
           <div className="container-textarea">
-            <CInput
-              label="Descrição"
-              id="description"
-              maxRows={4}
-              placeholder="Digite a sua descrição..."
-              multiline
-              rows={4}
-            />
+              <label htmlFor="description">Descrição: </label>
+              <textarea
+                name=""
+                id="description"
+                cols={30}
+                rows={10}
+                placeholder="Digite a sua descrição..."
+              ></textarea>
           </div>
           <div className="origin-destination-container">
-            <CInput
-              type="text"
-              id="origin"
-              label="Origem"
-              variant="outlined"
-              className="input-origin"
-              placeholder="Cidade e estado de origem..."
-            />
-
-            <CInput
-              type="text"
-              id="Destination"
-              label="Destino"
-              variant="outlined"
-              className="input-destination"
-              placeholder="Cidade e estado de destino..."
-            />
+              <span className="label-input">
+                  <label htmlFor="origin">Origem: </label>
+                  <input type="text" id="origin" />
+              </span>
+              <span className="label-input">
+                  <label htmlFor="destination">Destino: </label>
+                  <input type="text" id="destination" />
+              </span>
           </div>
           <button>Salvar Alterações</button>
         </form>
@@ -50,4 +37,4 @@ const ModalEditSolicitation = () => {
   );
 };
 
-export default ModalEditSolicitation;
+export default ModalEditSolicitation
