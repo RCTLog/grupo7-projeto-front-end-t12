@@ -13,10 +13,9 @@ export const Container = styled.section`
   }
 
   .userName {
-    font-family: "Inter";
     font-style: normal;
     font-weight: 700;
-    font-size: 35px;
+    font-size: 2rem;
     line-height: 42px;
 
     color: #eb8c5b;

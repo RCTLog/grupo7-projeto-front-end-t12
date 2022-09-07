@@ -3,8 +3,7 @@ import { useLogin } from "../../context/LoginContext/LoginProvider"
 import { Container } from "./style"
 
 export const ContainerUserDashboard = () => {
-  const { user } = useLogin();
-/*   console.log(user); */
+  const { user, GetUser } = useLogin();
 
   return (
     <Container>

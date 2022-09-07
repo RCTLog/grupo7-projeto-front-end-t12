@@ -12,7 +12,7 @@ import ModalEditAnnouncement from "../components/ModalEditAnnouncement";
 const MainRoutes = () => {
   return (
     <>
-      <BrowserRouter>
+
         <Routes>
           <Route index element={<Homepage />} />
           <Route path="/login" element={<Login />} />
@@ -24,7 +24,7 @@ const MainRoutes = () => {
 
           <Route path="*" element={<ContentNotFound />} />
         </Routes>
-      </BrowserRouter>
+
     </>
   );
 };
