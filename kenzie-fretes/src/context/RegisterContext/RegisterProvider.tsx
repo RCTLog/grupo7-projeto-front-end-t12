@@ -99,7 +99,6 @@ const RegisterProvider = ({ children }: IRegisterProps) => {
         });
       });
   };
-
   useEffect(() => {
     const token = localStorage.getItem("@RCTL: Token");
 
