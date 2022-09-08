@@ -3,7 +3,7 @@ import { AiOutlineEllipsis } from "react-icons/ai";
 import { UserContext } from "../../context/UserContext/UserProvider";
 import Container from "./style";
 
-const ModalInformation = () => {
+const ModalInformation = ({ setModal }: any) => {
   const { currentUser } = useContext(UserContext);
 
   return (
@@ -19,7 +19,12 @@ const ModalInformation = () => {
           Estado: <span>{currentUser?.address?.state}</span>
         </p>
       </div>
-      <AiOutlineEllipsis size={30} />
+      <AiOutlineEllipsis
+        size={30}
+        onClick={() => {
+          setModal(1);
+        }}
+      />
     </Container>
   );
 };

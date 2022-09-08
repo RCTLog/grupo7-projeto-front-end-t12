@@ -11,24 +11,24 @@ const ModalEditSolicitation = () => {
         </div>
         <form>
           <div className="container-textarea">
-              <label htmlFor="description">Descrição: </label>
-              <textarea
-                name=""
-                id="description"
-                cols={30}
-                rows={10}
-                placeholder="Digite a sua descrição..."
-              ></textarea>
+            <label htmlFor="description">Descrição: </label>
+            <textarea
+              name=""
+              id="description"
+              cols={30}
+              rows={10}
+              placeholder="Digite a sua descrição..."
+            ></textarea>
           </div>
           <div className="origin-destination-container">
-              <span className="label-input">
-                  <label htmlFor="origin">Origem: </label>
-                  <input type="text" id="origin" />
-              </span>
-              <span className="label-input">
-                  <label htmlFor="destination">Destino: </label>
-                  <input type="text" id="destination" />
-              </span>
+            <span className="label-input">
+              <label htmlFor="origin">origem: </label>
+              <input type="text" id="origin" />
+            </span>
+            <span className="label-input">
+              <label htmlFor="destination">Destino: </label>
+              <input type="text" id="destination" />
+            </span>
           </div>
           <button>Salvar Alterações</button>
         </form>
@@ -37,4 +37,4 @@ const ModalEditSolicitation = () => {
   );
 };
 
-export default ModalEditSolicitation
+export default ModalEditSolicitation;

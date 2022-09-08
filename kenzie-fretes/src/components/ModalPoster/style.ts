@@ -1,12 +1,14 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-const Container = styled.div`
+const Container = styled.form`
   width: 100%;
   max-width: 700px;
+  height: 350px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-end;
-  gap: 0.5rem;
+  gap: 1rem;
   padding: 1rem;
   background-color: var(--grey-2);
   border-radius: 10px;
@@ -41,12 +43,40 @@ const Container = styled.div`
     border: none;
   }
 
-  @media (max-width: 450px) {
-    flex-direction: column;
-    button {
-      width: 100%;
+  .origin-destination-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: right; */
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .label-input {
+      display: flex;
+      gap: 5px;
+      align-items: center;
     }
   }
-`
+  label {
+    margin-bottom: -10px;
+    font-weight: 600;
+  }
 
-export default Container
+  input,
+  select {
+    max-width: 190px;
+    height: 35px;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    border: solid 1px black;
+  }
+
+  @media (min-width: 450px) {
+    flex-direction: column;
+    button {
+      width: 50%;
+    }
+  }
+`;
+
+export default Container;

@@ -17,6 +17,7 @@ import Announcement from "../../components/Announcement";
 import { UserContext } from "../../context/UserContext/UserProvider";
 import ModalEditAnnouncement from "../../components/ModalEditAnnouncement";
 import ModalEditAbout from "../../components/ModalEditAbout";
+import ModalEditInformation from "../../components/ModalEditInformation";
 
 const Dashboard = () => {
   const [userPage, setUserPage] = useState(1);
@@ -32,6 +33,8 @@ const Dashboard = () => {
 
   return (
     <Container>
+      {modal === 1 && <ModalEditInformation setModal={setModal} />}
+
       {modal === 3 && <ModalEditAbout setModal={setModal} />}
 
       <div className="main">
@@ -42,9 +45,11 @@ const Dashboard = () => {
             setUserPage={setUserPage}
           ></ContainerInfoDashboard>
           <ContainerObjectDashboard>
-            {userPage === 1 && <ModalInformation />}
+            {userPage === 1 && <ModalInformation setModal={setModal} />}
             {userPage === 2 && <ModalPoster />}
-            {userPage === 3 && currentUser.typeUser === "Motorista" && <ModalAbout setModal={setModal} />}
+            {userPage === 3 && currentUser.typeUser === "Motorista" && (
+              <ModalAbout setModal={setModal} />
+            )}
           </ContainerObjectDashboard>
           <Announcement />
         </div>
