@@ -100,6 +100,9 @@ const ClientPosts = () => {
                       {post.destination[0].state}
                     </p>
                   </Grid>
+                  <Grid item xs={4} sm={2}>
+                    <p>Telefone: {post.contact}</p>
+                  </Grid>
                   <Grid item xs={12} sm={4}>
                     <CButton variant="outlined">Iniciar Chat</CButton>
                   </Grid>
