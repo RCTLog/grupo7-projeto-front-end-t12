@@ -14,6 +14,7 @@ export interface ILoginProvider {
   auth: boolean;
   setAuth: React.Dispatch<React.SetStateAction<boolean>>;
   loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   register: UseFormRegister<ILoginData>;
   handleSubmit: UseFormHandleSubmit<ILoginData>;
   errors: FieldErrorsImpl<DeepRequired<ILoginData>>;

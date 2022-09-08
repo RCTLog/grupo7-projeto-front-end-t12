@@ -13,7 +13,6 @@ export interface IRegisterProps {
 export interface IRegisterProvider {
   auth: boolean
   setAuth: React.Dispatch<React.SetStateAction<boolean>>
-  loading: boolean
   register: UseFormRegister<IRegisterData>
   handleSubmit: UseFormHandleSubmit<IRegisterData>
   errors: FieldErrorsImpl<DeepRequired<IRegisterData>>
