@@ -5,7 +5,6 @@ import api from "../../services/api";
 import Container from "./styles";
 
 const ModalEditAbout = ({ setModal }: any) => {
-  const [text, setText] = useState('')
   const { currentUser, modalOpen, setModalOpen } = useContext(UserContext);
 
   const token = localStorage.getItem("@RCTL: Token")
@@ -13,7 +12,6 @@ const ModalEditAbout = ({ setModal }: any) => {
 
   const Save = (e: any) => {
     e.preventDefault()
-    console.log(e.target[0].value)
 
     api.patch(`users/${currentUser.id}`, { about: e.target[0].value }).then((res) => console.log(res)).catch((err) => console.error(err))
     setModal(null)
