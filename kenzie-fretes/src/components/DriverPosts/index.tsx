@@ -1,4 +1,4 @@
-import { PlaceOutlined } from "@mui/icons-material"
+import { PlaceOutlined } from "@mui/icons-material";
 import {
   FormControl,
   Grid,
@@ -16,9 +16,11 @@ import CustomSelect, { SelectStates } from "../Select"
 import { IServices } from "./driver.interfaces"
 import logo from "../../assets/logo.svg"
 import { Container } from "./style"
+import FooterDashboard from "../FooterDashboard"
 
 const DriverPosts = () => {
-  const { user } = useLogin()
+  const { user } = useLogin();
+
 
   const [services, setServices] = useState<IServices[]>([])
   const [loading, setLoading] = useState(true)
@@ -26,14 +28,15 @@ const DriverPosts = () => {
   const [originFilter, setOriginFilter] = useState("SP")
   const [destinationFilter, setDestinationFilter] = useState("RJ")
 
+
   useEffect(() => {
     api.get<SetStateAction<IServices[]>>("/services").then(({ data }) => {
       setTimeout(() => {
-        setLoading(false)
-        setServices(data)
-      }, 1000)
-    })
-  }, [])
+        setLoading(false);
+        setServices(data);
+      }, 1000);
+    });
+  }, []);
 
   return (
     <>
@@ -73,6 +76,7 @@ const DriverPosts = () => {
             />
           </>
         )}
+
         {services ? (
           services.map((post, index) => {
             return (
@@ -85,7 +89,6 @@ const DriverPosts = () => {
                   className="post-card"
                 >
                   <Grid item xs={12}>
-                    <p className="post-name">UserName</p>
                     <p className="post-description">{post.description}</p>
                   </Grid>
                   <Grid item xs={6} sm={4}>
@@ -104,15 +107,15 @@ const DriverPosts = () => {
                   </Grid>
                 </Grid>
               )
-            )
+            );
           })
         ) : (
           <p>Sem pedidos</p>
         )}
+        <FooterDashboard />
       </Container>
-      <Footer logo={logo} />
     </>
-  )
-}
+  );
+};
 
-export default DriverPosts
+export default DriverPosts;

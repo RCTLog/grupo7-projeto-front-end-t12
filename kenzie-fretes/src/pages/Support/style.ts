@@ -10,7 +10,6 @@ const Container = styled.div`
   align-items: center;
   color: white;
 
-
   .logo_top {
     width: 60%;
     max-width: 500px;
@@ -24,7 +23,13 @@ const Container = styled.div`
     flex-direction: column;
     gap: 20px;
     min-height: 50vh;
-    
+
+    button {
+      border: none;
+      background-color: transparent;
+      width: 100px;
+      font-size: 1.2rem;
+    }
     a {
       color: inherit;
       display: flex;
@@ -36,7 +41,6 @@ const Container = styled.div`
       display: flex;
       flex-direction: column;
       gap: 20px;
-
 
       h2 {
         display: flex;
@@ -53,8 +57,6 @@ const Container = styled.div`
       }
     }
   }
-
-
 `;
 
 export default Container;

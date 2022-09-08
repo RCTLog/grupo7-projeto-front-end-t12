@@ -1,5 +1,5 @@
 import Container from "./style";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdOutlineArrowBackIos } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
 import logo_support from "../../assets/logo_support.svg";
@@ -10,27 +10,42 @@ import perfil_vinicius from "../../assets/perfil_vinicius.svg";
 import perfil_lucas from "../../assets/perfil_lucas.svg";
 import LinkGit from "../../components/LinkGit";
 import Footer from "../../components/Footer";
+import { useLogin } from "../../context/LoginContext/LoginProvider";
 
 const Support = () => {
+  const navigate = useNavigate();
+
+  const { auth } = useLogin();
+
+  const handleLink = () => {
+    if (auth) {
+      navigate("/dashboard");
+    } else {
+      navigate("/");
+    }
+  };
+
   return (
     <Container>
-      <img className="logo_top"  src={logo_support} alt="logo-rctlog" />
+      <img className="logo_top" src={logo_support} alt="logo-rctlog" />
 
       <div className="main">
-        <Link to={"/"} >
-          <MdOutlineArrowBackIos /> Inicio
-        </Link>
+        <button onClick={() => handleLink()}>
+          <MdOutlineArrowBackIos /> Voltar
+        </button>
 
         <div className="dev-list">
-          <h2><AiFillGithub size={60} /> Desenvolvido por:</h2>
+          <h2>
+            <AiFillGithub size={60} /> Desenvolvido por:
+          </h2>
 
           <div className="devs">
-            <LinkGit 
-              src={perfil_christian} 
-              alt="Christian Gall" 
+            <LinkGit
+              src={perfil_christian}
+              alt="Christian Gall"
               href="https://github.com/Christ1anGall"
             />
-            
+
             <LinkGit
               src={perfil_gabriel}
               alt="Gabriel Fray"
@@ -56,12 +71,10 @@ const Support = () => {
             />
           </div>
         </div>
-
       </div>
       <Footer logo={logo_support} />
-
     </Container>
-  )
-}
+  );
+};
 
 export default Support;
