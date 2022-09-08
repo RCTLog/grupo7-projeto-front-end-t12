@@ -42,7 +42,7 @@ const Dashboard = () => {
           <ContainerObjectDashboard>
             {userPage === 1 && <ModalInformation />}
             {userPage === 2 && <ModalPoster />}
-            {userPage === 3 && <ModalAbout setModal={setModal} />}
+            {userPage === 3 && currentUser.typeUser === "Motorista" && <ModalAbout setModal={setModal} />}
           </ContainerObjectDashboard>
         </div>
       </div>
