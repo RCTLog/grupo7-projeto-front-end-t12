@@ -32,9 +32,10 @@ const Header = () => {
               ? navigate("../dashboard/driver/posts", { replace: true })
               : navigate("../dashboard/client/posts", { replace: true })
           }
+          className="home"
         />
-        <MdOutlineEmail />
-        <BsBell />
+        <MdOutlineEmail className="email"/>
+        <BsBell className="bell"/>
         <img
           src={currentUser?.userImg ? currentUser?.userImg : imgUser}
           alt=""
@@ -48,6 +49,7 @@ const Header = () => {
             setAuth(false);
             navigate("../login", { replace: true });
           }}
+          className="door"
         />
       </div>
     </Container>

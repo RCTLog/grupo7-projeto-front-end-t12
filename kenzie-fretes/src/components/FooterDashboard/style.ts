@@ -6,6 +6,9 @@ export const Container = styled.div`
   border-top: 2px solid #c7c7c7;
   max-height: 80px;
 
+  animation: fadeInUpBig 1.5s ;
+
+
   .flex {
     display: flex;
     gap: 5px;
@@ -33,6 +36,12 @@ export const Container = styled.div`
       gap: 5px;
       align-items: center;
 
+      .face:hover {
+        animation: wobble 1s infinite;
+      }
+      .insta:hover {
+        animation: wobble 1s infinite;
+      }
       a {
         color: inherit;
       }
@@ -43,6 +52,7 @@ export const Container = styled.div`
     .contact {
       display: flex;
       justify-content: space-between;
+      font-weight: 600;
     }
   }
 

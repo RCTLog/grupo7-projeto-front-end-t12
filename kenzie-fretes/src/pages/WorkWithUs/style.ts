@@ -12,6 +12,8 @@ const Container = styled.div`
     max-width: 500px;
     min-height: 8vh;
     margin-bottom: 1rem;
+
+    animation: fadeInDown 1s;
   }
 
   .main {
@@ -20,7 +22,9 @@ const Container = styled.div`
     flex-direction: column;
     gap: 20px;
     min-height: 50vh;
-    
+
+    animation: fadeIn 1s;
+
     button {
       color: var(--chinese-black);
       border: none;

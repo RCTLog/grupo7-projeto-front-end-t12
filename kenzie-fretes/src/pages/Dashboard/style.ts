@@ -7,6 +7,8 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
+  animation: fadeIn 1s;
+
   .main {
     width: 100%;
     display: flex;

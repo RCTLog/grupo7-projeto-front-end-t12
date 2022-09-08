@@ -15,6 +15,9 @@ const Container = styled.div`
     max-width: 500px;
     min-height: 8vh;
     margin-bottom: 1rem;
+
+    animation: fadeInDown 1s;
+
   }
 
   .main {
@@ -29,6 +32,8 @@ const Container = styled.div`
       background-color: transparent;
       width: 100px;
       font-size: 1.2rem;
+
+      animation: fadeInLeft 1s;
     }
     a {
       color: inherit;
@@ -42,6 +47,8 @@ const Container = styled.div`
       flex-direction: column;
       gap: 20px;
 
+      animation: fadeInLeft 1s;
+
       h2 {
         display: flex;
         align-items: center;
@@ -54,6 +61,8 @@ const Container = styled.div`
         flex-direction: column;
         gap: 20px;
         margin-left: 5px;
+
+        animation: fadeInLeft 1s;
       }
     }
   }
