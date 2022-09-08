@@ -8,7 +8,7 @@ export const Container = styled.section`
   gap: 37px;
 
   .userImg {
-    width: 150px;
+    min-width: 150px;
     height: 150px;
 
     img {
