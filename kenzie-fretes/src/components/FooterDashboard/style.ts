@@ -1,10 +1,10 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
-
   width: 100%;
   padding: 1rem 5%;
   border-top: 2px solid #c7c7c7;
+  max-height: 80px;
 
   .flex {
     display: flex;
@@ -25,7 +25,6 @@ export const Container = styled.div`
         justify-content: center;
         gap: 5px;
         color: inherit;
-
       }
     }
 
@@ -85,4 +84,4 @@ export const Container = styled.div`
       flex-direction: column;
     }
   }
-`
+`;

@@ -1,18 +1,15 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-
+  height: 100vh;
   overflow: hidden;
-  padding: 20px 0;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 40px;
-
-  padding-top: 130px;
 
   .filters {
     max-width: 728px;
@@ -47,4 +44,4 @@ export const Container = styled.div`
       font-weight: 600;
     }
   }
-`
+`;
