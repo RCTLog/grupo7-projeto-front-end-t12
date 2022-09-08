@@ -1,4 +1,5 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useContext } from "react";
+import { UserContext } from "../../context/UserContext/UserProvider";
 import { Container } from "./style";
 
 interface IUserPage {
@@ -6,6 +7,8 @@ interface IUserPage {
 }
 
 export const ContainerInfoDashboard = ({ setUserPage }: IUserPage) => {
+  const { currentUser } = useContext(UserContext);
+ 
   return (
     <Container>
       <p
@@ -22,13 +25,15 @@ export const ContainerInfoDashboard = ({ setUserPage }: IUserPage) => {
       >
         Anúncios
       </p>
-      <p
-        onClick={() => {
-          setUserPage(3);
-        }}
-      >
-        Sobre
-      </p>
+      {currentUser && currentUser.typeUser === "Motorista" &&  
+        <p
+          onClick={() => {
+            setUserPage(3);
+          }}
+        >
+          Sobre
+        </p>
+      }
     </Container>
   );
 };

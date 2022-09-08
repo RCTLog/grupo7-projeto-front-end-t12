@@ -21,11 +21,13 @@ import FooterDashboard from "../FooterDashboard"
 const DriverPosts = () => {
   const { user } = useLogin();
 
-  const [services, setServices] = useState<IServices[]>([]);
-  const [loading, setLoading] = useState(true);
 
-  const [originFilter, setOriginFilter] = useState("SP");
-  const [destinationFilter, setDestinationFilter] = useState("RJ");
+  const [services, setServices] = useState<IServices[]>([])
+  const [loading, setLoading] = useState(true)
+  const [modal, setModal] = useState(false)
+  const [originFilter, setOriginFilter] = useState("SP")
+  const [destinationFilter, setDestinationFilter] = useState("RJ")
+
 
   useEffect(() => {
     api.get<SetStateAction<IServices[]>>("/services").then(({ data }) => {
@@ -78,7 +80,7 @@ const DriverPosts = () => {
         {services ? (
           services.map((post, index) => {
             return (
-              post.typeUser !== user.typeUser && (
+              post.typeUser === "Cliente" && (
                 <Grid
                   container
                   rowSpacing={2}

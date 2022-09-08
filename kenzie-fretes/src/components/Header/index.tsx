@@ -14,6 +14,7 @@ import { TiHomeOutline } from "react-icons/ti";
 import { useMain } from "../../context/MainContext/MainProvider";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext/UserProvider";
+import imgUser from "../../assets/user.png"
 
 const Header = () => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const Header = () => {
         <MdOutlineEmail />
         <BsBell />
         <img
-          src={currentUser?.userImg}
+          src={currentUser?.userImg ? currentUser?.userImg : imgUser}
           alt=""
           onClick={() => {
             navigate("../dashboard");

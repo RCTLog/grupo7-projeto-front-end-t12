@@ -11,6 +11,9 @@ import ModalAbout from "../../components/ModalAbout";
 import { useNavigate } from "react-router-dom";
 import { useLogin } from "../../context/LoginContext/LoginProvider";
 import ModalEditSolicitation from "../../components/ModalEditSolicitation";
+
+import Announcement from "../../components/Announcement";
+
 import { UserContext } from "../../context/UserContext/UserProvider";
 import ModalEditAnnouncement from "../../components/ModalEditAnnouncement";
 import ModalEditAbout from "../../components/ModalEditAbout";
@@ -44,8 +47,11 @@ const Dashboard = () => {
           <ContainerObjectDashboard>
             {userPage === 1 && <ModalInformation setModal={setModal} />}
             {userPage === 2 && <ModalPoster />}
-            {userPage === 3 && <ModalAbout setModal={setModal} />}
+            {userPage === 3 && currentUser.typeUser === "Motorista" && (
+              <ModalAbout setModal={setModal} />
+            )}
           </ContainerObjectDashboard>
+          <Announcement />
         </div>
       </div>
       <FooterDashboard />
