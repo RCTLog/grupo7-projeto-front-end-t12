@@ -11,11 +11,13 @@ import ModalAbout from "../../components/ModalAbout";
 import { useNavigate } from "react-router-dom";
 import { useLogin } from "../../context/LoginContext/LoginProvider";
 import ModalEditSolicitation from "../../components/ModalEditSolicitation";
-import Announcement from "../../components/Announcement";
+// import Announcement from "../../components/Announcement";
 import { UserContext } from "../../context/UserContext/UserProvider";
 import ModalEditAnnouncement from "../../components/ModalEditAnnouncement";
 import ModalEditAbout from "../../components/ModalEditAbout";
 import ModalEditInformation from "../../components/ModalEditInformation";
+// import ModalEditSolicitation from "../../components/ModalEditSolicitation";
+
 
 const Dashboard = () => {
   const [userPage, setUserPage] = useState(1);
@@ -32,7 +34,7 @@ const Dashboard = () => {
   return (
     <Container>
       {modal === 1 && <ModalEditInformation setModal={setModal} />}
-
+      {modal === 2 && <ModalEditSolicitation setModal={setModal}/>}
       {modal === 3 && <ModalEditAbout setModal={setModal} />}
 
       <div className="main">
@@ -48,8 +50,11 @@ const Dashboard = () => {
             {userPage === 3 && currentUser.typeUser === "Motorista" && (
               <ModalAbout setModal={setModal} />
             )}
+            {/* {userPage === 4 && currentUser.typeUser === "Cliente" && (
+
+            )} */}
           </ContainerObjectDashboard>
-          <Announcement />
+          
         </div>
       </div>
       <FooterDashboard />
