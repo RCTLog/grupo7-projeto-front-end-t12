@@ -1,15 +1,15 @@
-import * as React from "react";
-import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
-import { AiOutlineEllipsis } from "react-icons/ai";
-import { useState } from "react";
+import * as React from "react"
+import Button from "@mui/material/Button"
+import Menu from "@mui/material/Menu"
+import MenuItem from "@mui/material/MenuItem"
+import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state"
+import { AiOutlineEllipsis } from "react-icons/ai"
+import { useState } from "react"
 
 export default function AnnouncementMenu() {
   const [modal, setModal] = useState(false)
 
-  function modalOpen(){
+  function modalOpen() {
     setModal(true)
   }
 
@@ -26,11 +26,17 @@ export default function AnnouncementMenu() {
             <AiOutlineEllipsis size={30} style={{ color: "black" }} />
           </Button>
           <Menu {...bindMenu(popupState)}>
-            <MenuItem onClick={()=>{popupState.close, setModal(true)}}>Editar</MenuItem>
+            <MenuItem
+              onClick={() => {
+                popupState.close, setModal(true)
+              }}
+            >
+              Editar
+            </MenuItem>
             <MenuItem onClick={popupState.close}>Deletar</MenuItem>
           </Menu>
         </React.Fragment>
       )}
     </PopupState>
-  );
+  )
 }
