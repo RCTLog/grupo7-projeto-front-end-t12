@@ -9,8 +9,8 @@ const Container = styled.div`
   align-items: center;
   background-color: rgba(18, 18, 20, 0.5);
   color: var(--color-gray-0);
-  z-index: 100;
-  backdrop-filter: blur(20px);
+  z-index: 5;
+  backdrop-filter: blur(5px);
 
   .edit {
     width: 90vw;

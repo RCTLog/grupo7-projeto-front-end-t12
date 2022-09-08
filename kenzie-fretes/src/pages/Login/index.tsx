@@ -10,8 +10,8 @@ import {
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import CInput from "../../components/Input";
 import CButton from "../../components/Button";
-import { Link, Navigate } from "react-router-dom";
-import { useState } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useRef, useState } from "react";
 import { ErrorOutline, Visibility, VisibilityOff } from "@mui/icons-material";
 import { useLogin } from "../../context/LoginContext/LoginProvider";
 
@@ -25,7 +25,18 @@ const Login = () => {
   const [password, setPassword] = useState(false);
   const [type, setType] = useState(false);
 
+  const navigate = useNavigate();
+
   const { auth, register, handleSubmit, errors, onSubmit } = useLogin();
+
+  const box = useRef<HTMLDivElement>(null);
+
+  const handleOut = () => {
+    box.current?.classList.add("animate__animated", "animate__bounceOut");
+    setTimeout(() => {
+      navigate("/register");
+    }, 500);
+  };
 
   return (
     <>
@@ -33,7 +44,7 @@ const Login = () => {
         <Navigate to={"/dashboard"} />
       ) : (
         <Container>
-          <div className="login-container">
+          <div ref={box} className="login-container">
             <LoginWrap>
               <Link to="/">
                 <IconButton sx={{ width: "40px", height: "40px" }}>
@@ -45,51 +56,11 @@ const Login = () => {
 
               <h2>Bem-vindo!</h2>
               <form onSubmit={handleSubmit(onSubmit)}>
-                <FormLabel id="type">Você é:</FormLabel>
-
-                <RadioGroup
-                  aria-labelledby="type"
-                  defaultValue="Motorista"
-                  sx={{ display: "inline" }}
-                >
-                  <FormControlLabel
-                    value="Motorista"
-                    control={
-                      <Radio
-                        sx={{
-                          "&.Mui-checked": {
-                            color: "var(--color-primary)",
-                          },
-                        }}
-                        {...register("typeUser")}
-                        onClick={() => setType(false)}
-                      />
-                    }
-                    label="Motorista"
-                  />
-
-                  <FormControlLabel
-                    value="Cliente"
-                    control={
-                      <Radio
-                        sx={{
-                          "&.Mui-checked": {
-                            color: "var(--color-primary)",
-                          },
-                        }}
-                        {...register("typeUser")}
-                        onClick={() => setType(true)}
-                      />
-                    }
-                    label="Cliente"
-                  />
-                </RadioGroup>
-
                 <CInput
                   variant="outlined"
                   id="email"
                   placeholder="Digite seu e-mail"
-                  label="E-mail:"
+                  label="E-mail"
                   InputProps={{
                     endAdornment: errors.email && (
                       <Tooltip
@@ -97,12 +68,6 @@ const Login = () => {
                         placement="right"
                         arrow
                         disableInteractive
-                        sx={{
-                          "& .MuiTooltip-popper": {
-                            width: "300px",
-                            height: "300px",
-                          },
-                        }}
                       >
                         <Icon sx={{ cursor: "default" }}>
                           <ErrorOutline color="error" />
@@ -118,7 +83,7 @@ const Login = () => {
                   variant="outlined"
                   id="password"
                   placeholder="Digite sua senha"
-                  label="Senha:"
+                  label="Senha"
                   type={password ? "text" : "password"}
                   InputProps={{
                     endAdornment: errors.password?.message ? (
@@ -134,7 +99,7 @@ const Login = () => {
                       </Tooltip>
                     ) : (
                       <IconButton onClick={() => setPassword(!password)}>
-                        {password ? <VisibilityOff /> : <Visibility />}
+                        {password ? <Visibility /> : <VisibilityOff />}
                       </IconButton>
                     ),
                   }}
@@ -146,9 +111,9 @@ const Login = () => {
                   Login
                 </CButton>
 
-                <p>Ainda não possui uma conta?</p>
                 <p>
-                  <Link to="/register">Clique aqui</Link> e cadastre-se
+                  Ainda não possui uma conta?{" "}
+                  <span onClick={handleOut}>Clique aqui</span> e cadastre-se
                 </p>
               </form>
             </LoginWrap>

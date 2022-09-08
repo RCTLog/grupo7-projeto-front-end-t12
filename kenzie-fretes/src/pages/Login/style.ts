@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import styled from "styled-components";
+import 'animate.css';
 
 export const Container = styled.div`
   width: 100%;
@@ -26,6 +27,8 @@ export const Container = styled.div`
 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
 
+    animation: jackInTheBox 1.5s;
+
     .login-image {
       display: none;
       width: 50%;
@@ -50,7 +53,7 @@ export const Container = styled.div`
       }
     }
   }
-`
+`;
 
 export const LoginWrap = styled.div`
   width: 100%;
@@ -72,9 +75,11 @@ export const LoginWrap = styled.div`
     gap: 20px;
 
     p {
-      text-align: center;
-      a {
+      text-align: start;
+      font-size: 16px;
+      span {
         color: var(--links);
+        cursor: pointer;
       }
     }
   }
@@ -82,4 +87,4 @@ export const LoginWrap = styled.div`
   @media (min-width: 1280px) {
     width: 50%;
   }
-`
+`;

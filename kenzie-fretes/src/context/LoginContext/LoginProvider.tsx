@@ -38,17 +38,18 @@ const LoginProvider = ({ children }: ILoginProps) => {
       .post<ILoginApi>("/login/users", data)
       .then((res) => {
         setAuth(true);
-        console.log(res)
+
+        setUser(res.data.user);
         window.localStorage.setItem("@RCTL: Token", res.data.accessToken);
         window.localStorage.setItem("@RCTL: UserId", res.data.user.id);
         window.localStorage.setItem("@RCTL: Username", res.data.user.name);
         window.localStorage.setItem("@RCTL: typeUser", res.data.user.typeUser);
         window.localStorage.setItem("@RCTL: UserEmail", res.data.user.email);
 
-        toast.success("Login realizado com sucesso! Você será redirecionado.", {
+        toast.success("Login realizado com sucesso!", {
           toastId: 1,
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: false,
@@ -56,11 +57,11 @@ const LoginProvider = ({ children }: ILoginProps) => {
           progress: undefined,
         });
       })
-      .catch((error) => {
-        toast.error("Login ou senha inválidos.", {
+      .catch(() => {
+        toast.error("Login ou senha inválidos!", {
           toastId: 1,
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: false,
@@ -76,13 +77,6 @@ const LoginProvider = ({ children }: ILoginProps) => {
     const userName = localStorage.getItem("@RCTL: Username");
     const typeUser = localStorage.getItem("@RCTL: typeUser");
     const userEmail = localStorage.getItem("@RCTL: UserEmail");
-
-    setUser({
-      id: `${userId}`,
-      email: `${userEmail}`,
-      name: `${userName}`,
-      typeUser: `${typeUser}`,
-    });
 
     token && setAuth(true);
   }, [auth]);

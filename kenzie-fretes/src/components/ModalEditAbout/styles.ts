@@ -9,11 +9,12 @@ const Container = styled.div`
   align-items: center;
   background-color: rgba(18, 18, 20, 0.5);
   color: var(--color-gray-0);
-  z-index: 1;
-  backdrop-filter: blur(1.25rem);
+  z-index: 5;
+  backdrop-filter: blur(3px);
 
   .edit {
-    width: 40rem;
+    width: 90%;
+    max-width: 40rem;
     height: 17.625rem;
     background-color: var(--grey-2);
     border-radius: .3125rem;
@@ -51,7 +52,8 @@ const Container = styled.div`
       }
 
       button {
-        width: 324px;
+        width: 90%;
+        max-width: 324px;
         height: 40px;
         padding: 0.8rem;
         border-radius: 0.5rem;

@@ -1,15 +1,17 @@
-import userImg from "../../assets/no-image-user.jpg"
-import { useLogin } from "../../context/LoginContext/LoginProvider"
-import { Container } from "./style"
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext/UserProvider";
+import { Container } from "./style";
+import imgUser from "../../assets/user.png"
 
 export const ContainerUserDashboard = () => {
-  const { user } = useLogin();
-/*   console.log(user); */
+  const { currentUser } = useContext(UserContext);
 
   return (
     <Container>
-      <img className="userImg" src={userImg} alt="" />
-      <h2 className="userName">{user.name}</h2>
+      <figure className="userImg">
+        <img src={currentUser?.userImg ? currentUser?.userImg : imgUser} alt="" />
+      </figure>
+      <h2 className="userName">{currentUser?.name}</h2>
     </Container>
-  )
-}
+  );
+};

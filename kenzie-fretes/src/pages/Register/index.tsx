@@ -1,41 +1,32 @@
-import "./style";
+import "./style"
 import {
   FormControlLabel,
   FormLabel,
+  Icon,
   IconButton,
   Radio,
   RadioGroup,
-} from "@mui/material";
-import CInput from "../../components/Input";
-import CButton from "../../components/Button";
-import { Link, Navigate } from "react-router-dom";
-import { useState } from "react";
-import { useRegister } from "../../context/RegisterContext/RegisterProvider";
+  Tooltip,
+} from "@mui/material"
+import CInput from "../../components/Input"
+import CButton from "../../components/Button"
+import { Link, Navigate } from "react-router-dom"
+import { useState } from "react"
+import { useRegister } from "../../context/RegisterContext/RegisterProvider"
 
-import { Container, RegisterWrap } from "./style";
+import { Container, RegisterWrap } from "./style"
 
-import logo from "../../assets/logo.svg";
-import cliente_register from "../../assets/cliente_register.svg";
-import fretista_register from "../../assets/fretista_register.svg";
-import arrowBack from "../../assets/arrowBack.svg";
+import logo from "../../assets/logo.svg"
+import cliente_register from "../../assets/cliente_register.svg"
+import fretista_register from "../../assets/fretista_register.svg"
+import arrowBack from "../../assets/arrowBack.svg"
+import { ErrorOutline, Visibility, VisibilityOff } from "@mui/icons-material"
 
 const Register = () => {
-  const [password, setPassword] = useState(false);
-  const [passwordConfirm, setPasswordConfirm] = useState(false);
-  const [type, setType] = useState(false);
+  const [type, setType] = useState(false)
 
-  const {
-    emailError,
-    nameError,
-    passError,
-    auth,
-    setAuth,
-    loading,
-    register,
-    handleSubmit,
-    errors,
-    onSubmit,
-  } = useRegister();
+  const { auth, setAuth, loading, register, handleSubmit, errors, onSubmit } =
+    useRegister()
 
   return (
     <>
@@ -43,7 +34,7 @@ const Register = () => {
         <Navigate to={"/login"} />
       ) : (
         <Container>
-          <div className="register-container">
+          <div className="register-container animate__animated animate__fadeIn">
             <RegisterWrap>
               <Link to={"/login"}>
                 <img className="arrowBack" src={arrowBack} alt="voltar" />{" "}
@@ -96,9 +87,22 @@ const Register = () => {
                   variant="outlined"
                   id="name"
                   placeholder="Digite seu nome"
-                  label="Nome:"
-                  error={nameError}
-                  helperText={errors.name?.message}
+                  label="Nome"
+                  error={errors.name && true}
+                  InputProps={{
+                    endAdornment: errors.name && (
+                      <Tooltip
+                        title={`${errors.name?.message}`}
+                        placement="right"
+                        arrow
+                        disableInteractive
+                      >
+                        <Icon sx={{ cursor: "default" }}>
+                          <ErrorOutline color="error" />
+                        </Icon>
+                      </Tooltip>
+                    ),
+                  }}
                   {...register("name")}
                 />
 
@@ -106,9 +110,22 @@ const Register = () => {
                   variant="outlined"
                   id="email"
                   placeholder="Digite seu e-mail"
-                  label="E-mail:"
-                  error={emailError}
-                  helperText={errors.email?.message}
+                  label="E-mail"
+                  error={errors.email && true}
+                  InputProps={{
+                    endAdornment: errors.email && (
+                      <Tooltip
+                        title={`${errors.email?.message}`}
+                        placement="right"
+                        arrow
+                        disableInteractive
+                      >
+                        <Icon sx={{ cursor: "default" }}>
+                          <ErrorOutline color="error" />
+                        </Icon>
+                      </Tooltip>
+                    ),
+                  }}
                   {...register("email")}
                 />
 
@@ -116,10 +133,23 @@ const Register = () => {
                   variant="outlined"
                   id="password"
                   placeholder="Digite sua senha"
-                  label="Senha:"
-                  type={password ? "text" : "password"}
-                  error={passError}
-                  helperText={errors.password?.message}
+                  label="Senha"
+                  type={"password"}
+                  error={errors.password && true}
+                  InputProps={{
+                    endAdornment: errors.password && (
+                      <Tooltip
+                        title={`${errors.password?.message}`}
+                        placement="right"
+                        arrow
+                        disableInteractive
+                      >
+                        <Icon sx={{ cursor: "default" }}>
+                          <ErrorOutline color="error" />
+                        </Icon>
+                      </Tooltip>
+                    ),
+                  }}
                   {...register("password")}
                 />
 
@@ -127,10 +157,23 @@ const Register = () => {
                   variant="outlined"
                   id="passwordConfirm"
                   placeholder="Digite sua senha"
-                  label="Confirmação de senha:"
-                  type={passwordConfirm ? "text" : "password"}
-                  error={passwordConfirm}
-                  helperText={errors.passwordConfirm?.message}
+                  label="Confirmação de senha"
+                  type={"password"}
+                  error={errors.passwordConfirm && true}
+                  InputProps={{
+                    endAdornment: errors.passwordConfirm && (
+                      <Tooltip
+                        title={`${errors.passwordConfirm?.message}`}
+                        placement="right"
+                        arrow
+                        disableInteractive
+                      >
+                        <Icon sx={{ cursor: "default" }}>
+                          <ErrorOutline color="error" />
+                        </Icon>
+                      </Tooltip>
+                    ),
+                  }}
                   {...register("passwordConfirm")}
                 />
 
@@ -150,7 +193,7 @@ const Register = () => {
         </Container>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Register;
+export default Register

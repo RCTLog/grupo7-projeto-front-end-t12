@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 const Container = styled.div`
   width: 100vw;
@@ -6,7 +6,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
+  animation: fadeIn 1s;
+
   .main {
     width: 100%;
     display: flex;
@@ -31,5 +33,4 @@ export const ContainerObjectDashboard = styled.section`
   padding: 1rem;
   display: flex;
   justify-content: center;
-
-`;
+`

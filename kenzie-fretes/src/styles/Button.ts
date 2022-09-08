@@ -10,6 +10,8 @@ background-color: var(--color-secundary);
 color: var(--grey-2);
 font-size: 20px;
 font-weight: bold;
-font-family: 'Inter', sans-serif; 
 border: 0;
+:hover{
+    animation: pulse 1s infinite;
+}
 `
