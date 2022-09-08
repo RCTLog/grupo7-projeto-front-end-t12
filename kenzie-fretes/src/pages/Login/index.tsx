@@ -99,7 +99,7 @@ const Login = () => {
                       </Tooltip>
                     ) : (
                       <IconButton onClick={() => setPassword(!password)}>
-                        {password ? <VisibilityOff /> : <Visibility />}
+                        {password ? <Visibility /> : <VisibilityOff />}
                       </IconButton>
                     ),
                   }}
@@ -111,7 +111,10 @@ const Login = () => {
                   Login
                 </CButton>
 
-                <p>Ainda não possui uma conta? <span onClick={handleOut}>Clique aqui</span> e cadastre-se</p>
+                <p>
+                  Ainda não possui uma conta?{" "}
+                  <span onClick={handleOut}>Clique aqui</span> e cadastre-se
+                </p>
               </form>
             </LoginWrap>
             <div className="login-image">

@@ -1,4 +1,4 @@
-import { Button, styled } from "@mui/material"
+import { Button, styled } from "@mui/material";
 
 const CButton = styled(Button)({
   "&.MuiButton-contained": {
@@ -7,6 +7,7 @@ const CButton = styled(Button)({
     width: "100%",
     "&:hover": {
       backgroundColor: "var(--color-secundary-50)",
+      animation: "pulse 1s infinite",
     },
   },
   "&.MuiButton-outlined": {
@@ -19,6 +20,6 @@ const CButton = styled(Button)({
       color: "#fff",
     },
   },
-})
+});
 
-export default CButton
+export default CButton;

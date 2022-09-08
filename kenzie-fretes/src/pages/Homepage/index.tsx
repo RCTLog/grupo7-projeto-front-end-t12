@@ -1,12 +1,13 @@
-import React, { useRef } from "react";
-import { MainContent } from "./styles";
+import React, { useRef, useState } from "react";
+import { ContentImage, MainContent } from "./styles";
 import FirstImage from "../../assets/FirstImage.svg";
 import Logo from "../../assets/logo.svg";
 import SecondImage from "../../assets/SecondImage.svg";
 import { Button } from "../../styles/Button";
-
+import entregador from "../../assets/entregador.json";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
+import Lottie from "react-lottie";
 
 export const Homepage = () => {
   let navigate = useNavigate();
@@ -20,17 +21,29 @@ export const Homepage = () => {
     });
   };
 
+  const [animateState] = useState({ isStopped: false, isPaused: false });
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: entregador,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   return (
     <>
       <MainContent>
         <div className="main-image-buttons">
           <img src={Logo} alt="logo" className="logo" />
           <div className="image-buttons">
-            <img
-              src={FirstImage}
-              alt="Imagem de uma pessoa segurando uma caixa"
-              className="main-first-image"
-            />
+            <ContentImage>
+              <Lottie
+                options={defaultOptions}
+                isStopped={animateState.isStopped}
+                isPaused={animateState.isPaused}
+              />
+            </ContentImage>
             <div className="buttons">
               <Button onClick={gotoSobre}>Sobre</Button>
               <Button onClick={() => navigate("../login", { replace: true })}>
@@ -45,9 +58,10 @@ export const Homepage = () => {
           </div>
         </div>
         <div className="main-text" ref={sobreRef}>
-          <h2>SOBRE</h2>
+          
           <div className="text-image">
             <p>
+          <h2>SOBRE</h2>
               A RTCLog é uma plataforma voltada para motoristas se cadastrarem e
               oferecerem seus serviços de transporte, e ao mesmo tempo, para o
               cliente final que busca por esses serviços, ter a facilidade em
