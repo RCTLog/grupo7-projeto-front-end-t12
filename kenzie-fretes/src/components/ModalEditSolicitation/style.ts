@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 const Container = styled.div`
   width: 100vw;
@@ -21,7 +21,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     box-shadow: 2px 4px 4px var(--grey-0);
 
     .title {
@@ -41,14 +41,14 @@ const Container = styled.div`
       flex-direction: column;
       gap: 1.5rem;
       width: 90%;
-      align-items:center;
+      align-items: center;
       .container-textarea {
         display: flex;
         flex-direction: column;
         width: 100%;
         align-items: center;
-        gap:19px;
-        
+        gap: 19px;
+
         textarea {
           resize: none;
           border-radius: 0.5rem;
@@ -59,41 +59,18 @@ const Container = styled.div`
         display: flex;
         flex-wrap: wrap;
         /* justify-content: right; */
-        gap: 10px;  
+        gap: 10px;
         align-items: center;
-        justify-content:space-between;
+        justify-content: space-between;
         width: 100%;
-        .label-input{
-            display:flex;
-            gap:5px;
-            align-items: center;
+        .label-input {
+          display: flex;
+          gap: 5px;
+          align-items: center;
         }
-      }
-      label {
-        margin-bottom: -10px;
-        font-weight: 600;
-      }
-
-      input,
-      select {
-        max-width: 190px;
-        height: 35px;
-        padding: 0.8rem;
-        border-radius: 0.5rem;
-        border: solid 1px black;
-      }
-
-      button {
-        cursor: pointer;
-        min-width: 250px;
-        padding: 0.8rem;
-        border-radius: 0.5rem;
-        background-color: var(--color-secundary);
-        border: none;
-        box-shadow: 2px 4px 4px var(--grey-0);
       }
     }
   }
-`;
+`
 
-export default Container;
+export default Container

@@ -18,6 +18,9 @@ import ModalEditInformation from "../../components/ModalEditInformation"
 import UserPosts from "../../components/UserPosts"
 
 const Dashboard = () => {
+  const [reload, setReload] = useState(false)
+  const [postId, setPostId] = useState(0)
+
   const [userPage, setUserPage] = useState(1)
   const [modal, setModal] = useState(null)
   const navigate = useNavigate()
@@ -32,7 +35,14 @@ const Dashboard = () => {
   return (
     <Container>
       {modal === 1 && <ModalEditInformation setModal={setModal} />}
-      {modal === 2 && <ModalEditSolicitation setModal={setModal} />}
+      {modal === 2 && (
+        <ModalEditSolicitation
+          setModal={setModal}
+          postId={postId}
+          reload={reload}
+          setReload={setReload}
+        />
+      )}
       {modal === 3 && <ModalEditAbout setModal={setModal} />}
 
       <div className="main">
@@ -46,8 +56,14 @@ const Dashboard = () => {
             {userPage === 1 && <ModalInformation setModal={setModal} />}
             {userPage === 2 && (
               <>
-                <ModalPoster />
-                <UserPosts />
+                <ModalPoster setReload={setReload} reload={reload} />
+                <UserPosts
+                  setReload={setReload}
+                  reload={reload}
+                  setModal={setModal}
+                  postId={postId}
+                  setPostId={setPostId}
+                />
               </>
             )}
             {userPage === 3 && currentUser.typeUser === "Motorista" && (
