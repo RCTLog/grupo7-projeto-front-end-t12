@@ -13,12 +13,12 @@ import CButton from "../Button";
 import Footer from "../Footer";
 import Header from "../Header";
 import CustomSelect, { SelectStates } from "../Select";
-import { IServices } from "./driver.interfaces";
+import { IServices } from "./Client.interfaces";
 import logo from "../../assets/logo.svg";
 import { Container } from "./style";
 import FooterDashboard from "../FooterDashboard";
 
-const DriverPosts = () => {
+const ClientPosts = () => {
   const { user } = useLogin();
 
   const [services, setServices] = useState<IServices[]>([]);
@@ -78,7 +78,7 @@ const DriverPosts = () => {
         {services ? (
           services.map((post, index) => {
             return (
-              post.typeUser === "Cliente" && (
+              post.typeUser === "Motorista" && (
                 <Grid
                   container
                   rowSpacing={2}
@@ -116,4 +116,4 @@ const DriverPosts = () => {
   );
 };
 
-export default DriverPosts;
+export default ClientPosts;
