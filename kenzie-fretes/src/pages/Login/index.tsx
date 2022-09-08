@@ -32,7 +32,7 @@ const Login = () => {
   const box = useRef<HTMLDivElement>(null);
 
   const handleOut = () => {
-    box.current?.classList.add("animate__animated", "animate__fadeOut");
+    box.current?.classList.add("animate__animated", "animate__bounceOut");
     setTimeout(() => {
       navigate("/register");
     }, 500);

@@ -28,12 +28,12 @@ const Footer = ({logo}: IFooter) => {
         <div className="links">
           <div className="pages">
             <Link to="/work-with-us" >Trabalhe Conosco</Link>
-            <Link to="/support" ><AiFillGithub size={25} />Suporte</Link>
+            <Link to="/support" ><AiFillGithub size={25}  />Suporte</Link>
           </div>
 
           <div className="networks">
-            <a href="https://www.facebook.com/RCTLog/" target="_blank"><BsFacebook size={30} /></a>
-            <a href="https://www.instagram.com/rctlogfretesemudancas/" target="_blank"><AiFillInstagram size={38} /></a>
+            <a href="https://www.facebook.com/RCTLog/" target="_blank"><BsFacebook size={30} className="face" /></a>
+            <a href="https://www.instagram.com/rctlogfretesemudancas/" target="_blank"><AiFillInstagram size={38} className="insta" /></a>
           </div>
         </div>
 

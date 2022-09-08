@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
@@ -18,6 +18,20 @@ export const Container = styled.div`
 
   z-index: 3;
 
+  animation: fadeInDownBig 1s;
+
+  .home:hover {
+    animation: bounce 1s infinite;
+  }
+  .bell:hover {
+    animation: bounce 1s infinite;
+  }
+  .email:hover {
+    animation: bounce 1s infinite;
+  }
+  .door:hover {
+    animation: bounce 1s infinite;
+  }
   .Logo {
     display: none;
     width: 244px;
@@ -42,7 +56,10 @@ export const Container = styled.div`
       height: 50px;
       object-fit: cover;
       border-radius: 100%;
-      cursor: pointer
+      cursor: pointer;
+      :hover {
+        animation: bounce 1s infinite;
+      }
     }
   }
 
@@ -56,4 +73,4 @@ export const Container = styled.div`
       display: block;
     }
   }
-`
+`;

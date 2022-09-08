@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.section`
   align-items: center;
@@ -14,6 +14,9 @@ export const Container = styled.section`
   p {
     font-weight: 600;
     cursor: pointer;
+    :hover{
+      color: var(--color-primary);
+    }
   }
 
   @media screen and (min-width: 450px) {
@@ -24,4 +27,4 @@ export const Container = styled.section`
     width: 100%;
     justify-content: center;
   }
-`
+`;

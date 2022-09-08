@@ -5,6 +5,9 @@ const Container = styled.div`
   margin-top: 3rem;
   min-height: 10vh;
 
+  animation: fadeInUpBig 1.5s;
+
+
   .logo {
     img {
       display: none;
@@ -50,6 +53,12 @@ const Container = styled.div`
         align-items: center;
         gap: 1rem;
 
+        .face:hover {
+          animation: wobble 1s infinite;
+        }
+        .insta:hover {
+          animation: wobble 1s infinite;
+        }
         a {
           color: inherit;
         }
@@ -67,7 +76,7 @@ const Container = styled.div`
       .apps {
         display: flex;
         gap: 1rem;
-        
+
         img {
           width: 45%;
           max-width: 200px;
@@ -92,10 +101,10 @@ const Container = styled.div`
   }
   @media screen and (min-width: 1200px) {
     .logo {
-    img {
-      display: block;
+      img {
+        display: block;
+      }
     }
-  }
     .info {
       grid-template-columns: 1fr 1fr 1fr;
       gap: 2rem;
