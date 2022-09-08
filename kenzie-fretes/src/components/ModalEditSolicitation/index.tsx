@@ -1,36 +1,30 @@
-import { AiOutlineClose } from "react-icons/ai";
-import Container from "./style";
-import { useState } from "react";
-import { AnyMessageParams } from "yup/lib/types";
-import api from "../../services/api";
-import { useContext } from "react";
-import { UserContext } from "../../context/UserContext/UserProvider";
+import { AiOutlineClose } from "react-icons/ai"
+import Container from "./style"
+import { useState } from "react"
+import { AnyMessageParams } from "yup/lib/types"
+import api from "../../services/api"
+import { useContext } from "react"
+import { UserContext } from "../../context/UserContext/UserProvider"
+import { Grid } from "@mui/material"
+import CInput from "../Input"
 
-
-
-const ModalEditSolicitation = ({setModal}:any) => {
- 
-  const { currentUser, setModalOpen, modalOpen } = useContext(UserContext);
+const ModalEditSolicitation = ({ setModal }: any) => {
+  const { currentUser, setModalOpen, modalOpen } = useContext(UserContext)
 
   const Save = (e: any) => {
-    e.preventDefault();
-    console.log();
-
-    
-
+    e.preventDefault()
     api
       .patch(`users/${currentUser.id}`, {
         description: e.target[0].value,
         origin: e.target[1].value,
-        destination: e.target[2].value
+        destination: e.target[2].value,
       })
-      .then((res) => console.log(res))
-      .catch((err) => console.error(err));
+      .then((res) => res)
+      .catch((err) => console.error(err))
 
-    setModal(null);
-    setModalOpen(!modalOpen);
-  };
-
+    setModal(null)
+    setModalOpen(!modalOpen)
+  }
 
   return (
     <Container>
@@ -64,7 +58,7 @@ const ModalEditSolicitation = ({setModal}:any) => {
         </form>
       </div>
     </Container>
-  );
-};
+  )
+}
 
-export default ModalEditSolicitation;
+export default ModalEditSolicitation
