@@ -11,6 +11,8 @@ import ModalAbout from "../../components/ModalAbout";
 import { useNavigate } from "react-router-dom";
 import { useLogin } from "../../context/LoginContext/LoginProvider";
 import ModalEditSolicitation from "../../components/ModalEditSolicitation";
+import Announcement from "../../components/Announcement";
+
 const Dashboard = () => {
   const [userPage, setUserPage] = useState(1);
   const navigate = useNavigate();
@@ -36,6 +38,7 @@ const Dashboard = () => {
             {userPage === 2 && <ModalPoster />}
             {userPage === 3 && <ModalAbout />}
           </ContainerObjectDashboard>
+      <Announcement />
         </div>
       </div>
       <FooterDashboard />

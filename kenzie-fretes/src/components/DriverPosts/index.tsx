@@ -22,7 +22,7 @@ const DriverPosts = () => {
 
   const [services, setServices] = useState<IServices[]>([])
   const [loading, setLoading] = useState(true)
-
+  const [modal, setModal] = useState(false)
   const [originFilter, setOriginFilter] = useState("SP")
   const [destinationFilter, setDestinationFilter] = useState("RJ")
 
@@ -76,7 +76,7 @@ const DriverPosts = () => {
         {services ? (
           services.map((post, index) => {
             return (
-              post.typeUser !== user.typeUser && (
+              post.typeUser === "Cliente" && (
                 <Grid
                   container
                   rowSpacing={2}
