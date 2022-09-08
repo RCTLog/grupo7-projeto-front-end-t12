@@ -1,5 +1,5 @@
-import FooterDashboard from "../../components/FooterDashboard"
-import Header from "../../components/Header"
+import FooterDashboard from "../../components/FooterDashboard";
+import Header from "../../components/Header";
 
 import Container, { ContainerObjectDashboard } from "./style";
 import { ContainerInfoDashboard } from "../../components/ContainerInfoDashboard/ContainerInfoDashboard";
@@ -14,23 +14,25 @@ import ModalEditSolicitation from "../../components/ModalEditSolicitation";
 import { UserContext } from "../../context/UserContext/UserProvider";
 import ModalEditAnnouncement from "../../components/ModalEditAnnouncement";
 import ModalEditAbout from "../../components/ModalEditAbout";
+import ModalEditInformation from "../../components/ModalEditInformation";
 
 const Dashboard = () => {
-  const [userPage, setUserPage] = useState(1)
-  const [modal, setModal] = useState(null)
-  const navigate = useNavigate()
+  const [userPage, setUserPage] = useState(1);
+  const [modal, setModal] = useState(null);
+  const navigate = useNavigate();
 
-  const { auth } = useLogin()
-  const { currentUser } = useContext(UserContext)
+  const { auth } = useLogin();
+  const { currentUser } = useContext(UserContext);
 
   useEffect(() => {
-    !auth && navigate("../login", { replace: true })
-  }, [auth])
+    !auth && navigate("../login", { replace: true });
+  }, [auth]);
 
   return (
     <Container>
-      
-      {modal === 3 && <ModalEditAbout setModal={setModal}/>}
+      {modal === 1 && <ModalEditInformation setModal={setModal} />}
+
+      {modal === 3 && <ModalEditAbout setModal={setModal} />}
 
       <div className="main">
         <Header />
@@ -40,7 +42,7 @@ const Dashboard = () => {
             setUserPage={setUserPage}
           ></ContainerInfoDashboard>
           <ContainerObjectDashboard>
-            {userPage === 1 && <ModalInformation />}
+            {userPage === 1 && <ModalInformation setModal={setModal} />}
             {userPage === 2 && <ModalPoster />}
             {userPage === 3 && <ModalAbout setModal={setModal} />}
           </ContainerObjectDashboard>
@@ -48,7 +50,7 @@ const Dashboard = () => {
       </div>
       <FooterDashboard />
     </Container>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;

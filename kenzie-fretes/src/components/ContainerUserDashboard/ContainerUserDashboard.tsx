@@ -10,7 +10,7 @@ export const ContainerUserDashboard = () => {
       <figure className="userImg">
         <img src={currentUser?.userImg} alt="" />
       </figure>
-      <h2 className="userName">{}</h2>
+      <h2 className="userName">{currentUser?.name}</h2>
     </Container>
   );
 };
