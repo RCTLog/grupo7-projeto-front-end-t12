@@ -5,17 +5,18 @@ import {
   InputLabel,
   MenuItem,
   Skeleton,
-} from "@mui/material";
-import { SetStateAction, useEffect, useState } from "react";
-import { useLogin } from "../../context/LoginContext/LoginProvider";
-import api from "../../services/api";
-import CButton from "../Button";
-import Footer from "../Footer";
-import Header from "../Header";
-import CustomSelect, { SelectStates } from "../Select";
-import { IServices } from "./driver.interfaces";
-import logo from "../../assets/logo.svg";
-import { Container } from "./style";
+} from "@mui/material"
+import { SetStateAction, useEffect, useState } from "react"
+import { useLogin } from "../../context/LoginContext/LoginProvider"
+import api from "../../services/api"
+import CButton from "../Button"
+import Footer from "../Footer"
+import Header from "../Header"
+import CustomSelect, { SelectStates } from "../Select"
+import { IServices } from "./driver.interfaces"
+import logo from "../../assets/logo.svg"
+import { Container } from "./style"
+import FooterDashboard from "../FooterDashboard"
 
 const DriverPosts = () => {
   const { user } = useLogin();
@@ -109,7 +110,7 @@ const DriverPosts = () => {
         ) : (
           <p>Sem pedidos</p>
         )}
-        <Footer logo={logo} />
+        <FooterDashboard />
       </Container>
     </>
   );

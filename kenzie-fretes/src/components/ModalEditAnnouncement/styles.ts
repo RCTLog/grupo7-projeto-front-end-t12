@@ -9,7 +9,7 @@ const Container = styled.div`
   align-items: center;
   background-color: rgba(18, 18, 20, 0.5);
   color: var(--color-gray-0);
-  z-index: 1;
+  z-index: 5;
   backdrop-filter: blur(1.25rem);
 
   .edit {

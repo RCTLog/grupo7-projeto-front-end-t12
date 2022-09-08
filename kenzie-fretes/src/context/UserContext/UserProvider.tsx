@@ -5,6 +5,7 @@ import { IUserContext, IUserProps } from "./User.interfaces";
 export const UserContext = createContext<IUserContext>({} as IUserContext);
 
 const UserProvider = ({ children }: IUserProps) => {
+  const [modalOpen, setModalOpen] = useState(false)
   const [currentUser, setCurrentUser] = useState({});
   const userId = localStorage.getItem("@RCTL: UserId");
 
@@ -15,12 +16,14 @@ const UserProvider = ({ children }: IUserProps) => {
       });
       setCurrentUser(user[0]);
     });
-  }, [userId]);
+  }, [userId, modalOpen]);
 
   return (
     <UserContext.Provider
       value={{
         currentUser,
+        modalOpen,
+        setModalOpen
       }}
     >
       {children}

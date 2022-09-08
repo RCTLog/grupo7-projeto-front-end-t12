@@ -44,6 +44,7 @@ export const Container = styled.div`
       height: 50px;
       object-fit: cover;
       border-radius: 100%;
+      cursor: pointer
     }
   }
 
