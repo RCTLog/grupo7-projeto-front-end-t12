@@ -10,11 +10,12 @@ import {
   Skeleton,
 } from "@mui/material"
 import { SelectStates } from "../Select"
-import { Iservices } from "./interface"
+import { IModalPosterProps, Iservices } from "./interface"
 import CInput from "../Input"
 import CButton from "../Button"
+import { toast } from "react-toastify"
 
-const ModalPoster = () => {
+const ModalPoster = ({ setReload, reload }: IModalPosterProps) => {
   const { currentUser } = useContext(UserContext)
   const [originFilter, setOriginFilter] = useState("SP")
   const [destinationFilter, setDestinationFilter] = useState("RJ")
@@ -44,6 +45,13 @@ const ModalPoster = () => {
       })
       .then((res) => res)
       .catch((err) => console.error(err))
+
+    toast.success(
+      currentUser === "Motorista"
+        ? "Serviço publicado!"
+        : "Solicitação de serviço publicada"
+    )
+    setReload(!reload)
   }
 
   return (
@@ -69,6 +77,7 @@ const ModalPoster = () => {
                 ? "Insira mais detalhes sobre o serviço prestado"
                 : "Insira mais detalhes do serviço solicitado"
             }
+            required
           />
         </Grid>
 
@@ -77,6 +86,7 @@ const ModalPoster = () => {
             label="Cidade de origem:"
             name="origin"
             placeholder="Ex:. Rio de Janeiro"
+            required
           />
         </Grid>
         <Grid item xs={12} sm={6} md={6}>
@@ -84,6 +94,7 @@ const ModalPoster = () => {
             label="Cidade de destino:"
             name="destination"
             placeholder="Ex:. São Paulo"
+            required
           />
         </Grid>
         <Grid item xs={12} sm={12} md={12}>
@@ -91,6 +102,7 @@ const ModalPoster = () => {
             label="Numero de celular"
             name="contact"
             placeholder="(12)55555-4444"
+            required
           />
         </Grid>
         <Grid item xs={6} className="select-1">

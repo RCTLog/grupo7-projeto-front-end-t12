@@ -21,8 +21,8 @@ export const Container = styled.div`
   }
 
   .post-card {
-    width: 80%;
-    max-width: 728px;
+    width: 100%;
+    max-width: 700px;
     height: max-content;
 
     padding: 15px 15px;

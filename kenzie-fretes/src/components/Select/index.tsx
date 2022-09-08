@@ -26,7 +26,7 @@ const CustomSelect = styled(Select)({
   },
 })
 
-export const SelectStates = ({ setState, Label }: ISelectStatesProps) => {
+export const SelectStates = ({ setState, Label, name }: ISelectStatesProps) => {
   return (
     <FormControl>
       <InputLabel
@@ -41,12 +41,13 @@ export const SelectStates = ({ setState, Label }: ISelectStatesProps) => {
       </InputLabel>
       <CustomSelect
         id="origin"
-        label="Origem"
+        label={Label}
         variant="outlined"
         defaultValue="all"
-        onChange={(event) => {
-          setState(`${event.target.value}`)
-        }}
+        name={name}
+        // onChange={(event) => {
+        //   setState(`${event.target.value}`)
+        // }}
         startAdornment={<PlaceOutlined />}
       >
         <MenuItem value="all">Todos</MenuItem>
