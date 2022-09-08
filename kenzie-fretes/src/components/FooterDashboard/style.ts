@@ -23,9 +23,9 @@ export const Container = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-
+        gap: 5px;
         color: inherit;
-        font-weight: 600;
+
       }
     }
 

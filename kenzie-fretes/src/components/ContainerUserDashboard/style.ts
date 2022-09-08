@@ -32,14 +32,20 @@ export const Container = styled.section`
 
   @media (max-width: 450px) {
     width: 100%;
-    justify-content: space-around;
-    gap: 10px;
+    gap: 20px;
+    padding: 20px;
+
+
     .userName {
       width: fit-content;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
     }
 
     .userImg {
-      width: 75px;
+      min-width: 75px;
+      height: 75px;
     }
   }
 `
