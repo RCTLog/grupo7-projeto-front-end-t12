@@ -14,7 +14,7 @@ import { TiHomeOutline } from "react-icons/ti";
 import { useMain } from "../../context/MainContext/MainProvider";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext/UserProvider";
-import imgUser from "../../assets/user.png"
+import imgUser from "../../assets/user.png";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -28,7 +28,9 @@ const Header = () => {
       <div className="buttons">
         <TiHomeOutline
           onClick={() =>
-            navigate("../dashboard/driver/posts", { replace: true })
+            currentUser.type === "Cliente"
+              ? navigate("../dashboard/driver/posts", { replace: true })
+              : navigate("../dashboard/client/posts", { replace: true })
           }
         />
         <MdOutlineEmail />
