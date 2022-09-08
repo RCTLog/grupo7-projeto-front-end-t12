@@ -6,19 +6,20 @@ import {
   MenuItem,
   Skeleton,
 } from "@mui/material"
-import { SetStateAction, useEffect, useState } from "react"
+import { SetStateAction, useContext, useEffect, useState } from "react"
 import { useLogin } from "../../context/LoginContext/LoginProvider"
 import api from "../../services/api"
 import CButton from "../Button"
 import Footer from "../Footer"
 import Header from "../Header"
 import CustomSelect, { SelectStates } from "../Select"
-import { IServices } from "./driver.interfaces"
+import { IServices } from "./User.interfaces"
 import logo from "../../assets/logo.svg"
 import { Container } from "./style"
 import FooterDashboard from "../FooterDashboard"
+import { UserContext } from "../../context/UserContext/UserProvider"
 
-const DriverPosts = () => {
+const UserPosts = () => {
   const { user } = useLogin()
 
   const [services, setServices] = useState<IServices[]>([])
@@ -27,28 +28,22 @@ const DriverPosts = () => {
   const [originFilter, setOriginFilter] = useState("SP")
   const [destinationFilter, setDestinationFilter] = useState("RJ")
 
+  const { currentUser } = useContext(UserContext)
   useEffect(() => {
-    api.get<SetStateAction<IServices[]>>("/services").then(({ data }) => {
+    api.get<IServices[]>("/services").then(({ data }) => {
+      const userData = data.filter(
+        (post) => post.createUserId === currentUser.id
+      )
       setTimeout(() => {
         setLoading(false)
-        setServices(data)
+        setServices(userData)
       }, 1000)
     })
   }, [])
 
   return (
     <>
-      <Header />
       <Container>
-        <Grid container spacing={2} className="filters">
-          <Grid item xs={6} className="center">
-            <SelectStates setState={setOriginFilter} Label="Origem" />
-          </Grid>
-          <Grid item xs={6} className="center">
-            <SelectStates setState={setDestinationFilter} Label="Destino" />
-          </Grid>
-        </Grid>
-
         {loading && (
           <>
             <Skeleton
@@ -78,7 +73,7 @@ const DriverPosts = () => {
         {services ? (
           services.map((post, index) => {
             return (
-              post.typeUser === "Cliente" && (
+              post.typeUser === "Motorista" && (
                 <Grid
                   container
                   rowSpacing={2}
@@ -104,7 +99,7 @@ const DriverPosts = () => {
                     <p>Telefone: {post.contact}</p>
                   </Grid>
                   <Grid item xs={12} sm={4}>
-                    <CButton variant="outlined">Iniciar Chat</CButton>
+                    <CButton variant="contained">Editar Anuncio</CButton>
                   </Grid>
                 </Grid>
               )
@@ -114,9 +109,8 @@ const DriverPosts = () => {
           <p>Sem pedidos</p>
         )}
       </Container>
-      <FooterDashboard />
     </>
   )
 }
 
-export default DriverPosts
+export default UserPosts

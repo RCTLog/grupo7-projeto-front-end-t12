@@ -1,10 +1,9 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Container = styled.div`
   width: 100%;
-  height: 100vh;
   overflow: hidden;
-
+  padding: 100px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,4 +43,4 @@ export const Container = styled.div`
       font-weight: 600;
     }
   }
-`;
+`
