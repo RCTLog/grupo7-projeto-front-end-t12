@@ -12,9 +12,9 @@ import Lottie from "react-lottie";
 export const Homepage = () => {
   let navigate = useNavigate();
 
-  const sobreRef = useRef(null);
+  const sobreRef = useRef<any>();
 
-  const gotoSobre = () => {
+  const gotoSobre = (): any => {
     window.scrollTo({
       top: sobreRef.current?.offsetTop,
       behavior: "smooth",
@@ -58,16 +58,14 @@ export const Homepage = () => {
           </div>
         </div>
         <div className="main-text" ref={sobreRef}>
-          
           <div className="text-image">
             <p>
-          <h2>SOBRE</h2>
-              A RTCLog é uma plataforma voltada para motoristas se cadastrarem e
-              oferecerem seus serviços de transporte, e ao mesmo tempo, para o
-              cliente final que busca por esses serviços, ter a facilidade em
-              poucos cliques de se cadastrar e de contratar os serviços de que
-              precisa, de forma assertiva e direta ao ponto, é só escolher um
-              fretista e marcar um horário!
+              <h2>SOBRE</h2>A RTCLog é uma plataforma voltada para motoristas se
+              cadastrarem e oferecerem seus serviços de transporte, e ao mesmo
+              tempo, para o cliente final que busca por esses serviços, ter a
+              facilidade em poucos cliques de se cadastrar e de contratar os
+              serviços de que precisa, de forma assertiva e direta ao ponto, é
+              só escolher um fretista e marcar um horário!
             </p>
             <img
               src={SecondImage}
