@@ -10,11 +10,11 @@ const ModalEditAbout = ({ setModal }: any) => {
 
   const Save = (e: any) => {
     e.preventDefault();
-    console.log(e.target[0].value);
+    
 
     api
       .patch(`users/${currentUser.id}`, { about: e.target[0].value })
-      .then((res) => console.log(res))
+      .then((res) => res)
       .catch((err) => console.error(err));
     setModal(null);
     setModalOpen(!modalOpen);

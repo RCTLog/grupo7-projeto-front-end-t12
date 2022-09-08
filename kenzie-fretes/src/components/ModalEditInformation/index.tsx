@@ -1,18 +1,15 @@
-import { AiOutlineClose } from "react-icons/ai";
-import Container from "./style";
-import { useContext, useState } from "react";
-import { UserContext } from "../../context/UserContext/UserProvider";
-import api from "../../services/api";
+import { AiOutlineClose } from "react-icons/ai"
+import Container from "./style"
+import { useContext, useState } from "react"
+import { UserContext } from "../../context/UserContext/UserProvider"
+import api from "../../services/api"
 
 const ModalEditInformation = ({ setModal }: any) => {
-  const [text, setText] = useState("");
-  const { currentUser, modalOpen, setModalOpen } = useContext(UserContext);
+  const [text, setText] = useState("")
+  const { currentUser, modalOpen, setModalOpen } = useContext(UserContext)
 
   const Save = (e: any) => {
-    e.preventDefault();
-    console.log();
-
-    console.log(currentUser);
+    e.preventDefault()
 
     api
       .patch(`users/${currentUser.id}`, {
@@ -25,12 +22,12 @@ const ModalEditInformation = ({ setModal }: any) => {
           state: e.target[2].value,
         },
       })
-      .then((res) => console.log(res))
-      .catch((err) => console.error(err));
+      .then((res) => res)
+      .catch((err) => console.error(err))
 
-    setModal(null);
-    setModalOpen(!modalOpen);
-  };
+    setModal(null)
+    setModalOpen(!modalOpen)
+  }
 
   return (
     <Container>
@@ -40,7 +37,7 @@ const ModalEditInformation = ({ setModal }: any) => {
           <AiOutlineClose
             size={25}
             onClick={() => {
-              setModal(null);
+              setModal(null)
             }}
           />
         </div>
@@ -50,7 +47,7 @@ const ModalEditInformation = ({ setModal }: any) => {
             type="text"
             id="image"
             placeholder="URL da imagem"
-            defaultValue={currentUser.userImg}
+            defaultValue=""
           />
 
           <label htmlFor="contact">Contato:</label>
@@ -58,15 +55,11 @@ const ModalEditInformation = ({ setModal }: any) => {
             type="text"
             id="contact"
             placeholder="Digite seu número"
-            defaultValue={currentUser.contact}
+            defaultValue=""
           />
 
           <label htmlFor="">Estado:</label>
-          <select
-            name="state"
-            id="states-selection"
-            defaultValue={currentUser.address.state}
-          >
+          <select name="state" id="states-selection" defaultValue="">
             <option value="" selected disabled>
               Selecione seu Estado
             </option>
@@ -102,7 +95,7 @@ const ModalEditInformation = ({ setModal }: any) => {
         </form>
       </div>
     </Container>
-  );
-};
+  )
+}
 
-export default ModalEditInformation;
+export default ModalEditInformation

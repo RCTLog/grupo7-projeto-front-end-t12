@@ -23,14 +23,15 @@ const Container = styled.div`
       align-items: center;
     }
   }
+`
 
-`;
-
-export default Container;
+export default Container
 
 export const ContainerObjectDashboard = styled.section`
   width: 100%;
   padding: 1rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `
