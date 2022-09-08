@@ -16,6 +16,7 @@ import CustomSelect, { SelectStates } from "../Select"
 import { IServices } from "./driver.interfaces"
 import logo from "../../assets/logo.svg"
 import { Container } from "./style"
+import FooterDashboard from "../FooterDashboard"
 
 const DriverPosts = () => {
   const { user } = useLogin()
@@ -109,7 +110,7 @@ const DriverPosts = () => {
         ) : (
           <p>Sem pedidos</p>
         )}
-        <Footer logo={logo} />
+        <FooterDashboard />
       </Container>
     </>
   )

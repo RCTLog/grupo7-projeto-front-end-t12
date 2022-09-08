@@ -12,9 +12,12 @@ import { useNavigate } from "react-router-dom";
 import { useLogin } from "../../context/LoginContext/LoginProvider";
 import ModalEditSolicitation from "../../components/ModalEditSolicitation";
 import { UserContext } from "../../context/UserContext/UserProvider";
+import ModalEditAnnouncement from "../../components/ModalEditAnnouncement";
+import ModalEditAbout from "../../components/ModalEditAbout";
 
 const Dashboard = () => {
   const [userPage, setUserPage] = useState(1)
+  const [modal, setModal] = useState(null)
   const navigate = useNavigate()
 
   const { auth } = useLogin()
@@ -26,6 +29,9 @@ const Dashboard = () => {
 
   return (
     <Container>
+      
+      {modal === 3 && <ModalEditAbout setModal={setModal}/>}
+
       <div className="main">
         <Header />
         <div className="info-container">
@@ -36,7 +42,7 @@ const Dashboard = () => {
           <ContainerObjectDashboard>
             {userPage === 1 && <ModalInformation />}
             {userPage === 2 && <ModalPoster />}
-            {userPage === 3 && <ModalAbout />}
+            {userPage === 3 && <ModalAbout setModal={setModal} />}
           </ContainerObjectDashboard>
         </div>
       </div>
