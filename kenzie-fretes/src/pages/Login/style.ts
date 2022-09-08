@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import 'animate.css';
 
 export const Container = styled.div`
   width: 100%;
@@ -25,6 +26,8 @@ export const Container = styled.div`
     background-color: #ffffff;
 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+
+    animation: jackInTheBox 1.5s;
 
     .login-image {
       display: none;

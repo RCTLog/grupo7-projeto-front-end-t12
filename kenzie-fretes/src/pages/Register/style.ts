@@ -28,6 +28,8 @@ export const Container = styled.div`
 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
 
+    animation: jackInTheBox 1.5s;
+
     .register-image {
       display: none;
       width: 50%;
