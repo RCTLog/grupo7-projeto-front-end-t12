@@ -25,7 +25,7 @@ import { ErrorOutline, Visibility, VisibilityOff } from "@mui/icons-material"
 const Register = () => {
   const [type, setType] = useState(false)
 
-  const { auth, setAuth, loading, register, handleSubmit, errors, onSubmit } =
+  const { auth, setAuth, register, handleSubmit, errors, onSubmit } =
     useRegister()
 
   return (
