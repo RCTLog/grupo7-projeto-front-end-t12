@@ -21,16 +21,16 @@ export const Container = styled.div`
   animation: fadeInDownBig 1s;
 
   .home:hover {
-    animation: bounce 1s infinite;
+    animation: pulse 1s infinite;
   }
   .bell:hover {
-    animation: bounce 1s infinite;
+    animation: pulse 1s infinite;
   }
   .email:hover {
-    animation: bounce 1s infinite;
+    animation: pulse 1s infinite;
   }
   .door:hover {
-    animation: bounce 1s infinite;
+    animation: pulse 1s infinite;
   }
   .Logo {
     display: none;
@@ -51,14 +51,18 @@ export const Container = styled.div`
       cursor: pointer;
     }
 
-    img {
+    figure {
       width: 50px;
       height: 50px;
-      object-fit: cover;
-      border-radius: 100%;
-      cursor: pointer;
-      :hover {
-        animation: bounce 1s infinite;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 100%;
+        cursor: pointer;
+      }
+      :hover > img {
+        animation: pulse 1s infinite;
       }
     }
   }
